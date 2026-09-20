@@ -1,12 +1,16 @@
 import { useMemo } from 'react'
-import { SalaryPaycheck } from 'dutch-tax-income-calculator'
+import { SalaryPaycheck, constants } from 'dutch-tax-income-calculator'
 import { PERIOD_MULTIPLIERS } from '../constants/box1Defaults.js'
 
 /**
  * Available years supported by dutch-tax-income-calculator
- * The package supports years from 2019 onwards
+ * Keep the existing 2019 lower bound while deriving new years from the package.
  */
-export const BOX1_AVAILABLE_YEARS = [2025, 2024, 2023, 2022, 2021, 2020, 2019]
+export const BOX1_AVAILABLE_YEARS = constants.years
+  .filter((year) => year >= 2019)
+  .sort((a, b) => b - a)
+
+export const BOX1_DEFAULT_YEAR = BOX1_AVAILABLE_YEARS[0] ?? 2026
 
 /**
  * Map period values to SalaryPaycheck startFrom parameter
@@ -53,7 +57,7 @@ function convertToYearlyIncome(income, period, hoursPerWeek) {
  * @param {number} year - Tax year
  * @returns {Object} Tax summary with detailed breakdown
  */
-export function useBox1Calculator(inputs, year = 2025) {
+export function useBox1Calculator(inputs, year = BOX1_DEFAULT_YEAR) {
   const {
     grossIncome = 0,
     period = 'yearly',

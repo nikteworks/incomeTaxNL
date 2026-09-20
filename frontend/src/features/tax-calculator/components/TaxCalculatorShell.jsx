@@ -5,7 +5,11 @@ import CalculatorToggleSwitch from './CalculatorToggleSwitch.jsx'
 import CalculationExplanation from './CalculationExplanation.jsx'
 import { useBox3Calculator } from '../hooks/useBox3Calculator.js'
 import { BOX1_EMPTY_FORM } from '../constants/box1Defaults.js'
-import { useBox1Calculator, BOX1_AVAILABLE_YEARS } from '../hooks/useBox1Calculator.js'
+import {
+  useBox1Calculator,
+  BOX1_AVAILABLE_YEARS,
+  BOX1_DEFAULT_YEAR,
+} from '../hooks/useBox1Calculator.js'
 import { BOX3_DEFAULTS, DEFAULT_YEAR, getDefaultsForYear } from 'dutch-tax-box3-calculator'
 import { storage, STORAGE_KEYS } from '../../../utils/storage.js'
 import './TaxCalculatorShell.css'
@@ -81,7 +85,7 @@ const getInitialBox1Year = () => {
   if (typeof saved === 'number' && BOX1_AVAILABLE_YEARS.includes(saved)) {
     return saved
   }
-  return BOX1_AVAILABLE_YEARS[0]
+  return BOX1_DEFAULT_YEAR
 }
 
 /**
@@ -191,7 +195,7 @@ function TaxCalculatorShell() {
 
   const handleBox1Reset = useCallback(() => {
     setBox1FormValues(BOX1_EMPTY_FORM)
-    setBox1SelectedYear(BOX1_AVAILABLE_YEARS[0])
+    setBox1SelectedYear(BOX1_DEFAULT_YEAR)
   }, [])
 
   // Box 3: Memoize calculated values to prevent unnecessary recalculations
