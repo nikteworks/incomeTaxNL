@@ -1,12 +1,12 @@
-import { createContext, useContext, useMemo, useCallback } from 'react'
-import { useParams, useNavigate, useLocation } from 'react-router-dom'
+import { createContext, useContext, useMemo, useCallback, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useQueryState } from '../hooks/useQueryState.js'
+import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES, readLanguage, normalizedLanguageLocation, languageLocation, languageCanonical } from '../utils/urlState.js'
 import PropTypes from 'prop-types'
 import en from '../locales/en.json'
 import nl from '../locales/nl.json'
 
 const translations = { en, nl }
-const SUPPORTED_LANGUAGES = ['en', 'nl']
-const DEFAULT_LANGUAGE = 'en'
 
 const LanguageContext = createContext(null)
 
@@ -19,12 +19,23 @@ function get(obj, path) {
 }
 
 export function LanguageProvider({ children }) {
-  const { lang } = useParams()
+  const { location, updateQuery } = useQueryState()
   const navigate = useNavigate()
-  const location = useLocation()
+  const language = readLanguage(location.search)
 
-  // Validate language from URL, fallback to default
-  const language = SUPPORTED_LANGUAGES.includes(lang) ? lang : DEFAULT_LANGUAGE
+  useEffect(() => {
+    const normalized = normalizedLanguageLocation(location)
+    if (normalized) navigate(normalized, { replace: true })
+  }, [location, navigate])
+
+  useEffect(() => {
+    document.documentElement.lang = language
+    const canonical = languageCanonical(language)
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonical)
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', canonical)
+    document.querySelector('meta[property="og:locale"]')?.setAttribute('content', `${language}_NL`)
+    document.querySelector('meta[property="og:locale:alternate"]')?.setAttribute('content', language === 'nl' ? 'en_NL' : 'nl_NL')
+  }, [language])
 
   // Translation function
   const t = useCallback((key, fallback) => {
@@ -38,9 +49,10 @@ export function LanguageProvider({ children }) {
   // Switch language and navigate to new URL
   const switchLanguage = useCallback((newLang) => {
     if (!SUPPORTED_LANGUAGES.includes(newLang)) return
-    const pathWithoutLang = location.pathname.replace(/^\/(en|nl)/, '')
-    navigate(`/${newLang}${pathWithoutLang || ''}`, { replace: true })
-  }, [navigate, location.pathname])
+    updateQuery({ lang: newLang === 'en' ? null : newLang })
+  }, [updateQuery])
+
+  const languageHref = useCallback((newLang) => languageLocation(location, newLang), [location])
 
   // Toggle between languages
   const toggleLanguage = useCallback(() => {
@@ -57,8 +69,9 @@ export function LanguageProvider({ children }) {
     t,
     switchLanguage,
     toggleLanguage,
+    languageHref,
     supportedLanguages: SUPPORTED_LANGUAGES,
-  }), [language, locale, t, switchLanguage, toggleLanguage])
+  }), [language, locale, t, switchLanguage, toggleLanguage, languageHref])
 
   return (
     <LanguageContext.Provider value={value}>
@@ -71,6 +84,8 @@ LanguageProvider.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
+// The existing public context API intentionally exports its consumer hook.
+// eslint-disable-next-line react-refresh/only-export-components
 export function useLanguage() {
   const context = useContext(LanguageContext)
   if (!context) {
@@ -78,5 +93,3 @@ export function useLanguage() {
   }
   return context
 }
-
-export { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE }

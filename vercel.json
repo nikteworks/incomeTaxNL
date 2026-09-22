@@ -1,6 +1,25 @@
 {
-  "trailingSlash": true,
   "redirects": [
+    {
+      "source": "/en",
+      "destination": "https://incometax.nl/?lang=en",
+      "permanent": true
+    },
+    {
+      "source": "/en/",
+      "destination": "https://incometax.nl/?lang=en",
+      "permanent": true
+    },
+    {
+      "source": "/nl",
+      "destination": "https://incometax.nl/?lang=nl",
+      "permanent": true
+    },
+    {
+      "source": "/nl/",
+      "destination": "https://incometax.nl/?lang=nl",
+      "permanent": true
+    },
     {
       "source": "/:path*",
       "has": [
@@ -15,7 +34,7 @@
   ],
   "rewrites": [
     {
-      "source": "/(en|nl)/:path*",
+      "source": "/",
       "destination": "/index.html"
     }
   ],
