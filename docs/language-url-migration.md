@@ -1,8 +1,8 @@
 # Language query migration — issue #21
 
 Branch implementation of https://github.com/nikteworks/incomeTaxNL/issues/21.
-Do not release independently of #22: localized initial HTML and its metadata remain
-required before the query URL migration goes live.
+The #22 implementation now supplies localized initial HTML and metadata; see
+[localized-html.md](localized-html.md) for its deployment and external release gates.
 
 ## URL contract
 
@@ -32,7 +32,7 @@ The four exact legacy paths (`/en`, `/en/`, `/nl`, `/nl/`) have 308 redirects to
 apex root with their language query. The destination's explicit `lang` must take
 precedence over incoming values. Place these before generic www normalization so
 www legacy URLs reach the final target in one hop. Leave `trailingSlash` unset to
-avoid an automatic slash redirect before these rules. Rewrite only `/` to the app;
+avoid an automatic slash redirect before these rules. #22 selects the appropriate pre-rendered language artifact at `/`;
 unknown paths must return HTTP 404 on Vercel. The client has a matching not-found
 view (Vite's development fallback itself still returns HTTP 200).
 
@@ -42,9 +42,8 @@ English canonical: `https://incometax.nl/`; Dutch canonical:
 `https://incometax.nl/?lang=nl`. Reciprocal hreflang and sitemap use these two URLs,
 with `/` as x-default. The sitemap has no invented lastmod dates. Rendered canonical,
 OG URL/locale and HTML language track navigation and exclude calculation/tracking
-parameters. The existing English HTML shell still needs #22's deployment-compatible
-localized rendering, title/description/social content and visible initial content.
-Client updates here are not a substitute for that work.
+parameters. The coordinated #22 implementation supplies pre-rendered localized HTML,
+title/description/social content and visible initial content. See localized-html.md.
 
 ## Validation and release gates
 
@@ -80,6 +79,6 @@ validate production-domain routing on the final deployment. Do not treat local
 browser tests or JSON inspection as proof of Vercel behavior.
 
 Outstanding before release: deployed HTTP checks (including deployment-specific
-framework fallback and trailing-slash behavior); #22 initial HTML/cache checks and
+framework fallback and trailing-slash behavior); deployed initial HTML/cache checks and
 private Search Console baseline/live inspection; submit the coordinated sitemap.
 No deployment or Search Console changes are made by this branch.

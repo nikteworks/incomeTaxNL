@@ -44,3 +44,27 @@ if (www) {
   assert.equal((await request(new URL(unknown.headers.get('location'), www))).status, 404)
 }
 console.log('PASS deployed language routes, preserved queries, www normalization and genuine 404s')
+
+// Repeated, alternating requests exercise the deployment's cache selection.
+for (const [path, language] of [
+  ['/', 'en'], ['/?lang=nl', 'nl'], ['/?lang=en', 'en'], ['/?lang=nl', 'nl'],
+  ['/?lang=nl&lang=en', 'en'], ['/?lang=nl&calcType=box3&v=1&state=PRIVATE_TEST_VALUE&utm_source=release-check', 'nl'],
+]) {
+  const response = await request(new URL(path, base))
+  assert.equal(response.status, 200)
+  const html = await response.text()
+  const canonical = language === 'nl' ? 'https://incometax.nl/?lang=nl' : 'https://incometax.nl/'
+  assert.ok(html.includes(`<html lang="${language}">`), `${path}: initial HTML language`)
+  assert.ok(html.includes(`<link rel="canonical" href="${canonical}"`), `${path}: initial canonical`)
+  assert.equal((html.match(/rel="canonical"/g) || []).length, 1)
+  assert.equal((html.match(/rel="alternate"/g) || []).length, 3)
+  assert.ok(html.includes(language === 'nl' ? 'Nederlandse Belastingcalculator' : 'Dutch Tax Calculator'))
+  assert.ok(html.includes('<h1>'), 'visible initial heading')
+  assert.ok(!html.includes('PRIVATE_TEST_VALUE') && !html.includes('utm_source'), 'no request state in HTML')
+  console.log(`PASS initial ${language} HTML; status=${response.status}; cache=${response.headers.get('x-vercel-cache') || 'not exposed'}`)
+}
+const sitemap = await (await request(new URL('/sitemap.xml', base))).text()
+assert.ok(sitemap.includes('<loc>https://incometax.nl/</loc>'))
+assert.ok(sitemap.includes('<loc>https://incometax.nl/?lang=nl</loc>'))
+assert.ok(!sitemap.includes('<lastmod>'))
+console.log('PASS localized initial HTML, cache-selection probes and sitemap')

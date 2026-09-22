@@ -47,7 +47,8 @@ test('switch and history preserve opaque calculation data, query values, hash an
 })
 
 test('unknown paths do not render the calculator or redirect home', async ({ page }) => {
-  await page.goto('/nl/unknown?lang=nl')
+  const response = await page.goto('/nl/unknown?lang=nl')
+  expect(response.status()).toBe(404)
   await expect(page.getByRole('heading', { name: '404 — Page not found' })).toBeVisible()
   await expect(page).toHaveURL(/\/nl\/unknown\?lang=nl$/)
 })

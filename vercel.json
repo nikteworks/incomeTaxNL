@@ -32,12 +32,6 @@
       "permanent": true
     }
   ],
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/index.html"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -60,5 +54,17 @@
         }
       ]
     }
-  ]
+  ],
+  "framework": null,
+  "installCommand": "npm ci && npm ci --prefix frontend",
+  "buildCommand": "npm run build --prefix frontend",
+  "outputDirectory": "frontend/dist",
+  "proxy": {
+    "entrypoint": "middleware.js",
+    "matcher": [
+      "/",
+      "/index.html",
+      "/localized/:path*"
+    ]
+  }
 }

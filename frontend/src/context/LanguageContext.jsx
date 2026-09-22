@@ -1,7 +1,8 @@
 import { createContext, useContext, useMemo, useCallback, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useQueryState } from '../hooks/useQueryState.js'
-import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES, readLanguage, normalizedLanguageLocation, languageLocation, languageCanonical } from '../utils/urlState.js'
+import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES, readLanguage, normalizedLanguageLocation, languageLocation } from '../utils/urlState.js'
+import { updateMetadata } from '../seo/metadata.js'
 import PropTypes from 'prop-types'
 import en from '../locales/en.json'
 import nl from '../locales/nl.json'
@@ -29,12 +30,7 @@ export function LanguageProvider({ children }) {
   }, [location, navigate])
 
   useEffect(() => {
-    document.documentElement.lang = language
-    const canonical = languageCanonical(language)
-    document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonical)
-    document.querySelector('meta[property="og:url"]')?.setAttribute('content', canonical)
-    document.querySelector('meta[property="og:locale"]')?.setAttribute('content', `${language}_NL`)
-    document.querySelector('meta[property="og:locale:alternate"]')?.setAttribute('content', language === 'nl' ? 'en_NL' : 'nl_NL')
+    updateMetadata(language, document)
   }, [language])
 
   // Translation function

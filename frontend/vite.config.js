@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   plugins: [react()],
   resolve: {
     alias: {
@@ -28,7 +28,7 @@ export default defineConfig({
     // Chunk splitting strategy for optimal caching
     rollupOptions: {
       output: {
-        manualChunks: {
+        manualChunks: isSsrBuild ? undefined : {
           // Vendor chunks for better caching
           'react-vendor': ['react', 'react-dom'],
           'mui-core': ['@mui/material', '@emotion/react', '@emotion/styled'],
@@ -52,4 +52,4 @@ export default defineConfig({
   optimizeDeps: {
     include: ['react', 'react-dom', '@mui/material', '@emotion/react', '@emotion/styled'],
   },
-})
+}))
