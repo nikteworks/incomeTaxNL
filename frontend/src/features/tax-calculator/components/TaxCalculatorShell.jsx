@@ -2,7 +2,6 @@ import { useState, useMemo, useCallback, useEffect, useRef, lazy, Suspense } fro
 import Box3InputForm from './Box3InputForm.jsx'
 import Box1InputForm from './Box1InputForm.jsx'
 import CalculatorToggleSwitch from './CalculatorToggleSwitch.jsx'
-import CalculationExplanation from './CalculationExplanation.jsx'
 import { useBox3Calculator } from '../hooks/useBox3Calculator.js'
 import { BOX1_EMPTY_FORM } from '../constants/box1Defaults.js'
 import {
@@ -10,7 +9,10 @@ import {
   BOX1_AVAILABLE_YEARS,
   BOX1_DEFAULT_YEAR,
 } from '../hooks/useBox1Calculator.js'
-import { BOX3_DEFAULTS, DEFAULT_YEAR, getDefaultsForYear } from 'dutch-tax-box3-calculator'
+import { DEFAULT_YEAR, getDefaultsForYear } from 'dutch-tax-box3-calculator'
+import { useLanguage } from '../../../context/LanguageContext.jsx'
+import { useQueryState } from '../../../hooks/useQueryState.js'
+import { readCalculatorType } from '../../../utils/urlState.js'
 import { storage, STORAGE_KEYS } from '../../../utils/storage.js'
 import './TaxCalculatorShell.css'
 import './CalculatorToggleSwitch.css'
@@ -107,6 +109,7 @@ const useDebouncedStorage = (key, value, delay = 250) => {
 }
 
 function TaxCalculatorShell() {
+  const { t } = useLanguage()
   // Refs for scroll navigation
   const inputPanelRef = useRef(null)
   const resultsPanelRef = useRef(null)
@@ -141,7 +144,15 @@ function TaxCalculatorShell() {
   }, [])
   
   // Box type state (box1 or box3)
-  const [boxType, setBoxType] = useState(getInitialBoxType)
+  const { location, updateQuery } = useQueryState()
+  const [savedBoxType] = useState(getInitialBoxType)
+  const boxType = readCalculatorType(location.search) ?? savedBoxType
+
+  useEffect(() => {
+    if (new URLSearchParams(location.search).has('calcType') && !readCalculatorType(location.search)) {
+      updateQuery({ calcType: null }, { replace: true })
+    }
+  }, [location.search, updateQuery])
   
   // Box 3 state
   const [box3FormValues, setBox3FormValues] = useState(getInitialBox3FormValues)
@@ -161,9 +172,9 @@ function TaxCalculatorShell() {
   // Box type change handler
   const handleBoxTypeChange = useCallback((_event, newBoxType) => {
     if (newBoxType !== null) {
-      setBoxType(newBoxType)
+      updateQuery({ calcType: newBoxType })
     }
-  }, [])
+  }, [updateQuery])
 
   // Box 3 handlers
   const handleBox3FieldChange = useCallback((name, value) => {
@@ -258,15 +269,7 @@ function TaxCalculatorShell() {
 
 
   return (
-    <section className="calculator-shell">
-      <header className="calculator-shell__header">
-        <div className="calculator-shell__title-row">
-          {/* Title removed as requested */}
-        </div>
-        <div className="calculator-shell__tool-desc">
-          {/* Description removed as requested */}
-        </div>
-      </header>
+    <section className="calculator-shell" id="calculator" tabIndex={-1}>
       <div className="calculator-shell__content">
         <div className="calculator-panel" ref={inputPanelRef}>
           {/* Toggle switch above the input panel */}
@@ -313,24 +316,14 @@ function TaxCalculatorShell() {
         </div>
       </div>
       
-      <CalculationExplanation
-        boxType={boxType}
-        box1Inputs={box1CalculatorInputs}
-        box1Summary={box1Summary}
-        box3Inputs={box3CalculatorInputs}
-        box3Summary={box3Summary}
-        box3Config={box3Config}
-      />
-      {/* Remove old footer switch buttons, toggle is now above input panel */}
-      
       {/* Floating navigation button for mobile */}
       <button
         className={`floating-nav-btn ${showGoToTop ? 'floating-nav-btn--top' : 'floating-nav-btn--results'}`}
         onClick={showGoToTop ? scrollToTop : scrollToResults}
-        aria-label={showGoToTop ? 'Go to top' : 'Go to results'}
+        aria-label={showGoToTop ? t('calculator.goToTop') : t('calculator.seeResults')}
       >
         <span className="floating-nav-btn__icon">{showGoToTop ? '↑' : '↓'}</span>
-        <span className="floating-nav-btn__text">{showGoToTop ? 'Go to Top' : 'See Results'}</span>
+        <span className="floating-nav-btn__text">{showGoToTop ? t('calculator.goToTop') : t('calculator.seeResults')}</span>
       </button>
     </section>
   )

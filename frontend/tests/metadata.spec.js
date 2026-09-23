@@ -7,7 +7,7 @@ for (const [path, language] of [['/', 'en'], ['/?lang=en', 'en'], ['/?lang=nl', 
     expect(response.status()).toBe(200)
     const html = await response.text()
     expect(html).toContain(`<html lang="${language}">`)
-    expect(html).toContain(pageCopy[language].heading)
+    expect(html).toContain(pageCopy[language].heading.replaceAll('&', '&amp;'))
     expect(html).toContain(pageCopy[language].introduction)
     expect(html).not.toContain('PRIVATE_TEST_VALUE')
     expect(html).not.toContain('utm_source')
@@ -27,7 +27,11 @@ for (const [path, language] of [['/', 'en'], ['/?lang=en', 'en'], ['/?lang=nl', 
     page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()) })
     await page.addInitScript(() => localStorage.setItem('dutch_tax:form.box1.values.v1', JSON.stringify({ grossIncome: 83000 })))
     await page.goto(path)
-    await expect(page.locator('input[type="number"]').first()).toHaveValue('83000')
+    if (path.includes('calcType=box3')) {
+      await expect(page.getByRole('button', { name: 'Box 3', exact: true })).toHaveAttribute('aria-pressed', 'true')
+    } else {
+      await expect(page.locator('input[type="number"]').first()).toHaveValue('83000')
+    }
     await expect(page).toHaveTitle(pageCopy[language].title)
     await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', pageCopy[language].description)
     const other = language === 'en' ? 'nl' : 'en'
