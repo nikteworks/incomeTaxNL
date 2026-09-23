@@ -25,8 +25,8 @@ only from the validated language, never request state or tracking parameters.
 
 The old unsupported aggregate rating, FAQ markup without matching visible FAQ,
 and broken `/frontend/src/assets/screenshot.png` image references were removed
-while replacing the fixed metadata. Social cards use text-only `summary` until
-#24 supplies an approved public preview asset; no image or rating is fabricated.
+while replacing the fixed metadata. Social cards use text-only `summary`;
+#24 keeps README screenshots outside the frontend build and adds no preview image.
 
 ## Vercel deployment
 

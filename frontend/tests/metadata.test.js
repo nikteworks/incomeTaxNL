@@ -1,6 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { metadata } from '../src/seo/metadata.js'
+import { faqByLanguage } from '../src/seo/faq.js'
 import middleware from '../../middleware.js'
 
 for (const [search, language] of [['', 'en'], ['?lang=en', 'en'], ['?lang=nl', 'nl'], ['?lang=nl&lang=en', 'en'], ['?lang=nl&lang=nl', 'en'], ['?lang=xx', 'en'], ['?lang=', 'en']]) {
@@ -20,6 +21,13 @@ test('canonical and all discovery metadata are parameter-free except Dutch langu
       ['en', 'https://incometax.nl/'], ['nl', 'https://incometax.nl/?lang=nl'], ['x-default', 'https://incometax.nl/'],
     ])
     assert.equal(data.structuredData.url, data.canonical)
+    assert.equal(data.faqStructuredData.url, data.canonical)
+    assert.equal(data.faqStructuredData.inLanguage, language)
+    assert.deepEqual(data.faqStructuredData.mainEntity, faqByLanguage[language].mainEntity)
+    assert.equal(data.faqStructuredData.mainEntity.length, 216)
+    assert.equal('aggregateRating' in data.structuredData, false)
+    assert.equal('image' in data.structuredData, false)
+    assert.equal(data.metas.some((meta) => /image|rating/i.test(meta.name || meta.property)), false)
   }
 })
 

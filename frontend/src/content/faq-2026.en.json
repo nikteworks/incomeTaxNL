@@ -1,0 +1,1735 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much tax do I pay on my salary in the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Employment income is generally taxed in Box 1 using progressive bands, with credits and payroll deductions changing the final amount. The share paid can range widely from a modest portion to nearly half of taxable additional income. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is my net salary after tax in the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Subtract estimated wage tax, national insurance where applicable, and employee deductions from gross pay, then account for tax credits. Net pay varies with your contract and circumstances, so use a broad range until payslip details are known. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate gross salary to net salary in the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with annual taxable wages, apply the correct year's Box 1 bands and credits, then subtract employee pension and other payroll deductions. Divide the resulting annual estimate across the pay periods. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What percentage of my salary is taxed in the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your effective rate depends on pay, age, credits, deductions and residence; it may range from a small share to several tens of percent. A top marginal band does not apply to the whole salary. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much tax do I pay on a salary around €50,000 to €100,000?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The amount varies substantially by pay, credits, pension and benefits. For salaries in this range, the combined annual income-tax and national-insurance burden may run from several thousand to several tens of thousands of euros. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is my monthly net salary from my annual gross salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Calculate the annual net estimate after tax and employee deductions, then spread it over your pay periods. Monthly receipts may differ if holiday allowance or bonuses are paid separately. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I enter monthly or annual salary in the calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Either is workable if you use the same basis throughout. Annualizing monthly pay may require adding holiday allowance, bonuses and any extra salary period. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should gross salary include holiday allowance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the contract definition: some annual offers include holiday allowance and some quote it separately. Add it only if it has not already been included. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my calculator result different from my payslip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Differences commonly arise from pension contributions, special-rate withholding, travel reimbursement, company-car benefits, credits and timing. Compare the taxable-wage line and year-to-date withholding with the calculator inputs. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is my effective tax rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is the total tax after applicable credits divided by relevant taxable income. It commonly differs from every single statutory bracket rate. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is my marginal tax rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is the change in final tax caused by an extra unit of taxable income. Credit phase-outs can make it higher than the headline rate of the corresponding band. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much extra net income will I receive from a salary raise?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The added take-home amount may be materially less than the gross raise because of tax, changing credits, pension and benefits. Compare two full-year scenarios with identical assumptions. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does part-time work affect my tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Part-time pay enters the same annual Box 1 calculation, but a lower annual income may change the applicable bands and credits. Hours themselves do not create a separate tax rate. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does working fewer hours change my net pay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compare annualized salary, holiday allowance, pension and credits for both schedules. The drop in take-home pay can be smaller than the proportional drop in gross pay. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to tax during unpaid or parental leave?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lower taxable wages can alter withholding and annual credits, while any taxable leave benefit can add income. A full-year calculation is more reliable than multiplying a normal month's payslip. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the Dutch income tax brackets for 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For employees below state pension age, the 2026 Box 1 schedule has progressive bands running from roughly the mid-thirties percent range to just under half. The applicable thresholds and rates depend on age and the selected tax year. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does the highest Dutch income tax band start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In 2026 for someone below state pension age, the highest band begins around the upper-seventy-thousand-euro range of taxable Box 1 income. Check the official table for your precise threshold. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my entire salary taxed at the highest rate once I enter the top band?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The upper rate applies only to the slice of taxable income within that band; lower slices retain their corresponding rates before credits. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are Dutch income tax brackets progressive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Box 1 applies different rates to successive portions of taxable income, while tax credits alter the final bill. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the first tax bracket include social security contributions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For an insured person below state pension age, the lower Box 1 band generally combines income tax and national-insurance contributions. Status and age can change the split. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What changes when I reach AOW or state pension age?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The national-insurance contribution mix and credits change, so the applicable lower-band burden can be lower than for a younger employee. The year in which you reach that age needs a tailored calculation. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are tax brackets based on monthly or annual salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The final income-tax assessment uses annual income. Payroll spreads expected tax across pay periods and reconciles it with the annual return when required. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a bonus push me into a higher tax bracket?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A bonus can put part of your annual taxable income in a higher band. That does not re-tax all earlier salary at the new rate. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are tax brackets applied before or after deductions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The bands apply to taxable Box 1 income after relevant deductions and adjustments. Payroll withholding can be a different interim estimate. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What counts as taxable Box 1 income?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Employment wages, certain benefits, pensions, self-employment income and owner-occupied-home items can enter Box 1, subject to their specific rules. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the general tax credit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The algemene heffingskorting reduces eligible income tax and national insurance. Its amount depends on aggregate income and other personal circumstances. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the labour tax credit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The arbeidskorting is a credit linked to qualifying work income. It rises and later falls across income ranges, so it can materially change take-home pay. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do Dutch tax credits affect my net salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Credits reduce calculated tax rather than gross salary. Their effect can range from little or nothing to several thousand euros over a year, depending on eligibility and income. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "At what income does the general tax credit start decreasing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For 2026 it starts to phase down around the upper-twenties to lower-thirties thousands of euros of aggregate income. The exact threshold depends on the selected year. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "At what income does the general tax credit disappear?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a person below state pension age in 2026 it generally ends around the upper-seventy-thousand-euro range of aggregate income. Other age rules can apply. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When is the labour tax credit highest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It peaks over a limited middle-income range and then phases out as work income rises. Use the current-year table for the relevant turning points. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can my marginal tax rate exceed my tax band rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An additional euro may increase band tax while reducing an income-dependent credit. The combined marginal effect can exceed the printed band rate. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is loonheffingskorting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is payroll application of eligible tax credits, reducing tax withheld from wages during the year. The final tax return determines the ultimate entitlement. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I apply payroll tax credit to my salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can increase net payroll cash flow if you qualify. If you receive several simultaneous incomes, decide where it should be applied to avoid over-crediting. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use loonheffingskorting with two employers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Normally arrange for payroll tax credit to be applied through only one simultaneous payer. Otherwise too little tax may be withheld and a later balance may be due. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which employer should apply my payroll tax credit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually choose the payer where applying the credit best matches your expected annual entitlement, often the main employer. Consider other taxable income as well. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do I owe tax although my employer withheld payroll tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Withholding is an advance. Multiple jobs, bonuses, changing credits, Box 2 or Box 3 income and deductions can make the final annual amount different. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can tax credits result in a tax refund?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They can reduce the final bill below amounts already withheld, producing a refund if the conditions are met. Refundability of unused credits has separate rules. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Dutch holiday allowance usually around eight percent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For many employees it is around the high-single-digit percent range of qualifying wages, but the legal and contractual calculation needs checking. Do not add it again if the stated gross offer includes it. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is vakantiegeld calculated on gross or net salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is generally calculated using a qualifying gross wage base, and tax is then withheld when paid. The contract or collective agreement defines the precise base. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much holiday allowance will I receive after tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Net holiday pay depends on annual taxable wages and withholding. A rough planning range is materially below the gross allowance, with the final tax settled annually. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is holiday allowance withheld at a high rate on my payslip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Payroll may use a special table for irregular payments, reflecting expected annual tax and credit changes. That withholding is an advance rather than a separate final holiday-pay tax. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a bonus ultimately taxed differently from regular salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A normal employment bonus joins annual Box 1 wage income. Its payslip withholding can look different because payroll estimates its incremental tax. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much will I receive from a bonus around €5,000 to €10,000?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The net addition can vary broadly from under half to well over half of the gross payment, depending on annual income, credits and pension rules. Compare full-year scenarios for a useful estimate. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is a thirteenth-month salary taxed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is generally employment income in Box 1, subject to payroll withholding that may use a special table. The annual return reconciles the final tax. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are commissions, tips and overtime taxable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Employment-related cash payments generally enter taxable wages, subject to the applicable facts and payroll reporting. The final burden follows the annual income calculation. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are RSUs taxed when they vest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Employee share awards can create taxable employment income when the relevant taxable event occurs. Shares held afterward may fall into Box 3 unless another box applies. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are employee stock options taxed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Timing and valuation depend on the option plan and the applicable employee-share rules. Employment tax may arise before the later investment position is reported. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does company-car bijtelling affect net salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Private use can create an added taxable wage benefit, increasing payroll withholding without adding cash salary. The amount depends on the vehicle and use rules. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a mobility allowance increase taxable salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A cash allowance can be taxable wages unless a particular reimbursement exemption applies. Check the payroll classification rather than assuming the full amount is tax-free. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a travel allowance taxable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can be exempt within applicable reimbursement rules, while any excess or nonqualifying payment may be taxable. Employer policy and travel records matter. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are pension contributions deducted before income tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Qualifying employee contributions under an approved occupational pension arrangement generally lower taxable payroll income. The treatment of a private contribution can differ. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does every Dutch employer deduct pension contributions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Whether an employee contribution appears depends on the pension arrangement, industry obligations and contract. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does health insurance come out of my salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The basic policy premium is usually paid separately to the insurer. Income-related healthcare contributions follow separate employment or self-employed rules. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who pays the income-related Zvw healthcare contribution?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For ordinary employees the employer commonly pays an employer charge; other income arrangements can create a contribution on the individual. Check your status. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who pays unemployment and other employee-insurance premiums?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For ordinary insured employment these premiums are generally employer payroll costs. They can still affect employment cost without appearing as an employee deduction. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my collective labour agreement affect net salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It may set holiday pay, pension, allowances and pay timing, each of which can affect the payslip and calculator result. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Dutch 30% ruling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The expat scheme may allow a qualifying employer to provide a tax-free allowance for extra costs of working in the Netherlands. Eligibility, salary conditions, caps and transitional rules matter. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much can the 30% ruling increase my net salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The increase ranges from negligible to substantial depending on qualifying pay, the employer's agreement, salary floor and annual cap. Compare the same gross package with and without the allowance. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I qualify for the 30% ruling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Qualification depends on recruitment from abroad, specialized skills, salary conditions and a formal decision, subject to exceptions. An employer application is generally required. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the minimum salary for the 30% ruling in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For many applicants the taxable-salary floor lies around the high-forties-thousand-euro range, while a qualifying younger master's graduate has a lower mid-thirties-thousand-euro range. Special categories and annual updates apply. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a lower salary threshold for a younger master's graduate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A qualifying younger employee with the specified academic degree can use a lower taxable-salary threshold than the standard expat threshold. The degree and age conditions must be documented. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do researchers and doctors in specialist training have exceptions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Certain qualifying scientific researchers and doctors in specialist training can be treated differently under the salary requirement. Other scheme conditions still need review. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I have to be recruited from abroad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The scheme generally requires recruitment or transfer from outside the Netherlands, together with a qualifying prior-residence test. Document the hiring and residence history. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the distance requirement for the expat scheme?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The prior-residence rule generally tests whether the employee lived more than roughly a hundred to two hundred kilometres from the Dutch border during a qualifying prior period. Exceptions can apply. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long must I have lived outside the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eligibility looks at a substantial part of the pre-employment period and the distance of your residence from the border. Confirm the exact statutory window for your start date. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can my employer pay less than the maximum expat allowance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The employer is not obliged to pay the full possible tax-free amount. Your employment agreement and eligibility cap determine what is actually paid. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the maximum expat allowance always available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A minimum taxable wage and an annual compensation cap can restrict the allowance. A lower negotiated allowance is also possible. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if the allowance would put taxable salary below the floor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The allowance must be restricted so that the relevant taxable salary still meets the applicable floor, unless a specific exception applies. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a cap on salary eligible for the expat allowance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The tax-free allowance is subject to an annual maximum linked to a capped salary base and can be prorated for a partial year. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does the expat ruling last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The maximum duration is limited and may be shortened by previous Dutch residence or work. The decision and transitional history determine your own end date. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I keep the expat ruling after changing employers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It may continue if the new employment and application timing meet the conditions. Connected-group transfers can follow a different administrative route. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my ruling if salary rises or falls?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A pay change can alter both the permitted allowance and compliance with the taxable-salary floor. Model the entire year and notify payroll where needed. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do holiday pay, bonuses and a thirteenth month count for the expat salary test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Qualifying taxable wage components can contribute, but timing and their payroll treatment matter. A calculator should use annual eligible taxable pay. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the ruling apply for only part of a year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if the formal decision and employment dates support it. Annual limits and eligible wages may need prorating. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the expat ruling apply retroactively?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The effective start depends on application timing and the official decision. Late applications may produce a later start, so check the applicable filing window. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the expat ruling change my pension or mortgage eligibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A tax-free component can affect pensionable salary or lender assessments depending on the plan and lender. Compare the contract and pension definitions. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the expat ruling change in a future tax year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rates, thresholds and transitional provisions may change through legislation. Use the enacted rules for the chosen tax year rather than assuming present settings will persist. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the Netherlands have capital gains tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no single general capital-gains rate for every investment. Ordinary private assets commonly fall in Box 3, substantial company interests in Box 2, and business-like activity can fall in Box 1. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the capital gains tax rate in the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no universal rate. Box 2 taxable gains in 2026 generally face rates in roughly the mid-twenties to low-thirties percent range; Box 3 uses a separate return-based calculation. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate tax on investment profits in the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "First classify the asset into the correct tax box. For ordinary private wealth, calculate Box 3 on assets and eligible debts and compare deemed with lower actual return where available; for substantial interests, examine taxable disposal proceeds. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I pay Dutch tax when I sell shares for a profit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For ordinary Box 3 portfolio shares, a sale does not automatically create a separate sale-gain tax. A substantial shareholding or business activity can have a different result. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are unrealized stock gains taxed in the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Value increases can form part of actual Box 3 return even if shares are not sold. A deemed-return assessment instead uses the statutory asset valuation framework. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can investment income ever fall in Box 1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Business assets, remuneration and activities beyond ordinary asset management can be treated in Box 1. Classification depends on the facts. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I distinguish Box 1, Box 2 and Box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Box 1 generally covers work and owner-occupied housing, Box 2 covers substantial interests in companies, and Box 3 covers ordinary savings and investments. Each has its own tax base. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know whether my shares belong in Box 2 or Box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Consider your direct and indirect interest, partner and related-person rules, share classes and options. A substantial company interest can move shares into Box 2. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does owning a substantial company stake change the tax treatment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A stake around one-twentieth or more, including relevant partner holdings, can create a Box 2 substantial interest; sale gains and dividends then follow those rules. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my broker determine which Dutch tax box applies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Ownership, asset type and the nature of your activity determine classification. A domestic or foreign broker may only affect what data is prefilled. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do DEGIRO or Interactive Brokers automatically settle my Dutch income tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Do not assume a broker pays your final Dutch income tax. Check prefilled data, report missing assets and reconcile any dividend withholding on your return. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to report investments held outside the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dutch tax residents generally need to consider worldwide assets and income, including foreign brokerage accounts, subject to treaty relief and special rules. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to investments when I move to or from the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The residence period, asset class and any treaty or exit-tax rule can change the return. The moving-year return needs separate treatment. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Box 3 is the Dutch income-tax category for ordinary savings and investments. It generally taxes a calculated return on eligible assets after relevant debt and allowance rules. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who has to pay Box 3 tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A person with relevant taxable wealth or return may owe Box 3 tax, depending on residence, exemptions, debts and the chosen calculation. Filing obligations can arise separately. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which assets are included in Box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typical examples include bank balances, ordinary shares, funds, crypto, second homes and certain receivables. Exemptions and alternative box classifications can apply. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much Box 3 tax will I pay in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The result can range from none to many thousands of euros, depending on asset mix, qualifying debts, partnership, the wealth allowance and actual-return relief. It cannot be read from portfolio gains alone. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Box 3 tax rate in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The tax rate on calculated Box 3 income is broadly in the mid-thirties percent range. It is applied to a calculated return, not directly to the whole portfolio value. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Box 3 tax-free wealth allowance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under the 2026 deemed-return calculation, the per-person allowance is around the mid-fifties to mid-sixties thousands of euros, with roughly double that for qualifying fiscal partners. It is not used in the actual-return calculation. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Box 3 allowance per person or household?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is normally stated per person; qualifying fiscal partners can receive a combined amount around twice the individual allowance under the deemed-return method. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Box 3 use the value on the first day of the year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The deemed-return calculation generally values relevant assets and debts at the start-of-year reference date. Actual return can reflect changes during the year. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I buy or sell shares after the Box 3 reference date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A later trade normally does not change that year's opening-date deemed asset mix, although anti-arbitrage rules and the actual-return calculation may matter. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are cash and stocks treated differently in Box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The deemed-return system separates bank deposits from investments and other assets, with different assumed returns. Actual return instead tracks relevant real income and value changes. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are Box 3 debts treated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Qualifying debts above the applicable threshold can reduce the taxable wealth base, and a separate deemed debt return is used. Interest on qualifying Box 3 debt can matter for actual return. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a minimum threshold for Box 3 debts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A deductible debt threshold applies under the deemed-return system, with partnership and year-specific amounts. Debts below it do not reduce that base. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is rendementsgrondslag?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is the eligible Box 3 assets less qualifying debts under the relevant valuation rules, before applying the tax-free wealth allowance. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is grondslag sparen en beleggen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is the Box 3 savings-and-investments base after the relevant wealth allowance is deducted from the net asset base under the deemed method. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is taxable Box 3 return calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The deemed method applies category-specific assumed returns to bank deposits, other assets and debts, then scales the resulting return to the taxable asset base. Lower reported actual return can alter the final result. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is Box 3 based on an assumed return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The interim system uses prescribed category rates to estimate return. The current rebuttal approach permits lower qualifying actual return to be considered. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the 2026 deemed-return percentages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The provisional assumptions for bank deposits and debts sit roughly in the low-single-digit percent range, while investments and other assets are around the mid-single-digit range. Confirm finalized figures for the tax year. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Box 3 apply after an investment loss?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The deemed calculation can still show income despite a portfolio loss. Reporting a lower total actual return may reduce the assessment, subject to the actual-return rules. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Box 3 affect benefits or tax credits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Box 3 income can enter aggregate income relevant to some credits and income-tested benefits, while asset limits may also apply to benefits. Check the specific program. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can moving cash into investments change Box 3 tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The opening-date asset category can change the deemed calculation, but temporary transfers around the reference date can be subject to anti-arbitrage rules. Actual return is calculated separately. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is werkelijk rendement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It means actual Box 3 return: relevant income from assets plus changes in their value during the calendar year, net of specific permitted adjustments. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is fictief rendement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It means the deemed return calculated using statutory percentages and the opening-date asset mix rather than all actual transactions. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use actual return instead of deemed return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eligible taxpayers can report actual return; the Dutch Tax Administration generally uses the lower qualifying result. Reporting rules depend on the tax year. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does actual return include dividends and interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Relevant dividends and savings interest are included alongside other asset income and value changes. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does actual return include unrealized gains and losses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally yes. Both increases and decreases in the value of eligible assets during the year count, even without a sale. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can stock losses offset crypto gains within actual Box 3 return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eligible gains and losses across Box 3 assets are aggregated for the same year. A negative total is normally floored at zero for that year. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a negative actual Box 3 return be carried forward?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally no. A negative total actual return for a year is set to zero and does not become a carryforward to another year. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the tax-free wealth allowance applied to actual return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The actual-return comparison uses the return on total relevant Box 3 assets, without the deemed-method wealth allowance. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are brokerage and transaction fees deductible from actual Box 3 return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ordinary management and trading costs generally cannot be deducted. Limited exceptions include eligible Box 3 debt interest and specified property improvements. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which values are needed to calculate actual return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Collect beginning and end values, purchase and sale records, interest, dividends, property figures and debt interest for the relevant year. Midyear changes also matter. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I bought an asset during the year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Its return for the period owned can enter actual return, taking account of the purchase and subsequent value or proceeds. It may be absent from the opening-date deemed snapshot. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I sold an asset during the year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sale proceeds and the change in value during ownership can enter actual return, while cash received may also generate later interest. Avoid counting transfers as investment income. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I report actual return from a foreign broker?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gather annual statements and transaction history, convert values consistently into euros under the applicable reporting rules, and use the relevant Dutch return process. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I report actual cryptocurrency return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Collect wallet and exchange records, opening and closing euro values, disposals and receipts. Different sources of receipts can need separate classification. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I amend a previous Box 3 calculation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Earlier-year relief and correction routes depend on the assessment and year. Check whether the actual-return form or a formal amendment process is available. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is private use of a second home included in actual return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For 2026, a private-use addition can enter actual Box 3 return for an eligible second property. The amount depends on use days and the prescribed valuation method. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are stocks, ETFs and index funds taxed in the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ordinary private holdings commonly fall in Box 3, while substantial stakes can fall in Box 2. Income and value changes can matter under the actual-return comparison. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are accumulating and distributing ETFs taxed differently?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The opening-date deemed asset category is usually similar, but cash distributions affect actual-return records while retained value changes remain in the fund price. Fund and withholding details can differ. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I pay Dutch tax on US or European stocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Dutch resident generally includes foreign ordinary shares in the Dutch tax analysis. Foreign withholding and tax-treaty relief may change the overall burden. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What value should I use for shares at the Box 3 reference date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the prescribed opening-date market value in euros and retain the broker statement or price evidence. Special valuation rules can apply to unusual holdings. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When do employee shares move from Box 1 to Box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After the relevant employment-tax event, shares retained as private investments may form part of Box 3. The award plan and any substantial-interest rules can alter that outcome. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can frequent trading move investments into Box 1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trading beyond ordinary private asset management can raise a Box 1 classification question. Frequency alone is not necessarily decisive; facts about labor, expertise and expected profit matter. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are dividends taxed in the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ordinary portfolio dividends can matter in Box 3 actual return, while dividends from a substantial interest generally belong in Box 2. Withholding may be creditable. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I pay tax twice on dividends?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dividend withholding can often be credited against Dutch income tax, subject to the source country and applicable rules. Foreign withholding above treaty limits may require a separate reclaim. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Dutch dividend withholding tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is tax deducted by a Dutch dividend payer before distribution. The withheld amount may be set off against final income tax where the recipient is eligible. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I reclaim foreign dividend withholding tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Treaties and domestic relief may allow a credit or source-country refund within limits. The procedure and documents vary by country. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are US dividends treated for a Dutch resident?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Consider the US withholding rate under the applicable treaty and the Dutch box for the holding. Keep withholding statements to assess relief. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are dividends from my own BV taxed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a qualifying substantial interest, the shareholder distribution generally belongs in Box 2; company-level tax and dividend withholding are separate considerations. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Box 2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Box 2 taxes income from a substantial interest, including qualifying company dividends and share-disposal gains. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an aanmerkelijk belang?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a substantial interest in a company or similar entity. The threshold is around one-twentieth of qualifying rights, and partner and related rules can matter. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does exactly five percent ownership count as a substantial interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the threshold includes a holding at the stated boundary, subject to the precise rights and aggregation rules. Review share classes and indirect interests. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my partner's shares included in the substantial-interest test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The relevant direct and indirect rights of fiscal partners can be combined for the test. Related-person and deemed-interest rules may also matter. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the gain on selling my BV shares calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Box 2 disposal benefit generally compares consideration with the recognized acquisition price, subject to adjustments and special transactions. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the Box 2 tax rates for 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Taxable Box 2 income falls into progressive rates roughly from the mid-twenties to low-thirties percent range. The threshold between bands is year-specific. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Box 2 losses be carried forward?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Loss relief can be available under specific Box 2 rules and time limits. Confirm the loss decision and the year to which it can be applied. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can fiscal partners allocate Box 2 income between themselves?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Certain joint Box 2 income can be allocated on the return under the fiscal-partner rules. The best allocation depends on both partners' circumstances. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I sell enough shares to fall below the substantial-interest threshold?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The disposal itself may produce a Box 2 result, and rules on a remaining deemed substantial interest can apply. Review the transaction before assuming the balance moves to Box 3. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I gift or inherit substantial-interest shares?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Transfer can trigger deemed-disposal rules or qualify for a specific rollover or relief, depending on the facts. Gift and inheritance taxes may be separate. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my BV shares if I emigrate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Emigration can trigger a protective assessment or other substantial-interest rules. Treaties and later distributions affect the outcome. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is salary from my own BV taxed in Box 2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Salary from the company is generally Box 1 employment income. Dividends and qualifying share-sale gains are considered separately in Box 2. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do director-major shareholder salary and dividends differ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Salary is a payroll and Box 1 item; qualifying dividends enter Box 2 after company-level considerations. Employment, customary-salary and corporate rules also matter. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Bitcoin or other cryptocurrency taxed in the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ordinary privately held crypto is commonly a Box 3 asset. Mining, rewards or professional activity can require a different classification. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I pay tax when I sell or swap cryptocurrency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For ordinary Box 3 holdings, a sale or swap does not automatically create a separate capital-gains charge, but it affects actual-return records and resulting asset values. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are unrealized cryptocurrency gains part of actual return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally yes. The annual change in the euro value of eligible crypto holdings can count even when no tokens are sold. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can cryptocurrency losses reduce actual Box 3 return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Losses in eligible Box 3 assets can offset other Box 3 actual return for the same year. A negative total generally cannot be carried to a later year. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which cryptocurrency value and exchange rate should I report?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Keep a consistent, supportable euro valuation at required dates and transaction times. Record the chosen exchange source and method. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are staking and mining rewards taxed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rewards may be ordinary Box 3 receipts or Box 1 income if activity has a business or labor character. The facts of generation and subsequent holding matter. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are NFTs and stablecoins included in Box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They can be included as privately held assets if they have economic value, subject to classification and valuation. Stablecoin labels do not automatically make them bank deposits. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do foreign exchanges and hardware wallets need to be reported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Location and custody method do not automatically remove an asset from a Dutch resident's tax analysis. Consolidate all wallet and exchange balances. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What crypto records should I keep?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Keep wallet addresses, exchange exports, deposits, withdrawals, trades, reward receipts and euro valuations across the year. Records help distinguish transfers from returns. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can professional crypto trading be taxed in Box 1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, activities beyond ordinary private investing may create Box 1 taxable income. Classification depends on work, organization, expertise and expected profit. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I pay capital gains tax when I sell my main home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A normal sale of an owner-occupied home is generally not taxed as a standalone investment gain. Home equity can affect the mortgage-interest deduction on a replacement home. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the bijleenregeling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is the home-equity rule that can limit deductible interest on a new owner-occupied-home loan after selling a previous main home with equity. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my main residence in Box 1 or Box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A qualifying owner-occupied main residence is generally dealt with in Box 1. A second home is commonly treated as a Box 3 asset. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is a second or holiday home taxed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An eligible second property generally enters Box 3 using prescribed values and debt rules. Actual return can reflect rent, value changes and, for 2026, a private-use addition. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is rental property income treated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ordinary private rental property is generally analyzed in Box 3; actual return can include rents and value changes. Additional services or business activity can change classification. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is foreign property taxed for a Dutch resident?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Foreign property may need to be reported in the Dutch return, with treaty-based relief where applicable. Situs, residence and property use matter. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which value should I use for a second home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the prescribed property value for the applicable opening-date Box 3 calculation; actual-return reporting can require values across the year. Domestic and foreign valuation rules can differ. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I deduct a mortgage on a second home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A qualifying liability may reduce the Box 3 base after the debt threshold, while its interest may matter for actual return. It is generally not the main-home mortgage-interest deduction. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens when I sell a second property?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Box 3 holding may not face a standalone sale-gain tax under the deemed method, but the disposal and value movement can affect actual return. Business-like property trading can differ. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is property flipping taxed as work income?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Frequent or highly organized property dealing may constitute Box 1 business or other-work income depending on the facts. No single number of flips decides classification. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does personal use affect actual return on a holiday home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. For 2026 a prescribed addition for days available for personal use can enter actual return, while rented days follow rental-income treatment. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a fiscal partner in the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A fiscal partner is a person who meets the legal relationship and household conditions for a tax year. Marriage usually qualifies; unmarried partners need to meet specified criteria. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can unmarried couples be fiscal partners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if they meet applicable shared-household and legal conditions. Living at the same address alone may be insufficient. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my partner's salary change my Box 1 salary tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each person's salary is generally taxed to that person. Partnership can affect allocation of certain joint items and income-tested entitlements. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can fiscal partners combine Box 3 allowances?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Qualifying partners can use a combined deemed-method wealth allowance broadly around twice the individual amount and allocate the joint Box 3 base. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we divide Box 3 assets and income between partners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eligible joint Box 3 amounts can be allocated in the tax return, subject to partnership rules. The underlying ownership and actual-return reporting still require care. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we divide salary income between fiscal partners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Employment income generally remains with the employee who earned it. Only eligible joint tax items can be allocated. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can one partner use the other's unused tax credit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "General transfer or payout of unused credits is restricted and depends on transitional rules, age and household circumstances. Do not assume unused amounts automatically transfer. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we allocate mortgage-interest deductions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eligible owner-occupied-home income and deductions can often be divided between fiscal partners in the annual return. Compare the combined result. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if we become fiscal partners during the year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some items can be treated under an election covering the full year, while eligibility and allowance outcomes depend on the exact dates and conditions. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we change an allocation after filing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Corrections may be possible while assessments and amendment windows permit. Preserve the original allocation and check both partners' returns together. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I live in the Netherlands and hold investments abroad; where do I pay tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Dutch resident generally reports worldwide assets and income, then considers any treaty allocation and double-tax relief. Foreign withholding may require separate treatment. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to declare foreign bank and brokerage accounts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They generally enter a Dutch resident's relevant asset and income reporting even if the account is not Dutch. Reconcile prefilled data with foreign statements. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a double-tax treaty affect investments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A treaty can allocate taxing rights and limit withholding, while domestic relief rules handle any overlap. The result depends on the asset and the other country. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I claim relief for foreign tax paid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A foreign tax credit, exemption or source-country refund may apply, subject to limits and documentation. Different rules apply to dividends and real estate. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What determines Dutch tax residency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Residence is assessed from the person's overall factual ties, such as home, family and work, alongside any applicable treaty tie-breaker. Registration alone is not the whole test. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens in the year I move to or from the Netherlands?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Income and assets can be subject to different resident and nonresident periods, and the moving-year return has special fields. Date and treaty facts matter. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the M-form tax return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is the Dutch return route for a year involving immigration or emigration, with questions for the different periods of residence. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the expat ruling exempt foreign investments from Box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The ordinary expat wage allowance does not automatically exempt foreign assets. A separate, now-limited partial-nonresident transitional regime may apply to some earlier users. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can new expat-ruling holders elect partial nonresident tax status?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The election was abolished for new cases from 2025. Limited transitional treatment can continue through 2026 for qualifying earlier users. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What changes when the transitional partial-nonresident regime ends?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Foreign Box 2 or Box 3 positions may have a different Dutch reporting treatment once the transitional option is unavailable. Review the chosen year and applicable treaty. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are foreign pensions taxed or classified?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Foreign pensions can enter Box 1 as pension income or require a different treatment under treaty and domestic rules. Do not classify them solely as investment accounts. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are assets bought before immigration taxable afterward?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pre-move purchase alone does not exempt an asset from later Dutch tax analysis. Residence-period valuations and treaty rules determine the relevant return. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to substantial shares when I emigrate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Protective-assessment and treaty rules can apply to a substantial interest. Later dividends, sales and payments can interact with the assessment. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much total tax might I pay on salary around €80,000 and investments around €200,000?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Calculate salary under Box 1 and relevant investments under Box 3, then combine the final liability after credits, withholding and any relief. The result can vary by many thousands of euros with asset mix, pension and partnership. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do investment gains push my salary into the highest Box 1 band?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Box 3 investment return does not itself move salary into a higher Box 1 bracket. Aggregate income can nonetheless affect the general tax credit and some benefits. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does salary affect the Box 3 tax rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Salary does not change the statutory Box 3 rate, but it can affect credits and the overall final bill. Box 3 asset mix determines the deemed return. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are salary and capital gains added together for one tax rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The separate tax boxes use different calculations; they are not all charged at a single salary rate. Aggregate income can still matter for selected credits and entitlements. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Box 2 or Box 3 income reduce my general tax credit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can. The general credit depends on aggregate income across the boxes, so additional taxable income can reduce the credit even though box rates remain separate. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is verzamelinkomen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is aggregate taxable income across the Dutch tax boxes after relevant deductions, with adjustments specified for particular purposes. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What income and assets count for Dutch benefits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each benefit has its own income and sometimes wealth test, often involving partner figures. A higher Box 3 position can affect eligibility independently of salary tax brackets. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Box 3 losses reduce my salary tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ordinary negative Box 3 actual return generally does not offset Box 1 salary. Box-specific loss and relief rules should be checked separately. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Box 2 losses offset Box 1 salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Box 2 losses generally follow their own relief rules rather than simply reducing salary. Special conversion rules may be available under narrow conditions. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I have salary, dividends and investments in the same year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Classify salary in Box 1, the dividend according to the shareholding's box, and ordinary assets in Box 3. Then reconcile withholding, credits and foreign relief. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is a Netherlands tax calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is an estimate unless it captures the correct year, age, residence, payroll details, credits, pension, assets, debts and actual-return evidence. The official assessment can differ. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which tax year should the calculator use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the tax year in which wages or the relevant investment return arise. Brackets, credits, allowances and expat thresholds can change by year. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a salary calculator include national insurance and tax credits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It should state explicitly whether Box 1 national-insurance contributions and applicable credits are included. Otherwise comparisons with a payslip can be misleading. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should a calculator include holiday pay, bonuses and pension contributions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, as separate inputs or clearly stated assumptions. Their presence and timing can materially change annual net income. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should a calculator include company car and mortgage deductions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only if it has dedicated fields and correct tax-year logic. A simple gross-to-net estimate may omit these significant items. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should an investment calculator compare deemed and actual Box 3 return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, where the tax year allows reporting actual return. The comparison should follow the official rules for assets, debts, costs and any property-use addition. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does a calculator differ from Mijn Belastingdienst?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The official system may use prefilled data, finalized rates and detailed personal facts absent from a generic estimate. Check each input and assessment line. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a calculator result a final tax assessment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Payroll withholding and calculator output are estimates; the Dutch Tax Administration determines the final assessment under the applicable law. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I enter January or December asset values?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The deemed Box 3 calculation generally needs opening-date values; actual return also needs relevant end-of-year and transaction data. The input labels should make this distinction clear. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I compare different tax years or expat scenarios?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if each scenario uses its own enacted year-specific rules and the same underlying facts. Do not apply one year's thresholds to another year. Consult a qualified Dutch tax consultant for advice tailored to your circumstances."
+      }
+    }
+  ]
+}

@@ -3,7 +3,7 @@
     "title": "incomeTaxNL",
     "tagline": "Free Dutch Tax Calculator",
     "notice": "Built with ❤️ for privacy —",
-    "noticeLink": "your data never leaves your device"
+    "noticeLink": "how your data is handled"
   },
   "header": {
     "aboutAriaLabel": "Learn about incomeTaxNL",
@@ -189,10 +189,10 @@
   "modals": {
     "privacyTitle": "Privacy-first by design",
     "privacyIntro": "Your financial data is your business.",
-    "privacyText": "incomeTaxNL is a privacy-focused free Dutch income tax calculator for Box 1 and Box 3 taxes. Any data you enter is only stored locally in your browser. All calculations run 100% locally in your browser — your personal financial data is never sent, stored, or collected by this app for any reason.",
-    "privacyBullet1": "No risk of leaks, hacks, or misuse: your sensitive information never leaves your device.",
-    "privacyBullet2": "No tracking, no uploads, no analytics: you stay in control of your data.",
-    "privacyBullet3": "Use this Netherlands salary calculator with confidence for take home pay and capital gains calculations, knowing your privacy is protected.",
+    "privacyText": "Calculations run in your browser, and entered values are saved locally in your browser. The site uses Vercel Analytics for page visits.",
+    "privacyBullet1": "A URL containing financial values or account names can reveal them to anyone who receives the link.",
+    "privacyBullet2": "URL query strings can appear in browser history and hosting logs. Check a link before sharing it.",
+    "privacyBullet3": "Calculator results are estimates for guidance, not a personal tax assessment.",
     "aboutTitle": "About incomeTaxNL",
     "aboutText": "incomeTaxNL estimates Dutch gross-to-net salary in Box 1 and tax on savings and investments in Box 3. Calculations run locally in your browser.",
     "howToUseTitle": "How to use this Dutch income tax calculator",
@@ -225,7 +225,7 @@
     "termsConsultationText": "For official tax calculations, filing, or advice, users must consult the",
     "termsConsultationEnd": "(Dutch Tax and Customs Administration) or a qualified tax professional.",
     "termsPrivacyTitle": "6. Privacy and Data",
-    "termsPrivacyText": "All data entered into incomeTaxNL is stored locally in your browser and never transmitted to any server. We do not collect, store, or share your personal or financial information. See our Privacy Policy for more details.",
+    "termsPrivacyText": "Calculations run locally, and entered values are saved in your browser. The site uses Vercel Analytics for page visits. If you share a URL containing financial values or account names, recipients can read them, and query strings may appear in hosting logs. See the privacy notice for details.",
     "termsOpenSourceTitle": "7. Open Source License",
     "termsOpenSourceText": "incomeTaxNL is open source software available on",
     "termsOpenSourceEnd": ". You may use, modify, and distribute it according to the terms of its license.",
