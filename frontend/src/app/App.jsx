@@ -1,5 +1,6 @@
 import PrimaryLayout from '../layouts/PrimaryLayout.jsx'
 import ClientCalculator from '../components/ClientCalculator.jsx'
+import CalculationExplanation from '../features/tax-calculator/components/CalculationExplanation.jsx'
 import ErrorBoundary from '../components/ErrorBoundary.jsx'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <ErrorBoundary>
       <PrimaryLayout>
         <ClientCalculator />
+        <CalculationExplanation />
       </PrimaryLayout>
     </ErrorBoundary>
   )

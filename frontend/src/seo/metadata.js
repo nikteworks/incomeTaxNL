@@ -2,18 +2,18 @@ import { languageCanonical } from '../utils/urlState.js'
 
 export const pageCopy = {
   en: {
-    title: 'Dutch Tax Calculator | Gross to Net Salary | incomeTaxNL',
-    description: 'Estimate your Dutch net salary and tax on savings and investments. Use the Box 1 and Box 3 calculators in English or Dutch.',
-    heading: 'Dutch Tax Calculator',
-    introduction: 'Estimate your take-home pay with Box 1 and tax on savings and investments with Box 3. Choose a tax year and enter your figures to explore the calculation.',
+    title: 'Netherlands Salary & Tax Calculator | incomeTaxNL',
+    description: 'Estimate Dutch gross-to-net salary with holiday allowance and 30% ruling inputs, or Box 3 tax on savings and investments. Choose your tax year.',
+    heading: 'Netherlands salary & tax calculator',
+    introduction: 'Estimate gross-to-net salary in Box 1 (2019–2026), or savings and investment tax in Box 3 (2023–2026). Enter salary per year, month, week, day or hour.',
     loading: 'Loading calculator…',
     noScript: 'Enable JavaScript to use the interactive calculator.',
   },
   nl: {
-    title: 'Nederlandse Belastingcalculator | Bruto naar Netto | incomeTaxNL',
-    description: 'Bereken een schatting van uw nettoloon en belasting over sparen en beleggen. Gebruik de Box 1- en Box 3-rekenhulpen in het Nederlands of Engels.',
-    heading: 'Nederlandse Belastingcalculator',
-    introduction: 'Bereken een schatting van uw nettoloon in Box 1 en de belasting over sparen en beleggen in Box 3. Kies een belastingjaar en vul uw gegevens in om de berekening te bekijken.',
+    title: 'Bruto-netto salaris en belasting berekenen | incomeTaxNL',
+    description: 'Bereken uw nettoloon met vakantiegeld en de 30%-regeling, of schat uw Box 3-belasting over sparen en beleggen. Kies het gewenste belastingjaar.',
+    heading: 'Bruto-netto salaris en belasting berekenen',
+    introduction: 'Schat uw nettoloon in Box 1 (2019–2026), of uw belasting over sparen en beleggen in Box 3 (2023–2026). Vul uw salaris per jaar, maand, week, dag of uur in.',
     loading: 'Rekenhulp laden…',
     noScript: 'Schakel JavaScript in om de interactieve rekenhulp te gebruiken.',
   },

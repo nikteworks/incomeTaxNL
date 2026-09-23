@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { readLanguage, normalizedLanguageLocation, patchQuery, languageCanonical } from '../src/utils/urlState.js'
+import { readCalculatorType, readLanguage, normalizedLanguageLocation, patchQuery, languageCanonical } from '../src/utils/urlState.js'
 
 for (const [search, expected, normalize] of [
   ['', 'en', false], ['?lang=en', 'en', false], ['?lang=nl', 'nl', false],
@@ -38,3 +38,13 @@ test('canonical URLs contain only language', () => {
   assert.equal(languageCanonical('en'), 'https://incometax.nl/')
   assert.equal(languageCanonical('nl'), 'https://incometax.nl/?lang=nl')
 })
+
+for (const [search, expected] of [
+  ['', null], ['?calcType=box1', 'box1'], ['?calcType=box3', 'box3'],
+  ['?calcType=', null], ['?calcType=BOX3', null], ['?calcType=unknown', null],
+  ['?calcType=box3&calcType=box3', null], ['?calcType=box1&calcType=box3', null],
+]) {
+  test(`calculator URL policy: ${search || '(missing)'}`, () => {
+    assert.equal(readCalculatorType(search), expected)
+  })
+}

@@ -2,6 +2,7 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext.jsx'
+import CalculatorLink from '../features/tax-calculator/components/CalculatorLink.jsx'
 import LanguageSwitcher from '../components/LanguageSwitcher.jsx'
 import './PrimaryLayout.css'
 import { pageCopy } from '../seo/metadata.js'
@@ -58,7 +59,17 @@ function PrimaryLayout({ children }) {
       <div className="app-notice">
         {t('app.notice')} <button onClick={() => setShowPrivacy(true)} className="app-notice__link">{t('app.noticeLink')}</button>
       </div>
-      <main className="app-main"><section className="app-introduction"><h1>{pageCopy[language].heading}</h1><p>{pageCopy[language].introduction}</p></section>{children}</main>
+      <main className="app-main">
+        <section className="app-introduction">
+          <h1>{pageCopy[language].heading}</h1>
+          <p>{pageCopy[language].introduction}</p>
+          <nav className="calculator-links" aria-label={t('guide.navigation')}>
+            <CalculatorLink boxType="box1" />
+            <CalculatorLink boxType="box3" />
+          </nav>
+        </section>
+        {children}
+      </main>
       <footer className="app-footer">
         <div className="app-footer__disclaimer">
           <p>

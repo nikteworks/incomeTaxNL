@@ -36,3 +36,10 @@ export function languageLocation(location, language) {
 export function languageCanonical(language) {
   return `https://incometax.nl/${language === 'nl' ? '?lang=nl' : ''}`
 }
+
+// Explicit calculator links win over saved preferences. Invalid/duplicate values
+// use the same saved/default fallback as an absent value and are removed.
+export function readCalculatorType(search) {
+  const values = new URLSearchParams(search).getAll('calcType')
+  return values.length === 1 && ['box1', 'box3'].includes(values[0]) ? values[0] : null
+}
