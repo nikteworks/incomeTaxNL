@@ -5,6 +5,7 @@ import {
   Stack,
   TextField,
   Switch,
+  Checkbox,
   FormControlLabel,
   MenuItem,
   InputAdornment,
@@ -32,7 +33,7 @@ import {
 import { useLanguage } from '../../../context/LanguageContext.jsx'
 import './Box1InputForm.css'
 
-function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
+function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided = false }) {
   const { t } = useLanguage()
   const [showResetConfirm, setShowResetConfirm] = useState(false)
   const [showAdvanced, setShowAdvanced] = useState(false)
@@ -89,7 +90,31 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
   return (
     <form className="box1-form" onSubmit={(e) => e.preventDefault()} noValidate>
 
-      {/* Income, Period, and Advanced Options Switch Row */}
+      {guided && (
+        <div className="guided-basic-fields">
+          <label htmlFor="guided-salary">{t('guidedRail.salary')}</label>
+          <div className="guided-salary-input"><span aria-hidden="true">€</span><input
+            id="guided-salary" type="number" min="0.01" step="any" value={values.grossIncome}
+            onChange={handleNumberChange('grossIncome')} aria-describedby="guided-salary-help"
+          /></div>
+          <p id="guided-salary-help">{t('guidedRail.salaryHelp')}</p>
+          <fieldset className="guided-period"><legend>{t('box1Form.period')}</legend>
+            {['yearly', 'monthly'].map(period => <button key={period} type="button"
+              aria-pressed={values.period === period} onClick={() => onChange('period', period)}>{t(`periods.${period}`)}</button>)}
+          </fieldset>
+          <div><FormControlLabel control={<Checkbox checked={values.holidayAllowanceIncluded}
+            onChange={handleToggleChange('holidayAllowanceIncluded')} />}
+            label={t('box1Form.holidayAllowanceIncluded')} />
+            <p>{t('guidedRail.holidayHelp')}</p>
+          </div>
+          <button type="button" className="guided-disclosure" aria-expanded={showAdvanced}
+            aria-controls="guided-advanced" onClick={() => setShowAdvanced(!showAdvanced)}>
+            {t('box1Form.advancedOptions')} <span aria-hidden="true">{showAdvanced ? '−' : '+'}</span>
+          </button>
+        </div>
+      )}
+      {/* Existing layout remains available until the shell is approved. */}
+      {!guided && <>
       <div
         className="box1-form__income-row"
         style={{ marginBottom: showAdvanced ? '1.5rem' : '0.5rem' }}
@@ -134,8 +159,9 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
         />
       </div>
 
+      </>}
       {/* Collapse for showing advanced options, including tax year */}
-      <Collapse in={showAdvanced}>
+      <Collapse in={showAdvanced} id={guided ? "guided-advanced" : undefined}>
         <Stack spacing={3} component={Box} className="box1-form__fields">
           <div className="box1-form__year-row">
             <TextField
@@ -154,6 +180,10 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
               ))}
             </TextField>
           </div>
+          {guided && <TextField select size="small" label={t('box1Form.period')} value={values.period}
+            onChange={handleSelectChange('period')}>
+            {translatedPeriods.map(p => <MenuItem key={p.value} value={p.value}>{p.label}</MenuItem>)}
+          </TextField>}
           {values.period === 'hourly' && (
             <TextField
               label={t('box1Form.hoursPerWeek')}
@@ -170,7 +200,7 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
           )}
 
           <Box className="box1-form__toggles">
-            <FormControlLabel
+            {!guided && <FormControlLabel
               control={
                 <Switch
                   checked={values.holidayAllowanceIncluded}
@@ -185,7 +215,7 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
                   </Tooltip>
                 </Stack>
               }
-            />
+            />}
 
             <FormControlLabel
               control={
@@ -196,7 +226,7 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
               }
               label={
                 <Stack direction="row" alignItems="center" spacing={0.5}>
-                  <span>{t('box1Form.olderAge')}</span>
+                  <span>{guided ? t('guidedRail.pensionAge') : t('box1Form.olderAge')}</span>
                   <Tooltip title={t('box1Form.olderAgeTooltip')}>
                     <InfoOutlinedIcon fontSize="small" color="action" />
                   </Tooltip>
@@ -309,6 +339,7 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
 }
 
 Box1InputForm.propTypes = {
+  guided: PropTypes.bool,
   values: PropTypes.shape({
     grossIncome: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     period: PropTypes.string,

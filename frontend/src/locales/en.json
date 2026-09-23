@@ -263,5 +263,26 @@
     "actualSource": "Belastingdienst: actual returns and how to report them (Dutch)",
     "limitsTitle": "What the estimate leaves out",
     "limitsText": "This tool calculates gross-to-net pay, not net-to-gross. It has no inputs for pension deductions, mortgage deductions, other income or a complete tax return. The age and national insurance switches are simplified, and the year you reach state pension age can require a different calculation. Box 1 and Box 3 are separate estimates; Box 3 income is not used to recalculate Box 1 tax credits. Check the result against your payslip and the official rules for your tax year."
+  },
+  "guidedRail": {
+    "preview": "Design review · Fields are temporary; calculations are not connected.",
+    "salary": "Salary before tax",
+    "salaryHelp": "Use the gross amount from your contract or payslip.",
+    "holidayHelp": "Check this when your entered salary already includes 8% holiday allowance.",
+    "pensionAge": "At or above state pension age (AOW)",
+    "takeHome": "Estimated take-home pay",
+    "tax": "Tax and contributions",
+    "net": "Take-home pay",
+    "gross": "Gross salary",
+    "showTax": "Show tax calculation",
+    "hideTax": "Hide tax calculation",
+    "expand": "Expand results",
+    "collapse": "Minimize results",
+    "explanation": "How this estimate is worked out",
+    "monthlyNote": "The monthly average spreads annual holiday pay over 12 months, even if it is paid separately.",
+    "pending": "Amounts will appear after the calculator is connected.",
+    "ratio": "Net / gross",
+    "filter": "Filter calculation components",
+    "inputs": "Calculator inputs"
   }
 }

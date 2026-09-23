@@ -8,14 +8,14 @@ import './PrimaryLayout.css'
 import { pageCopy } from '../seo/metadata.js'
 
 
-function PrimaryLayout({ children }) {
+function PrimaryLayout({ children, guided = false }) {
   const { t, language } = useLanguage()
   const [showPrivacy, setShowPrivacy] = useState(false)
   const [showInfo, setShowInfo] = useState(false)
   const [showCredits, setShowCredits] = useState(false)
   const [showTerms, setShowTerms] = useState(false)
   return (
-    <div className="app-shell">
+    <div className={`app-shell${guided ? ' app-shell--guided' : ''}`}>
       <header className="app-header">
         <span className="app-brand">{t('app.title')}</span>
         <nav className="app-header__nav">
@@ -60,14 +60,14 @@ function PrimaryLayout({ children }) {
         {t('app.notice')} <button onClick={() => setShowPrivacy(true)} className="app-notice__link">{t('app.noticeLink')}</button>
       </div>
       <main className="app-main">
-        <section className="app-introduction">
+        {guided ? <h1 className="guided-page-title">{pageCopy[language].heading}</h1> : <section className="app-introduction">
           <h1>{pageCopy[language].heading}</h1>
           <p>{pageCopy[language].introduction}</p>
           <nav className="calculator-links" aria-label={t('guide.navigation')}>
             <CalculatorLink boxType="box1" />
             <CalculatorLink boxType="box3" />
           </nav>
-        </section>
+        </section>}
         {children}
       </main>
       <footer className="app-footer">
@@ -273,6 +273,7 @@ function PrimaryLayout({ children }) {
 
 PrimaryLayout.propTypes = {
   children: PropTypes.node.isRequired,
+  guided: PropTypes.bool,
 }
 
 export default PrimaryLayout

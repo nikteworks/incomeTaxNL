@@ -263,5 +263,26 @@
     "actualSource": "Belastingdienst: werkelijk rendement en doorgeven",
     "limitsTitle": "Wat de schatting niet meeneemt",
     "limitsText": "Deze rekenhulp berekent bruto naar netto, niet netto naar bruto. Er zijn geen invoervelden voor pensioeninhoudingen, hypotheekrenteaftrek, ander inkomen of een volledige belastingaangifte. De opties voor leeftijd en volksverzekeringen zijn vereenvoudigd; in het jaar waarin u de AOW-leeftijd bereikt, kan een andere berekening nodig zijn. Box 1 en Box 3 zijn afzonderlijke schattingen; Box 3-inkomen wordt niet gebruikt om de heffingskortingen in Box 1 opnieuw te berekenen. Vergelijk het resultaat met uw loonstrook en de officiële regels voor uw belastingjaar."
+  },
+  "guidedRail": {
+    "preview": "Ontwerpbeoordeling · Velden zijn tijdelijk; berekeningen zijn nog niet gekoppeld.",
+    "salary": "Salaris vóór belasting",
+    "salaryHelp": "Gebruik het brutobedrag op je contract of loonstrook.",
+    "holidayHelp": "Vink dit aan als je ingevoerde salaris al 8% vakantiegeld bevat.",
+    "pensionAge": "AOW-leeftijd bereikt",
+    "takeHome": "Geschat nettoloon",
+    "tax": "Belasting en premies",
+    "net": "Nettoloon",
+    "gross": "Brutosalaris",
+    "showTax": "Toon belastingberekening",
+    "hideTax": "Verberg belastingberekening",
+    "expand": "Resultaten uitklappen",
+    "collapse": "Resultaten minimaliseren",
+    "explanation": "Hoe deze schatting wordt berekend",
+    "monthlyNote": "Het maandgemiddelde spreidt het jaarlijkse vakantiegeld over 12 maanden, ook als het apart wordt uitbetaald.",
+    "pending": "Bedragen verschijnen zodra de calculator is gekoppeld.",
+    "ratio": "Netto / bruto",
+    "filter": "Berekeningsonderdelen filteren",
+    "inputs": "Calculatorinvoer"
   }
 }
