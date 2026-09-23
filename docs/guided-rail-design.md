@@ -1,80 +1,105 @@
-# Guided Rail — salary calculator design
+# Guided Rail — tax calculator design
 
-**Status:** design specification for a future implementation. The interactive mockup was used to choose this direction and has been removed from the application. This document describes the design; it does not change the production calculator.
+**Status:** design specification for a future implementation. The earlier interactive mockup has been removed from the application. This document defines the intended production design; it does not change the calculator today.
 
-## Purpose
+## Purpose and direction
 
-Help someone who knows their salary but not Dutch tax terminology get a trustworthy take-home estimate. The interface gives the user a short, numbered set of inputs on the left and an immediate explanation of the result on the right. It should feel like a personal salary statement rather than a dashboard.
+Help someone estimate Dutch take-home pay or Box 3 tax without first learning tax terminology. The input rail should make the next useful choice obvious; the result area should make the estimate and its basis easy to inspect. The visual reference is a clear personal tax statement, with the restraint and legibility expected of a financial tool. It is not a marketing page or a decorative dashboard.
 
-The existing calculator handles both employment income (Box 1) and savings/investments (Box 3). Guided Rail is the proposed **Box 1 salary view**. A production implementation must retain access to Box 3, language selection, supported tax years, and existing advanced Box 1 options. Their placement needs a separate integration pass; the three-field mockup is not a replacement for those capabilities.
+Box 1 starts with gross salary, income period, and holiday allowance. A Box 1 / Box 3 selector changes the rail and result together. The full existing Box 1 advanced options and Box 3 settings remain available. The page also includes the existing language, About, Help, GitHub, FAQ, and footer content.
+
+## Design tokens and rationale
+
+Define the following tokens before implementation, then test them against the existing product rather than adding new decorative treatments:
+
+- **Colour:** navy `#172941` for primary text and the single result surface; blue `#2246ae` for selected controls, focus, and links; pale blue `#e3eaf4` for the input rail; off-white `#f9fbfd` for the reading area; blue-gray `#cbd4df` only where a divider clarifies a relationship. Keep contrast strong enough for small text and disabled states. Use solid colours. Do not introduce cream and clay, near-black and acid accents, or decorative gradients.
+- **Type:** use the product's existing Roboto Flex stack (`--brand-font-family`) to keep the calculator and surrounding site related. Use sentence case for headings, field labels, result labels, and buttons. Size and weight show hierarchy: the calculated amount is largest, the result heading comes next, labels and help text remain comfortably readable. Do not use a display serif, decorative monogram, tracked uppercase eyebrow, or a highlighted single word in a heading.
+- **Shape:** the primary result surface may use a 12 px radius because it groups the headline figure. Inputs and modal controls use the existing 6–8 px family for familiar affordances. Text links and ledger rows need no card treatment. A pill shape is reserved for a genuinely binary or selected choice if it reads better than ordinary buttons. Shape follows function; do not stamp one radius across the page.
+- **Spacing:** keep labels and their help text close (about 8 px), separate independent form groups more clearly (about 24 px), and give the results/FAQ boundary greater space (about 40 px). Adjust by content rather than repeating one padding value. Use a divider only between related ledger lines or between major regions when spacing alone is insufficient. Do not draw hairlines around every block.
+- **Depth and motion:** use no routine card shadow. A focus ring and selected state should carry interaction feedback. If the results/FAQ disclosure needs animation, use one short height change caused by the user's action and respect reduced-motion preferences. Do not add scroll entrances or uniform lift/glow hover effects.
+
+The distinct feature is the narrow input rail beside an open, readable calculation. The wider result area reflects the greater information weight of the estimate. The dark result surface is one intentional emphasis; the FAQ and detailed breakdown remain part of the page rather than becoming a grid of matching cards.
 
 ## Layout
 
 ```text
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│ incometax.nl                                      Netherlands · tax year     │
-├─────────────────────────────┬────────────────────────────────────────────────┤
-│ LEFT RAIL                   │ PERSONAL SALARY STATEMENT                     │
-│ n.                          │                                                │
-│ YOUR INPUTS                 │ YOUR ESTIMATED RESULT       [Month] [Year]    │
-│ A few details.              │ Salary breakdown                               │
-│ One clear answer.           │ ┌────────────────────────────────────────────┐ │
-│                             │ │ Estimated take-home pay         NET/GROSS │ │
-│ ① Salary before tax         │ │ €3,750 / month                    75%      │ │
-│    € 60,000                 │ └────────────────────────────────────────────┘ │
-│ ② This amount is per        │ 01  Gross salary                    €5,000    │
-│    [Year] [Month]           │ 02  Tax & contributions          − €1,250    │
-│ ③ Includes holiday pay      │ 03  Take-home pay                   €3,750    │
-│                             │                                                │
-│ SALARY CALCULATOR · 2026    │ How is this worked out?   Estimate note       │
-└─────────────────────────────┴────────────────────────────────────────────────┘
+│ incometax.nl                         Language   About   Help   GitHub        │
+├──────────────────────────────┬───────────────────────────────────────────────┤
+│ Box 1 salary   Box 3 savings │ Results                         Month   Year  │
+│                              │                                               │
+│ Salary before tax            │ Estimated take-home pay                       │
+│ [€ entered amount]           │ [calculated amount] / month                   │
+│                              │                                               │
+│ Income period                │ Gross salary              [calculated amount] │
+│ [Year] [Month]               │ Tax and contributions    [calculated amount]  │
+│                              │   Show tax calculation                        │
+│ Includes holiday allowance   │ Take-home pay             [calculated amount] │
+│ [checkbox]                   │                                               │
+│                              │ How this estimate is worked out               │
+│ Advanced options             ├───────────────────────────────────────────────┤
+│ Tax year                     │ Frequently asked questions [expand]           │
+├──────────────────────────────┴───────────────────────────────────────────────┤
+│ Disclaimer and Belastingdienst link                                          │
+│ View on GitHub   Report an Issue   Credits   Terms of Use                    │
+└──────────────────────────────────────────────────────────────────────────────┘
 ```
 
-- **Global header:** white, 66 px high. Brand on the left; current country and tax year on the right. Keep the application's real language and calculator navigation in the production version.
-- **Left rail:** about 375 px wide on large screens, pale blue (`#e3eaf4`) with a subtle right divider. The content sits vertically near the centre, with a small brand monogram at the top and tax-year label at the bottom. Three numbered input groups are divided by fine horizontal rules.
-- **Main area:** remaining width, nearly white (`#f9fbfd`), with generous horizontal padding (about 6%). A quiet statement label leads to the result heading and the month/year control. The dark result panel is followed by a ruled three-row calculation.
-- **At 761–1050 px:** reduce the rail to about 300 px and tighten main padding and result type. Keep the two-column relationship.
-- **At 760 px and below:** stack rail above main. Inputs remain in their numbered order; the result follows. The result panel stacks the amount and net/gross percentage. Ledger amounts remain aligned with their labels, and no horizontal scrolling is allowed. The page header, rail, and main area remain separate visual regions.
+This is a structure diagram, not a copy deck or tax example. All amounts come from the selected calculator. The labels shown are illustrative English copy; the finished UI uses the existing localization system.
 
-## Visual system
-
-| Element | Specification |
-| --- | --- |
-| Primary ink / result panel | Navy `#172941` |
-| Selected controls | Blue `#2246ae` |
-| Rail | Pale blue `#e3eaf4` |
-| Main canvas | Off-white `#f9fbfd` |
-| Dividers | Blue-gray `#cbd4df`; 1 px, except the ledger's top and final rule at 2 px |
-| Main type | Manrope, with system sans-serif fallback |
-| Monogram | Small `n.` in a serif face; decorative, not the sole brand label |
-| Result amount | Semibold, about 78 px on wide desktop and 58 px on mobile; reduce or wrap safely for large amounts |
-| Labels | Small uppercase with restrained letter spacing; supporting text remains at comfortable contrast |
-
-Use solid colours, clear rules, and predictable spacing. Avoid decorative charts, shadows, and unexplained symbols. The percentage is secondary to the euro amount.
+- **Header:** keep the existing brand and language, About, Help, and GitHub controls. The GitHub icon links to the current project repository and has the existing localized accessible name. Show the applicable tax year where it helps interpret the result; do not add a decorative country/year strapline.
+- **Rail:** about 375 px on wide desktop and about 300 px at 761–1050 px. Place the Box selector before mode-specific controls. Group each label, control, and help text by meaning. Box 1's three basic fields are not steps, so do not number them. Box 3 has a different number and type of groups; allow the rail to grow with its content.
+- **Main area:** nearly white, with room for the headline result, an aligned calculation, and the FAQ below. Gross, tax, and net are accounting lines, not sequential steps; do not add `01/02/03` markers. Align amounts for scanning. The tax line opens the existing breakdown. Reserve the dark surface for the main result; do not wrap every line or FAQ answer in an identical rounded card.
+- **Footer:** full width below both columns. Keep every existing disclaimer sentence, link, and dialog action listed below. Use spacing or a semantic list to separate actions rather than generic middle-dot chrome.
+- **At 760 px and below:** stack rail, results, FAQ, and footer in that order. Keep the amount and its period together, allow long localized labels to wrap, align ledger values without horizontal scrolling, and keep the Box selector and advanced settings reachable.
 
 ## Content and interaction
 
-1. **Salary before tax.** Label the numeric field plainly. Prefix it with `€`, accept positive euro amounts, and show help text that points to a contract or payslip. On invalid or empty input, show a short inline error and replace result amounts with an em dash; never display a plausible zero-tax result.
-2. **Income period.** Year and Month are mutually exclusive buttons. Changing the period converts the entered salary, then updates the calculation. Preserve cents during conversion so switching back does not silently alter the user's amount. The current choice must be available to assistive technology via `aria-pressed` or an equivalent control.
-3. **Holiday pay.** A checkbox asks whether the entered salary already includes 8% holiday pay. Include a one-line explanation. If it is excluded, the estimate adds holiday pay before calculating; the gross and net figures shown in the result must consistently include it. Make the assumption explicit near the result.
-4. **Result period.** The main area defaults to a monthly average and offers a yearly view. The choice changes the hero and all three ledger values together. The actual annual holiday-pay payment may be separate from regular monthly payslips; explain that the monthly figure spreads it over 12 months.
-5. **Result panel.** Show “Estimated take-home pay,” one prominent amount, its period, and a smaller net/gross percentage. The percentage is `net annual income ÷ gross annual income`, clamped to 0–100 for display. Hide it or show an em dash when the calculation is unavailable.
-6. **Ledger.** Show gross salary, the difference between gross and net as estimated tax/contributions, and take-home pay. Use the same period throughout. Keep negative signs clear and align values on the right. If the production calculator exposes a more accurate breakdown, use that data rather than implying that every gross-to-net difference is a single tax charge.
-7. **Explanation.** A disclosure labelled “How is this worked out?” describes included tax credits, social contributions, holiday-pay averaging, and material assumptions. A persistent note says this is an estimate, not a final payslip.
+### Box 1 inputs
 
-The mockup used €60,000/year, holiday pay included, 2026, and an approximate monthly take-home of €3,750 as a visual example. **Those values are not design constants or a tax test case.** In production, use the year and results from the existing calculator and follow its current policy for initial form values.
+- **Salary before tax:** prefix the field with `€`; accept positive amounts. Help text may point to a contract or payslip. On empty or invalid input, show a specific inline correction and replace result amounts with an unavailable mark. Do not show a plausible zero-tax estimate.
+- **Income period:** Year and Month are prominent exclusive choices. Weekly, daily, and hourly periods remain in Advanced options, with hours per week when Hour is selected. Changing the period converts the entered salary and updates the result; preserve cents so a round trip does not change the user's amount. Expose the selected state to assistive technology.
+- **Holiday allowance:** ask whether the entered salary already includes 8% holiday allowance and explain the assumption in one sentence. Preserve the current calculator's treatment of included/excluded allowance and its interaction with the 30% ruling. The gross and net figures must match that calculation.
+- **Advanced options:** retain the existing disclosure and its tax year, additional income periods, hours per week, state pension age, 30% ruling and category, social security, and reset confirmation. The holiday allowance control can live in the basic rail, connected to the same state. Closing Advanced options hides controls without changing values or the estimate.
+
+### Box 3 inputs and settings
+
+Show the existing bank account, investment account, and debt groups; Manage entries dialogs retain add, edit, delete, validation, and unsaved-change behavior. Keep tax partner, tax year, reset, and the settings icon/modal. The modal retains tax-free asset and debt thresholds, tax rate, assumed return rates for bank balances, investments, and debts, year-specific defaults, validation, Save/Cancel, and Reset to defaults. Switching modes preserves each mode's values and settings.
+
+### Results and explanations
+
+- **Box 1 result:** show one prominent estimated take-home amount, its period, and a secondary net/gross percentage. Calculate the percentage from annual net ÷ annual gross, clamped to 0–100 for display; hide it when the calculation is unavailable. Monthly is the initial result period; retain yearly and the existing weekly view. The selected period updates the headline, ledger, compact result, and breakdown together. Explain that a monthly average spreads annual holiday pay over 12 months even when a payslip pays it separately.
+- **Box 1 calculation:** show gross salary, tax and contributions, and take-home pay in the same period. Use the calculator's actual tax value rather than labeling every gross-to-net difference as one tax charge. Make the tax line a disclosure labelled “Show tax calculation.” Its expanded content reuses the existing breakdown: gross income, 30% ruling tax-free amount, taxable income, payroll tax, social security, general and labour tax credits, and net income, with current category filters and help text. Its button label changes to “Hide tax calculation” when open.
+- **Box 3 result:** use the current Box 3 calculation and details. Do not invent a salary or net-income figure for Box 3. Keep its existing breakdown reachable.
+- **Estimate explanation:** explain included tax credits, social contributions, holiday-pay averaging, and material assumptions in a disclosure. Keep a plain estimate note. Use concrete, user-facing wording; do not expose internal hook or configuration names in the interface.
+
+The previous mockup used €60,000/year and an approximate €3,750/month only to test visual scale. These are not defaults or tax test cases. Production amounts and starting values come from the existing calculator.
+
+### Coordinated results and FAQ
+
+The main area has calculation results at the top and the existing FAQ at the bottom. Results start expanded and FAQ collapsed. Expanding FAQ minimizes Box 1 results to **net income and total tax only**, with the selected period and empty/error state still visible. It hides gross income, the full ledger, tax breakdown, and estimate explanation until results expand again. Expanding results collapses FAQ; collapsing FAQ restores expanded results. Input changes continue updating the compact values.
+
+In Box 3 mode, the compact result shows estimated tax and taxable base. Reuse the localized questions and answers from `FaqSection`/`faqByLanguage`; individual FAQ questions can open independently. Keep visible answers and structured data consistent. The main section toggles and tax disclosure have clear, state-matching labels, `aria-expanded`, and controlled regions. Keep keyboard focus in place when a region changes height.
+
+## Footer content to preserve
+
+Render the footer from the existing localization keys and preserve these complete visible sentences and actions:
+
+- **English disclaimer:** “Disclaimer: This tool is provided for educational and informational purposes only. Tax calculations are estimates and may not reflect your actual tax liability. For official advice, always consult the [Belastingdienst](https://www.belastingdienst.nl) or a qualified tax consultant.”
+- **English actions:** [View on GitHub](https://github.com/nikteworks/Dutch_Tax), [Report an Issue](https://github.com/nikteworks/Dutch_Tax/issues), Credits, Terms of Use.
+- **Dutch disclaimer:** “Disclaimer: Deze tool is uitsluitend bedoeld voor educatieve en informatieve doeleinden. Belastingberekeningen zijn schattingen en weerspiegelen mogelijk niet uw werkelijke belastingschuld. Raadpleeg voor officieel advies altijd de [Belastingdienst](https://www.belastingdienst.nl) of een gekwalificeerd belastingadviseur.”
+- **Dutch actions:** [Bekijk op GitHub](https://github.com/nikteworks/Dutch_Tax), [Probleem melden](https://github.com/nikteworks/Dutch_Tax/issues), Credits, Gebruiksvoorwaarden.
+
+Credits and Terms of Use remain buttons that open their current dialogs with the existing text and links.
 
 ## Accessibility and product constraints
 
-- Use semantic `header`, `main`, `aside`, form labels, `fieldset`/`legend` for the period choice, and a real checkbox for holiday pay. Number badges supplement labels; they do not replace them.
-- Support keyboard operation, visible focus, clear selected states, and sufficient contrast in the navy result panel and pale rail.
-- Announce the result when inputs change without announcing the entire ledger on each keystroke. Do not move focus automatically.
-- Keep currency formatting and explanatory copy localizable. Do not hard-code `2026`, English labels, or the Netherlands locale in the final component.
-- Calculate in the browser and preserve the current product's privacy behaviour. Do not send salary inputs to analytics or a server.
-- Keep the existing Box 1 calculation hook as the source of truth. The mockup used a reduced input set and assumed a person below state pension age with standard social contributions and no 30% ruling or pension deductions. The production view must surface or preserve applicable existing options, not silently force these assumptions.
+Use semantic `header`, `main`, `aside`, and `footer`; proper form labels; `fieldset`/`legend` where choices form one question; and a real checkbox for holiday allowance. Support keyboard operation, visible focus, coherent screen-reader labels, and sufficient contrast. Announce the changed result without reading the whole ledger on each keystroke or moving focus. Localize currency, help text, errors, and controls; do not hard-code 2026 or English copy.
 
-## Implementation boundary
+Calculate in the browser and preserve current data handling. Do not add transmission of salary or asset inputs to analytics or a server. Reuse `useBox1Calculator` and `useBox3Calculator` as the sources of truth. Keep saved preferences, query-language routing, prerendered pages, and SEO metadata working.
 
-The design is intentionally separate from the production UI. A follow-up implementation should adapt `frontend/src/features/tax-calculator/components/TaxCalculatorShell.jsx`, its Box 1 form/result components, and the existing localization files. It should reuse `useBox1Calculator`, display error/empty states from that hook, and avoid copying the mockup's hard-coded sample data. The Box 3 flow, saved preferences, query-language routing, prerendered pages, and SEO metadata must continue to work.
+## Implementation and review
 
-Acceptance for that implementation: the three inputs and both period choices work at desktop and mobile sizes; the result and ledger agree numerically; empty/invalid inputs never show a misleading estimate; advanced options remain reachable; both supported languages work; keyboard and screen-reader labels are coherent; there is no horizontal overflow at 390, 768, or 1440 px.
+The implementation will touch `TaxCalculatorShell.jsx`, the Box 1 and Box 3 form/result components, `PrimaryLayout.jsx`, `FaqSection.jsx`, and localization files. Build a working calculator flow before polishing visual details. Compare the first render against common generic calculator layouts, then revise any choice that does not help this product. In a final self-critique, remove at least one accessory or redundant treatment; the decorative monogram and numbered ledger markers have already been cut from this design.
+
+Acceptance: both calculators and existing settings paths work; totals agree with breakdowns for the selected year and period; empty/invalid inputs never show a misleading estimate; the GitHub icon and full footer work in both languages; the tax line reveals the existing breakdown; opening FAQ leaves only the correct compact metrics; keyboard and screen-reader states are coherent; and there is no horizontal overflow at 390, 768, or 1440 px. Verify the rendered page at those widths and inspect focus, hover, expanded, empty, and error states before implementation is complete.
