@@ -47,20 +47,24 @@ Reference: https://vercel.com/docs/routing-middleware — middleware executes be
 cache lookup. `proxy.entrypoint` and `proxy.matcher` are documented at
 https://vercel.com/docs/project-configuration/vercel-json#proxy.
 
-### Observed production blocker
+### Production domain correction (2026-09-23)
 
 The pre-release HTTP probe during implementation found **apex → www (307)** at
 `https://incometax.nl/` and query/legacy variants. `https://www.incometax.nl/?lang=nl`
 returned 200 with English HTML, the English canonical, and no initial H1. This is
-the current production deployment, not validation of this branch. Probe details
+the deployment before the domain correction, not validation of this branch. Probe details
 are in ignored `private-evidence/issue22-http-baseline.json`.
 
-Before publishing this branch, configure the Vercel domains so the apex serves the
-project directly, and remove any platform/domain redirect from apex to www. The
-branch's opposite www → apex rule would otherwise create a redirect loop. Confirm
-the repository-root build setting so this vercel.json and middleware are used.
-Do not enable a competing platform www redirect that adds an extra hop before
-legacy URL redirects. Domain settings and deployment were not changed here.
+On 2026-09-23, the Vercel project domain settings were changed so
+`incometax.nl` connects to Production and `www.incometax.nl` redirects permanently
+to it (308). Subsequent public HTTP checks returned 200 for the apex and 308
+from www to the apex, preserving `?lang=nl&check=1`. The old production build is
+still live; these checks verify the domain correction, not the #21/#22 migration.
+
+Before publishing the branch, confirm the repository-root build setting so this
+`vercel.json` and middleware are used. Test www legacy paths after deployment:
+the platform domain redirect may add a hop before the route migration, even though
+the domain correction itself no longer creates a loop.
 
 ## Verification
 
