@@ -17,8 +17,17 @@ for (const origin of [base.origin, www].filter(Boolean)) {
     for (const slash of ['', '/']) {
       const response = await request(`${origin}/${language}${slash}?${query}`)
       assert.equal(response.status, 308, `${origin}/${language}${slash} must permanently redirect`)
-      const target = new URL(response.headers.get('location'), origin)
-      assert.equal(target.origin, base.origin, 'redirect directly to apex')
+      let target = new URL(response.headers.get('location'), origin)
+      // Vercel's domain-level www redirect runs before repository redirects.
+      // That makes old www language URLs two hops, while other URLs stay one.
+      if (origin === www && target.pathname === `/${language}${slash}`) {
+        assert.equal(target.origin, base.origin, 'www first normalizes to apex')
+        assert.deepEqual([...target.searchParams], [...query], 'www hop preserves query values')
+        const legacy = await request(target)
+        assert.equal(legacy.status, 308, 'apex legacy URL then permanently redirects')
+        target = new URL(legacy.headers.get('location'), base.origin)
+      }
+      assert.equal(target.origin, base.origin, 'final redirect targets apex')
       assert.equal(target.pathname, '/')
       assert.deepEqual(target.searchParams.getAll('lang'), [language], 'path language wins, duplicates removed')
       for (const key of ['calcType', 'v', 'state', 'tag']) {

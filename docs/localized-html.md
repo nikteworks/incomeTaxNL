@@ -63,9 +63,10 @@ still live; these checks verify the domain correction, not the #21/#22 migration
 
 The Vercel Root Directory setting was cleared on 2026-09-23, so the next
 deployment uses the repository root and loads this `vercel.json` and middleware.
-Test www legacy paths after deployment:
-the platform domain redirect may add a hop before the route migration, even though
-the domain correction itself no longer creates a loop.
+The deployed HTTP check confirms that www legacy paths take two permanent hops:
+first to the same path on the apex, then to the query URL. All query values survive,
+and the second hop is the final 200 page. The platform-level www redirect also
+normalizes unknown paths before their 404 response.
 
 ## Verification
 
