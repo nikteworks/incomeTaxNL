@@ -1,19 +1,18 @@
-.config-menu__trigger {
-  color: var(--brand-text-muted);
-  transition: color 0.2s ease;
-}
-
-.config-menu__trigger:hover {
-  color: var(--brand-primary);
-}
-
-.config-menu__section-title {
+.standard-modal .config-menu__section-title {
   color: var(--brand-primary);
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  margin-bottom: 20px;
 }
 
-.config-menu__section-description {
+.standard-modal .config-menu__section-description {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-top: -12px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+/* Give floating labels their own space above each outline, including wrapped copy. */
+.standard-modal .config-menu__fields .MuiFormHelperText-root {
+  margin-top: 8px;
+  line-height: 1.5;
 }

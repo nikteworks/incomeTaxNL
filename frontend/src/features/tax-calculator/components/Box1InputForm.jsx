@@ -96,7 +96,7 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
           /></div>
           <p id="guided-salary-help">{t('guidedRail.salaryHelp')}</p>
           <fieldset className="guided-period"><legend>{t('box1Form.period')}</legend>
-            {['yearly', 'monthly'].map(period => <button key={period} type="button"
+            {INCOME_PERIODS.map(({ value: period }) => <button key={period} type="button"
               aria-pressed={values.period === period} onClick={() => onChange('period', period)}>{t(`periods.${period}`)}</button>)}
           </fieldset>
           <div><FormControlLabel control={<Checkbox checked={values.holidayAllowanceIncluded}
@@ -104,18 +104,12 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
             label={t('box1Form.holidayAllowanceIncluded')} />
             <p>{t('guidedRail.holidayHelp')}</p>
           </div>
-          <button type="button" className="guided-disclosure" aria-expanded={showAdvanced}
-            aria-controls="guided-advanced" onClick={() => setShowAdvanced(!showAdvanced)}>
-            {t('box1Form.advancedOptions')} <span aria-hidden="true">{showAdvanced ? '−' : '+'}</span>
-          </button>
+
         </div>
       )}
-      {/* Existing layout remains available until the shell is approved. */}
+      {/* Keep the default calculator input layout during design review. */}
       {!guided && <>
-      <div
-        className="box1-form__income-row"
-        style={{ marginBottom: showAdvanced ? '1.5rem' : '0.5rem' }}
-      >
+      <div className="box1-form__income-row">
         <TextField
           label={getIncomeLabel()}
           type="number"
@@ -142,23 +136,55 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
             </MenuItem>
           ))}
         </TextField>
-        {/* Advanced Options Switch */}
-        <FormControlLabel
-          control={
-            <Switch
-              checked={showAdvanced}
-              onChange={() => setShowAdvanced((prev) => !prev)}
-              color="primary"
-            />
-          }
-          label={t('box1Form.advancedOptions')}
-          className="box1-form__advanced-switch"
-        />
       </div>
 
       </>}
-      {/* Collapse for showing advanced options, including tax year */}
-      <Collapse in={showAdvanced} id={guided ? "guided-advanced" : undefined}>
+      <div className="box1-form__main-ruling">
+        <div className="box1-form__ruling-section">
+          <FormControlLabel
+            control={
+              <Switch
+                checked={values.ruling30Enabled}
+                onChange={handleToggleChange('ruling30Enabled')}
+              />
+            }
+            label={
+              <Stack direction="row" alignItems="center" spacing={0.5}>
+                <span>{t('box1Form.ruling30')}</span>
+                <Tooltip title={t('box1Form.ruling30Tooltip')}>
+                  <InfoOutlinedIcon fontSize="small" color="action" />
+                </Tooltip>
+              </Stack>
+            }
+          />
+          <Collapse in={values.ruling30Enabled}>
+            <FormControl component="fieldset" className="box1-form__ruling-options">
+              <FormLabel component="legend" className="box1-form__ruling-legend">
+                {t('box1Form.category')}
+              </FormLabel>
+              <RadioGroup
+                value={values.ruling30Category}
+                onChange={handleSelectChange('ruling30Category')}
+                className="box1-form__ruling-radio-group"
+              >
+                {translatedCategories.map((cat) => (
+                  <FormControlLabel
+                    key={cat.value}
+                    value={cat.value}
+                    control={<Radio size="small" />}
+                    label={cat.label}
+                    className="box1-form__ruling-radio-label"
+                  />
+                ))}
+              </RadioGroup>
+            </FormControl>
+          </Collapse>
+        </div>
+      </div>
+      <button type="button" className="advanced-options-link" aria-haspopup="dialog"
+        onClick={() => setShowAdvanced(true)}>{t('box1Form.advancedOptions')}</button>
+      <StandardModal open={showAdvanced} onClose={() => setShowAdvanced(false)}
+        title={t('box1Form.advancedOptions')}>
         <Stack spacing={3} component={Box} className="box1-form__fields">
           <div className="box1-form__year-row">
             <TextField
@@ -177,10 +203,6 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
               ))}
             </TextField>
           </div>
-          {guided && <TextField select size="small" label={t('box1Form.period')} value={values.period}
-            onChange={handleSelectChange('period')}>
-            {translatedPeriods.map(p => <MenuItem key={p.value} value={p.value}>{p.label}</MenuItem>)}
-          </TextField>}
           {values.period === 'hourly' && (
             <TextField
               label={t('box1Form.hoursPerWeek')}
@@ -231,48 +253,6 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
               }
             />
 
-            {/* 30% Ruling Section */}
-            <div className="box1-form__ruling-section">
-              <FormControlLabel
-                control={
-                  <Switch
-                    checked={values.ruling30Enabled}
-                    onChange={handleToggleChange('ruling30Enabled')}
-                  />
-                }
-                label={
-                  <Stack direction="row" alignItems="center" spacing={0.5}>
-                    <span>{t('box1Form.ruling30')}</span>
-                    <Tooltip title={t('box1Form.ruling30Tooltip')}>
-                      <InfoOutlinedIcon fontSize="small" color="action" />
-                    </Tooltip>
-                  </Stack>
-                }
-              />
-              <Collapse in={values.ruling30Enabled}>
-                <FormControl component="fieldset" className="box1-form__ruling-options">
-                  <FormLabel component="legend" className="box1-form__ruling-legend">
-                    {t('box1Form.category')}
-                  </FormLabel>
-                  <RadioGroup
-                    value={values.ruling30Category}
-                    onChange={handleSelectChange('ruling30Category')}
-                    className="box1-form__ruling-radio-group"
-                  >
-                    {translatedCategories.map((cat) => (
-                      <FormControlLabel
-                        key={cat.value}
-                        value={cat.value}
-                        control={<Radio size="small" />}
-                        label={cat.label}
-                        className="box1-form__ruling-radio-label"
-                      />
-                    ))}
-                  </RadioGroup>
-                </FormControl>
-              </Collapse>
-            </div>
-
             <FormControlLabel
               control={
                 <Switch
@@ -291,7 +271,7 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
             />
           </Box>
         </Stack>
-      </Collapse>
+      </StandardModal>
 
       {/* Reset button always visible below advanced options */}
       <Box className="box1-form__reset-section">

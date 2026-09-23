@@ -11,11 +11,11 @@ The shell uses temporary component state. It does not read or write saved calcul
 ## Review the interface
 
 - Switch between Box 1 and Box 3; entered preview values remain in place.
-- Inspect the basic salary controls, Advanced options, additional periods/hours, ruling categories, and reset confirmation.
+- Inspect all salary periods and 30% ruling categories in the main form, the Advanced Options modal (tax year, hourly hours, pension age, social security), and reset confirmation.
 - Open each Box 3 account/debt group, Manage entries, tax-partner controls, and the configuration dialog.
 - Expand the tax calculation and use the category filters.
 - Open FAQ: the result reduces to net pay/total tax or estimated Box 3 tax/taxable base. Reopen results to close FAQ.
-- Review the explanation, language switch, About/Help/GitHub controls, disclaimer, Credits, and Terms of Use.
+- Review the language switch, About/Help/GitHub controls, disclaimer, Credits, and Terms of Use.
 - Check the rail width, spacing, text, and mobile stacking.
 
 ## After human review
@@ -38,3 +38,11 @@ All popups now use `StandardModal`: Privacy, About, Credits, Terms, Box 1/Box 3 
 The shell uses Material UI focus trapping, Escape/backdrop dismissal, accessible titles, and focus restoration. Entry dismissal still calls the existing unsaved-change guard. Modal shell labels are localized; existing informational content is retained.
 
 Validation: eight browser tests cover English/Dutch dialogs at 390/768/1440 px, focus trapping/restoration, visible footer actions, and nested discard/cancel behavior. The shared frame also applies to the default calculator's dialogs.
+
+## Human-review edits
+
+- Standardized both result disclosures to Show Breakdown / Hide Breakdown and indented their contents on desktop.
+- Removed the “How this estimate is worked out” section from the Guided Rail preview.
+- Replaced the Box 3 settings gear with an Advanced Options link and separated section headings, floating field labels, helper text, and field groups in its modal.
+- Moved Box 1 Advanced Options into the shared modal. All income periods and the 30% ruling/category controls now live in the main form; the modal contains no duplicate period selector.
+- Verified English/Dutch at 390, 768, and 1440 px. Ten modal browser tests cover focus, dismissal guards, field persistence, and configuration label spacing. Lint, production build/prerender, and all 27 Node tests pass. Calculator wiring remains deferred.

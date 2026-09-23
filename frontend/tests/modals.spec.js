@@ -23,6 +23,17 @@ for (const language of ['en', 'nl']) {
         expect(bounds.x).toBeGreaterThanOrEqual(12)
         expect(bounds.x + bounds.width).toBeLessThanOrEqual(width - 12)
         expect(await dialog.evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true)
+        if (title === copy.config.title) {
+          const spacing = await dialog.evaluate(el => {
+            const headings = [...el.querySelectorAll('.config-menu__section-title')]
+            return headings.map(heading => {
+              const label = heading.parentElement.querySelector('.MuiInputLabel-root')
+              const precedingText = heading.parentElement.querySelector('.config-menu__section-description') || heading
+              return label.getBoundingClientRect().top - precedingText.getBoundingClientRect().bottom
+            })
+          })
+          spacing.forEach(gap => expect(gap).toBeGreaterThanOrEqual(8))
+        }
         const footer = dialog.locator('.standard-modal__actions')
         await expect(footer).toBeInViewport()
         // Wrapping backwards from the first button must stay inside the dialog.
@@ -39,10 +50,11 @@ for (const language of ['en', 'nl']) {
       await inspect(page.getByRole('button', { name: copy.app.noticeLink }), copy.modals.privacyTitle)
       await inspect(page.getByRole('button', { name: copy.footer.credits, exact: true }), copy.modals.creditsTitle)
       await inspect(page.getByRole('button', { name: copy.footer.termsOfUse, exact: true }), copy.modals.termsTitle, true)
+      await inspect(page.getByRole('button', { name: copy.box1Form.advancedOptions, exact: true }), copy.box1Form.advancedOptions)
       await inspect(page.getByRole('button', { name: copy.box1Form.reset, exact: true }), copy.box1Form.resetTitle)
       await page.getByRole('button', { name: 'Box 3', exact: true }).click()
       await inspect(page.getByRole('button', { name: copy.box3Form.reset, exact: true }), copy.box1Form.resetTitle)
-      await inspect(page.getByRole('button', { name: copy.config.openSettings }), copy.config.title, true)
+      await inspect(page.getByRole('button', { name: copy.box1Form.advancedOptions }), copy.config.title, true)
       await inspect(page.getByRole('button', { name: 'Where can I find this information?' }), copy.modals.statementTitle)
       for (const label of [copy.box3Form.bankAccounts, copy.box3Form.investmentAccounts, copy.box3Form.debts]) {
         await page.locator('.tax-form__accordion-summary').filter({ hasText: label }).click()
@@ -51,6 +63,26 @@ for (const language of ['en', 'nl']) {
       expect(errors).toEqual([])
     })
   }
+
+  test(`Box 1 advanced modal preserves controls and main ruling: ${language}`, async ({ page }) => {
+    const copy = translations[language]
+    await page.goto(`/?lang=${language}&calcType=box1`)
+    await page.locator('.box1-form__main-ruling input[type="checkbox"]').check()
+    await page.getByRole('radio', { name: copy.box1Form.researchWorker }).check()
+    await page.getByRole('combobox', { name: copy.box1Form.period, exact: false }).click()
+    await page.getByRole('option', { name: copy.periods.hourly, exact: true }).click()
+    const trigger = page.getByRole('button', { name: copy.box1Form.advancedOptions })
+    await trigger.click()
+    const dialog = page.getByRole('dialog', { name: copy.box1Form.advancedOptions })
+    await expect(dialog.getByRole('combobox', { name: copy.box1Form.period })).toHaveCount(0)
+    await expect(dialog.locator('.box1-form__ruling-section')).toHaveCount(0)
+    await dialog.getByLabel(copy.box1Form.hoursPerWeek).fill('32')
+    await page.keyboard.press('Escape')
+    await expect(trigger).toBeFocused()
+    await expect(page.getByRole('radio', { name: copy.box1Form.researchWorker })).toBeChecked()
+    await trigger.click()
+    await expect(dialog.getByLabel(copy.box1Form.hoursPerWeek)).toHaveValue('32')
+  })
 
   test(`entry dismissal guard survives shared close controls: ${language}`, async ({ page }) => {
     const copy = translations[language]

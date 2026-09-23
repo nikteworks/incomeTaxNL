@@ -11,7 +11,6 @@ import {
   Tooltip,
   MenuItem,
 } from '@mui/material'
-import SettingsIcon from '@mui/icons-material/Settings'
 import RestoreIcon from '@mui/icons-material/Restore'
 import { BOX3_DEFAULTS, BOX3_DEFAULTS_BY_YEAR, AVAILABLE_YEARS, getDefaultsForYear } from 'dutch-tax-box3-calculator'
 import { useLanguage } from '../../../context/LanguageContext'
@@ -130,15 +129,8 @@ function ConfigurationMenu({ config, onConfigChange }) {
 
   return (
     <>
-      <Tooltip title={t('config.openSettings')}>
-        <IconButton
-          onClick={handleOpen}
-          className="config-menu__trigger"
-          aria-label={t('config.openSettings')}
-        >
-          <SettingsIcon />
-        </IconButton>
-      </Tooltip>
+      <button type="button" className="advanced-options-link" onClick={handleOpen}
+        aria-haspopup="dialog">{t('box1Form.advancedOptions')}</button>
 
       <StandardModal open={open} onClose={handleClose} size="sm"
         title={t('config.title')}
@@ -156,7 +148,7 @@ function ConfigurationMenu({ config, onConfigChange }) {
           </Button>
         </>}
       >
-        <Stack spacing={3}>
+        <Stack spacing={4} className="config-menu__fields">
           {/* Year */}
           <TextField
             select
@@ -178,7 +170,7 @@ function ConfigurationMenu({ config, onConfigChange }) {
             <Typography variant="subtitle2" className="config-menu__section-title">
               {t('config.thresholds')}
             </Typography>
-            <Stack spacing={2}>
+            <Stack spacing={3}>
               <TextField
                 label={t('config.taxFreeAssets')}
                 type="number"
@@ -226,7 +218,7 @@ function ConfigurationMenu({ config, onConfigChange }) {
             <Typography variant="caption" color="text.secondary" className="config-menu__section-description">
               {t('config.assumedReturnRatesDesc')}
             </Typography>
-            <Stack spacing={2} sx={{ mt: 1 }}>
+            <Stack spacing={3}>
               <TextField
                 label={t('config.bankBalanceRate')}
                 type="number"

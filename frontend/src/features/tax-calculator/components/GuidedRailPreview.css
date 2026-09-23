@@ -81,9 +81,6 @@
 .guided-detail-row { font-size: 14px; border-top: 1px solid #dce3ed; padding-block: 12px; }
 .guided-detail-row p { font-size: 12px; color: #465770; margin: 4px 0 0; max-width: 56ch; }
 .guided-estimate-note { font-size: 13px; color: #465770; margin: 16px 0 24px; max-width: 70ch; }
-.guided-explanation { font-size: 14px; margin-top: 20px; }
-.guided-explanation > summary { cursor: pointer; color: #2246ae; padding: 5px 0; }
-.guided-explanation .calculation-guide { width: 100%; padding: 20px 0; margin: 0; border: 0; background: transparent; box-shadow: none; }
 .guided-faq { margin-top: 40px; border-top: 1px solid #cbd4df; padding-top: 24px; }
 .guided-faq h2 { font-size: 18px; margin: 0; }
 .guided-disclosure { display: flex; justify-content: space-between; gap: 16px; width: 100%; background: transparent; border: 0; padding: 8px 0; color: #172941; text-align: left; cursor: pointer; font-weight: 600; }
@@ -120,3 +117,14 @@
   .guided-headline--compact p { margin-top: 0; }
   .app-shell--guided .app-footer { padding: 24px; }
 }
+
+@media (min-width: 761px) {
+  #guided-tax-detail {
+    margin-left: 24px;
+    padding-left: 20px;
+    border-left: 2px solid #cbd4df;
+    margin-bottom: 20px;
+  }
+}
+.guided-inputs .tax-form__actions-grid { justify-content: space-between; }
+.guided-inputs .box1-form__main-ruling { margin-top: 8px; }

@@ -7,7 +7,6 @@ import { pageCopy } from '../../../seo/metadata.js'
 import Box1InputForm from './Box1InputForm.jsx'
 import Box3InputForm from './Box3InputForm.jsx'
 import ConfigurationMenu from './ConfigurationMenu.jsx'
-import CalculationExplanation from './CalculationExplanation.jsx'
 import { BOX1_EMPTY_FORM } from '../constants/box1Defaults.js'
 import { BOX1_DEFAULT_YEAR } from '../hooks/useBox1Calculator.js'
 import './GuidedRailPreview.css'
@@ -89,7 +88,7 @@ export default function GuidedRailPreview() {
                   <button type="button" aria-expanded={taxOpen} aria-controls="guided-tax-detail"
                     onClick={() => setTaxOpen(!taxOpen)}>
                     <span>{t(box1 ? 'guidedRail.tax' : 'box3Result.taxableBase')}
-                      <small>{box1 ? t(taxOpen ? 'guidedRail.hideTax' : 'guidedRail.showTax') : t(taxOpen ? 'box3Result.hideBreakdown' : 'box3Result.showBreakdown')} <span aria-hidden="true">{taxOpen ? '−' : '+'}</span></small>
+                      <small>{t(taxOpen ? 'box1Result.hideBreakdown' : 'box1Result.showBreakdown')} <span aria-hidden="true">{taxOpen ? '−' : '+'}</span></small>
                     </span><strong>—</strong>
                   </button>
                   <div id="guided-tax-detail" hidden={!taxOpen}>
@@ -109,7 +108,6 @@ export default function GuidedRailPreview() {
                 {metric(t(box1 ? 'guidedRail.net' : 'box3Result.estimatedTax'))}
               </div>
               {box1 && <p className="guided-estimate-note">{t('guidedRail.monthlyNote')}</p>}
-              <details className="guided-explanation"><summary>{t('guidedRail.explanation')}</summary><CalculationExplanation /></details>
             </div>
           </section>
           <section className="guided-faq" aria-labelledby="guided-faq-title">
