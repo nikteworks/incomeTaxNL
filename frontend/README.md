@@ -8,7 +8,7 @@ TaxNL is a privacy-first web app for Dutch tax calculations. It features two sep
 - **Salary Calculator (Box 1):** Estimate your net salary, taxes, and deductions for income from work.
 - **Capital Gains Calculator (Box 3):** Calculate your tax on savings and investments, with configurable rates and thresholds.
 
-**Privacy:** All calculations run locally in your browser. Your financial data is never sent, stored, or collected.
+**Privacy:** Calculations run locally, and entered values are saved in your browser. The site uses Vercel Analytics for page visits. If a URL contains financial values or account names, recipients can read them, and the URL may appear in hosting logs.
 
 ## Run Locally
 - `npm install`
@@ -28,4 +28,4 @@ TaxNL is a privacy-first web app for Dutch tax calculations. It features two sep
 
 ## Notes
 - Dev server port may auto-increment if busy (5173 → 5174 → 5175).
-- No data is sent to a server; everything runs in-browser.
+- Calculations run in-browser. Check any URL before sharing financial values or account names.
