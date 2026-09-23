@@ -35,7 +35,7 @@ for (const language of ['en', 'nl']) {
       const guide = page.locator('.calculation-guide')
       const calculator = await page.locator('.calculator-shell').boundingBox()
       expect((await guide.boundingBox()).y).toBeGreaterThanOrEqual(calculator.y + calculator.height)
-      await page.screenshot({ path: `test-results/issue23-${language}-${width}.png`, fullPage: true })
+      await guide.screenshot({ path: `test-results/issue23-${language}-${width}.png` })
     })
   }
 }

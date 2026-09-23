@@ -10,6 +10,7 @@ export function renderDocument(template, language, appHtml) {
     ...data.links.map((link) => `<link ${attributes(link)} />`),
     ...data.metas.map((meta) => `<meta ${attributes(meta)} />`),
     `<script id="page-structured-data" type="application/ld+json">${JSON.stringify(data.structuredData).replace(/</g, '\\u003c')}</script>`,
+    `<script id="faq-structured-data" type="application/ld+json">${JSON.stringify(data.faqStructuredData).replace(/</g, '\\u003c')}</script>`,
   ].join('\n    ')
   return template.replace('<html lang="en">', `<html lang="${language}">`)
     .replace('<!-- page-head -->', head)

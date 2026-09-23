@@ -1,0 +1,1735 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "nl",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hoeveel belasting betaal ik over mijn salaris in Nederland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Loon uit dienstbetrekking valt doorgaans in box 1. De belastingtarieven zijn progressief en heffingskortingen en inhoudingen beïnvloeden het eindbedrag. Het aandeel kan uiteenlopen van bescheiden tot bijna de helft van extra belastbaar inkomen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is mijn nettosalaris na belasting in Nederland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trek de geschatte loonheffing, eventuele werknemersbijdragen en andere inhoudingen af van het brutoloon en houd rekening met heffingskortingen. Het nettoresultaat verschilt per contract en persoonlijke situatie. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe reken ik een brutosalaris om naar een nettosalaris in Nederland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bepaal eerst het belastbare jaarloon, pas de box 1-tarieven en heffingskortingen van het juiste jaar toe en verwerk pensioenpremies en andere inhoudingen. Verdeel de jaaruitkomst vervolgens over de loonperioden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welk percentage van mijn salaris gaat naar belasting in Nederland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De effectieve belastingdruk hangt af van inkomen, leeftijd, kortingen, aftrekposten en woonplaats. Die kan variëren van een klein aandeel tot vele tientallen procenten; het hoogste marginale tarief geldt niet voor het hele loon. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoeveel belasting betaal ik bij een salaris van ongeveer € 50.000 tot € 100.000?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat hangt sterk af van heffingskortingen, pensioen, overige inkomsten en persoonlijke omstandigheden. In dit salarisbereik kan de jaarlijkse belasting en premie volksverzekeringen variëren van enkele duizenden tot vele tienduizenden euro's. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is mijn maandelijkse nettosalaris op basis van mijn brutojaarsalaris?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bereken het geschatte nettojaarinkomen na belasting en inhoudingen en verdeel het over de betaalperioden. Een maandbedrag kan afwijken als vakantiegeld of bonussen afzonderlijk worden uitgekeerd. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Moet ik een maand- of jaarsalaris in de calculator invullen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Beide kan, zolang alle invoer dezelfde grondslag gebruikt. Tel bij een omgerekend jaarsalaris apart vakantiegeld, bonussen of extra loonperioden op als die nog niet zijn inbegrepen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Moet vakantiegeld bij het brutosalaris worden opgeteld?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Controleer hoe het salaris in het contract is omschreven. Sommige jaarbedragen zijn inclusief vakantiegeld en andere exclusief; tel het alleen op als het nog niet is meegenomen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Waarom wijkt de uitkomst van de calculator af van mijn loonstrook?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pensioenpremie, de inhouding op bijzondere beloningen, reiskostenvergoeding, bijtelling, heffingskortingen en het betaalmoment kunnen verschillen veroorzaken. Vergelijk het fiscale loon en de cumulatieve loonheffing met de invoer. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is mijn effectieve belastingtarief?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat is de totale belasting na toepasselijke heffingskortingen gedeeld door het relevante belastbare inkomen. Het verschilt meestal van een afzonderlijk tarief uit de belastingschijven. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is mijn marginale belastingtarief?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat is de verandering in de uiteindelijke belasting bij extra belastbaar inkomen. Door de afbouw van heffingskortingen kan dit hoger liggen dan het tarief van de betreffende schijf. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoeveel extra netto houd ik over van een salarisverhoging?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De nettotoename kan aanzienlijk lager zijn dan de bruto verhoging door belasting, veranderende heffingskortingen, pensioenpremie en toeslagen. Vergelijk twee volledige jaarscenario's met dezelfde aannames. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe beïnvloedt deeltijdwerk mijn belasting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dezelfde jaarlijkse box 1-berekening geldt voor deeltijdloon. Een lager jaarinkomen kan wel andere schijven en heffingskortingen opleveren; het aantal uren heeft geen eigen belastingtarief. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat gebeurt er met mijn nettoloon als ik minder uren ga werken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vergelijk het jaarloon, vakantiegeld, pensioen en de heffingskortingen bij beide urenschema's. De nettoafname kan kleiner zijn dan de evenredige afname van het brutoloon. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat gebeurt er met mijn belasting tijdens onbetaald verlof of ouderschapsverlof?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een lager belastbaar loon kan de loonheffing en jaarheffingskortingen wijzigen. Een belastbare verlofuitkering kan juist inkomen toevoegen; bereken daarom het hele jaar. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat zijn de Nederlandse inkomstenbelastingschijven voor 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voor wie de AOW-leeftijd nog niet heeft bereikt, lopen de progressieve box 1-tarieven grofweg van midden dertig procent tot net onder de helft. De grenzen en tarieven hangen af van leeftijd en belastingjaar. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vanaf welk inkomen geldt de hoogste Nederlandse belastingschijf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voor iemand onder de AOW-leeftijd begint de hoogste box 1-schijf in 2026 ongeveer in de hoge zeventigduizend euro aan belastbaar inkomen. Controleer de officiële tabel voor de precieze grens. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wordt mijn hele salaris tegen het hoogste tarief belast zodra ik die schijf bereik?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nee. Het hogere tarief geldt alleen voor het deel van het belastbare inkomen in die schijf. Op de lagere delen blijven de bijbehorende tarieven van toepassing, vóór heffingskortingen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zijn de Nederlandse inkomstenbelastingschijven progressief?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. In box 1 gelden verschillende tarieven voor opeenvolgende delen van het belastbare inkomen. Heffingskortingen beïnvloeden vervolgens het uiteindelijke bedrag. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zijn premies volksverzekeringen inbegrepen in de eerste belastingschijf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bij iemand onder de AOW-leeftijd die in Nederland verzekerd is, omvat de lagere box 1-schijf doorgaans zowel inkomstenbelasting als premies volksverzekeringen. Leeftijd en verzekeringspositie kunnen dit veranderen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat verandert er fiscaal als ik de AOW-leeftijd bereik?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De samenstelling van de premies volksverzekeringen en de heffingskortingen verandert. De druk in de laagste schijf kan daardoor lager zijn; het jaar waarin u de AOW-leeftijd bereikt vraagt om een aparte berekening. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Worden belastingschijven op maand- of jaarsalaris toegepast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De definitieve inkomstenbelasting wordt op jaarinkomen gebaseerd. De werkgever verdeelt een geschatte inhouding over loonperioden, die indien nodig bij de aangifte wordt verrekend. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan een bonus mij in een hogere belastingschijf brengen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een bonus kan een deel van uw jaarlijkse belastbare inkomen in een hogere schijf brengen. Eerder verdiend loon wordt daardoor niet opnieuw tegen dat hogere tarief belast. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gelden de belastingschijven vóór of na aftrekposten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De schijven worden toegepast op het belastbare box 1-inkomen na relevante aftrekposten en correcties. De maandelijkse loonheffing kan daarvan een voorlopige benadering zijn. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke inkomsten vallen in belastbaar box 1-inkomen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Onder meer loon, bepaalde uitkeringen, pensioen, ondernemingsinkomen en posten rond de eigen woning kunnen in box 1 vallen. Voor iedere post gelden specifieke regels. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is de algemene heffingskorting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De algemene heffingskorting verlaagt de verschuldigde inkomstenbelasting en premie volksverzekeringen voor wie daarvoor in aanmerking komt. De hoogte hangt onder meer af van het verzamelinkomen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is de arbeidskorting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De arbeidskorting is een heffingskorting voor kwalificerend arbeidsinkomen. Zij stijgt eerst en neemt later in inkomensbereiken weer af, wat het nettoloon beïnvloedt. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe beïnvloeden heffingskortingen mijn nettosalaris?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Heffingskortingen verlagen de berekende belasting en niet het brutoloon. Het effect kan uiteenlopen van weinig of niets tot meerdere duizenden euro's per jaar. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vanaf welk inkomen neemt de algemene heffingskorting af?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voor 2026 begint de afbouw ongeveer bij een verzamelinkomen in de hoge twintigduizend tot lage dertigduizend euro. De exacte grens hoort bij het gekozen belastingjaar. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vanaf welk inkomen vervalt de algemene heffingskorting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voor iemand onder de AOW-leeftijd eindigt zij in 2026 doorgaans rond een verzamelinkomen in de hoge zeventigduizend euro. Voor AOW-gerechtigden kunnen andere regels gelden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bij welk inkomen is de arbeidskorting het hoogst?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De korting bereikt haar maximum binnen een beperkt middeninkomensbereik en daalt daarna bij hoger arbeidsinkomen. Raadpleeg de tabel van het betreffende jaar voor de omslagpunten. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Waarom kan mijn marginale belastingdruk hoger zijn dan mijn schijftarief?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Extra inkomen kan zowel belasting in een schijf oproepen als een inkomensafhankelijke heffingskorting verminderen. Het gezamenlijke effect kan hoger zijn dan het gedrukte schijftarief. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is loonheffingskorting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat is het toepassen van daarvoor in aanmerking komende heffingskortingen via de salarisadministratie. Daardoor wordt tijdens het jaar minder loonheffing ingehouden; de aangifte bepaalt de definitieve aanspraak. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Moet ik loonheffingskorting laten toepassen op mijn salaris?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Als u ervoor in aanmerking komt, kan het uw maandelijkse nettoloon verhogen. Bij meerdere gelijktijdige inkomens is het belangrijk te bepalen bij welke uitbetaler de korting wordt toegepast. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mag ik loonheffingskorting bij twee werkgevers toepassen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Laat de korting bij gelijktijdige inkomsten doorgaans slechts door één uitbetaler toepassen. Anders kan te weinig loonheffing worden ingehouden en later een bijbetaling ontstaan. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke werkgever moet mijn loonheffingskorting toepassen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kies meestal de uitbetaler bij wie dit het beste aansluit op uw verwachte jaarlijkse recht, vaak de hoofdwerkgever. Houd ook rekening met andere belastbare inkomsten. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Waarom moet ik bijbetalen als mijn werkgever al loonheffing heeft ingehouden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Loonheffing is een voorheffing. Meerdere banen, bonussen, veranderende heffingskortingen en inkomsten in box 2 of box 3 kunnen de jaarafrekening veranderen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kunnen heffingskortingen tot belastingteruggave leiden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Als ze de uiteindelijke belasting onder de al ingehouden bedragen brengen, kan een teruggave volgen. Voor niet-benutte kortingen gelden afzonderlijke uitbetalingsregels. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is het Nederlandse vakantiegeld meestal ongeveer acht procent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bij veel werknemers ligt het rond een hoog enkelcijferig percentage van het daarvoor geldende loon. Controleer de wettelijke en contractuele grondslag en tel het niet dubbel bij het jaarloon op. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wordt vakantiegeld berekend over bruto- of nettoloon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vakantiegeld wordt doorgaans berekend over een relevante brutoloonbasis. Bij uitbetaling wordt er loonheffing op ingehouden; contract of cao bepaalt de precieze basis. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoeveel vakantiegeld houd ik netto over?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat hangt af van het jaarloon en de ingehouden loonheffing. Voor planning ligt het nettobedrag doorgaans merkbaar onder het bruto vakantiegeld; de definitieve belasting volgt uit de jaarberekening. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Waarom wordt er op mijn loonstrook veel belasting op vakantiegeld ingehouden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voor bijzondere beloningen kan de salarisadministratie een aparte tabel gebruiken die rekening houdt met verwachte jaarbelasting en heffingskortingen. De inhouding is een voorschot. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wordt een bonus uiteindelijk anders belast dan gewoon loon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een gewone arbeidsbonus behoort tot het jaarlijkse box 1-loon. De inhouding op de loonstrook kan anders lijken omdat de werkgever de extra belasting schat. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoeveel houd ik over van een bonus van ongeveer € 5.000 tot € 10.000?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De nettotoename kan sterk uiteenlopen, van minder dan de helft tot ruim meer dan de helft van het brutobedrag. Jaarinkomen, kortingen en pensioenregels zijn bepalend. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe wordt een dertiende maand belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Deze behoort meestal tot het loon in box 1. Voor de voorlopige inhouding kan een tabel voor bijzondere beloningen gelden; de aangifte verrekent de definitieve belasting. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zijn provisie, fooien en overwerk belastbaar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Geldbetalingen die verband houden met werk vallen doorgaans onder belastbaar loon, afhankelijk van de feiten en loonadministratie. De eindheffing volgt uit de jaarberekening. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe worden RSU's belast wanneer ze vesten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een aandelenbeloning kan op het toepasselijke heffingsmoment belastbaar loon opleveren. Aandelen die u daarna privé aanhoudt, kunnen in box 3 vallen tenzij een andere box geldt. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe worden aandelenopties voor werknemers belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Het heffingsmoment en de waardering hangen af van het optieplan en de toepasselijke regels. Loonbelasting kan aan de latere behandeling als privébelegging voorafgaan. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe beïnvloedt de bijtelling voor een auto van de zaak mijn nettoloon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Privégebruik kan extra belastbaar loon opleveren en daardoor de loonheffing verhogen zonder extra contant salaris. De hoogte hangt af van voertuig en gebruiksregels. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Maakt een mobiliteitsvergoeding mijn belastbare salaris hoger?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een contante vergoeding kan loon zijn, tenzij een specifieke onbelaste vergoeding van toepassing is. Controleer hoe de salarisadministratie de betaling verwerkt. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is een reiskostenvergoeding belastbaar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Binnen de toepasselijke regels kan zij onbelast zijn; een te hoge of niet-kwalificerende vergoeding kan belast worden. Werkgeversbeleid en reisadministratie zijn van belang. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Worden pensioenpremies vóór de inkomstenbelasting afgetrokken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een kwalificerende werknemersbijdrage aan een toegelaten pensioenregeling verlaagt doorgaans het fiscale loon. Voor een privé-inleg kunnen andere regels gelden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Houdt iedere Nederlandse werkgever pensioenpremie in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nee. Of er een werknemersbijdrage is, hangt af van de pensioenregeling, eventuele sectorverplichtingen en de arbeidsovereenkomst. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wordt de zorgverzekering op mijn salaris ingehouden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De premie voor de basisverzekering betaalt u doorgaans afzonderlijk aan de verzekeraar. Voor de inkomensafhankelijke zorgbijdrage gelden aparte regels. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie betaalt de inkomensafhankelijke Zvw-bijdrage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bij gewone werknemers betaalt de werkgever doorgaans een werkgeversheffing. Bij andere soorten inkomen kan de bijdrage bij de betrokkene liggen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie betaalt de werkloosheids- en andere werknemersverzekeringspremies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bij gewone verzekerde dienstbetrekkingen zijn deze doorgaans werkgeverslasten. Ze beïnvloeden de werkgeverskosten, maar verschijnen niet noodzakelijk als werknemersinhouding. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Heeft mijn cao invloed op mijn nettosalaris?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De cao kan regels geven voor vakantiegeld, pensioen, vergoedingen en uitbetaalmomenten. Al die onderdelen kunnen de loonstrook en de calculatoruitkomst beïnvloeden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is de Nederlandse 30%-regeling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De expatregeling kan een werkgever toestaan een onbelaste vergoeding te geven voor extra kosten van werken in Nederland. Toelating, looneisen, maxima en overgangsrecht zijn van belang. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoeveel kan de 30%-regeling mijn nettosalaris verhogen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De stijging varieert van verwaarloosbaar tot aanzienlijk, afhankelijk van kwalificerend loon, werkgeversafspraken, de salarisnorm en een jaarmaximum. Vergelijk hetzelfde brutopakket met en zonder regeling. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kom ik in aanmerking voor de 30%-regeling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dit hangt af van werving uit het buitenland, specifieke deskundigheid, loonvoorwaarden en een formele beschikking, met mogelijke uitzonderingen. Doorgaans vraagt de werkgever de regeling aan. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is de minimale salariseis voor de 30%-regeling in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voor veel aanvragers ligt de norm voor belastbaar loon rond de hoge veertigduizend euro; voor bepaalde jongere werknemers met een mastergraad ligt zij rond de midden dertigduizend euro. Uitzonderingen en jaarlijkse wijzigingen gelden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Geldt voor een jongere werknemer met een mastergraad een lagere salarisnorm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Onder voorwaarden geldt een lagere norm voor een jongere werknemer met de vereiste mastergraad. De leeftijd en opleiding moeten aantoonbaar aan de eisen voldoen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zijn er uitzonderingen voor onderzoekers en artsen in specialistische opleiding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voor bepaalde kwalificerende wetenschappelijke onderzoekers en artsen in opleiding tot specialist kan de looneis anders uitwerken. Andere voorwaarden blijven van belang. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Moet ik vanuit het buitenland zijn geworven?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De regeling vereist doorgaans werving of overplaatsing vanuit het buitenland en een toets van de eerdere woonplaats. Bewaar bewijs van werving en woonverleden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke afstandseis geldt voor de expatregeling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De eerdere woonplaats wordt doorgaans getoetst aan een afstand van ruwweg honderd tot tweehonderd kilometer tot de Nederlandse grens gedurende een relevante voorafgaande periode. Uitzonderingen zijn mogelijk. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe lang moet ik buiten Nederland hebben gewoond?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De toets ziet op een aanzienlijk deel van de periode vóór aanvang van de dienstbetrekking en op de afstand van uw woonplaats. Controleer het exacte wettelijke tijdvak voor uw startdatum. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mag mijn werkgever minder dan de maximale expatvergoeding betalen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. De werkgever hoeft het maximaal mogelijke onbelaste bedrag niet te vergoeden. De arbeidsovereenkomst en de fiscale grens bepalen wat werkelijk wordt betaald. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is de maximale expatvergoeding altijd mogelijk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nee. Een minimum voor het belastbare loon en een jaarlijks vergoedingsmaximum kunnen de vergoeding beperken. Ook de afgesproken vergoeding kan lager zijn. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat als de expatvergoeding mijn belastbare loon onder de salarisnorm brengt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De vergoeding moet dan worden beperkt zodat het relevante belastbare loon aan de norm blijft voldoen, tenzij een specifieke uitzondering van toepassing is. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Geldt een maximum voor het salaris waarover de expatvergoeding wordt berekend?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. De onbelaste vergoeding is gebonden aan een jaarlijks maximum en een gemaximeerde salarisgrondslag. Bij gebruik gedurende slechts een deel van het jaar kan tijdsevenredige berekening nodig zijn. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoelang blijft de expatregeling gelden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De maximale looptijd is begrensd en kan korter worden door eerder verblijf of werk in Nederland. De beschikking en eventuele overgangsregels bepalen uw einddatum. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik de expatregeling behouden als ik van werkgever wissel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat kan als de nieuwe baan en aanvraagtermijn aan de voorwaarden voldoen. Voor een overstap binnen een verbonden groep kan een andere administratieve route gelden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat gebeurt er met mijn expatregeling als mijn salaris stijgt of daalt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een loonwijziging kan zowel de toegestane vergoeding als het voldoen aan de salarisnorm beïnvloeden. Bereken het hele jaar opnieuw en informeer de salarisadministratie. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tellen vakantiegeld, bonussen en een dertiende maand mee voor de salarisnorm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kwalificerende belastbare loonbestanddelen kunnen meetellen, maar het betaalmoment en de verwerking zijn belangrijk. Gebruik het jaarlijkse relevante belastbare loon. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan de expatregeling voor een deel van het jaar gelden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, als de beschikking en de arbeidsperiode dat toelaten. Jaarmaxima en kwalificerend loon moeten mogelijk tijdsevenredig worden berekend. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan de expatregeling met terugwerkende kracht ingaan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De ingangsdatum hangt af van de aanvraagtermijn en de beschikking. Bij een late aanvraag kan de regeling pas later beginnen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Heeft de expatregeling gevolgen voor mijn pensioen of hypotheek?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een onbelast loonbestanddeel kan het pensioengevend salaris of de beoordeling door een geldverstrekker beïnvloeden. Vergelijk de voorwaarden van contract, pensioenregeling en geldverstrekker. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Verandert de expatregeling in een toekomstig belastingjaar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tarieven, normen en overgangsregels kunnen door nieuwe wetgeving veranderen. Gebruik de vastgestelde regels van het gekozen belastingjaar. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kent Nederland belasting op vermogenswinst?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Er is geen algemeen tarief voor iedere beleggingswinst. Gewone privébeleggingen vallen vaak in box 3, een aanmerkelijk belang in box 2 en zakelijke of arbeidsmatige activiteiten kunnen in box 1 vallen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is het tarief voor belasting op vermogenswinst in Nederland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Er bestaat geen universeel tarief. Belastbare winst in box 2 wordt in 2026 grofweg tegen tarieven van midden twintig tot begin dertig procent belast; box 3 kent een afzonderlijke rendementsberekening. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe bereken ik in Nederland belasting over beleggingswinst?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bepaal eerst in welke box de belegging valt. Bij gewoon privévermogen berekent u box 3 met bezittingen en relevante schulden en vergelijkt u waar mogelijk het fictieve met een lager werkelijke rendement; voor een aanmerkelijk belang onderzoekt u het vervreemdingsvoordeel. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Betaal ik Nederlandse belasting als ik aandelen met winst verkoop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bij gewone box 3-aandelen ontstaat door verkoop niet automatisch een afzonderlijke belasting over de verkoopwinst. Voor een aanmerkelijk belang of zakelijke activiteit kan de uitkomst anders zijn. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wordt ongerealiseerde aandelenwinst in Nederland belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Waardestijgingen kunnen deel uitmaken van het werkelijke rendement in box 3, ook zonder verkoop. De fictieve berekening gebruikt in plaats daarvan de wettelijke waarderingssystematiek. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan beleggingsinkomen ook in box 1 vallen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Ondernemingsvermogen, beloningen en activiteiten die verder gaan dan normaal vermogensbeheer kunnen onder box 1 vallen. De feiten bepalen de indeling. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is het verschil tussen box 1, box 2 en box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Box 1 omvat doorgaans werk en eigen woning, box 2 een aanmerkelijk belang in een vennootschap en box 3 gewoon spaargeld en beleggingen. Elke box heeft een eigen berekening. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe weet ik of mijn aandelen in box 2 of box 3 vallen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bekijk uw directe en indirecte belang, de rechten van uw partner en verbonden personen, verschillende aandelensoorten en opties. Een aanmerkelijk belang kan de aandelen in box 2 brengen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Verandert een groot belang in een vennootschap de fiscale behandeling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Een belang rond een twintigste deel of meer, mede gelet op relevante partnerbelangen, kan een aanmerkelijk belang voor box 2 zijn. Dividend en vervreemdingswinst vallen dan onder die regels. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bepaalt mijn broker in welke Nederlandse belastingbox mijn belegging valt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nee. Eigendom, soort vermogen en de aard van uw activiteiten bepalen de indeling. Een Nederlandse of buitenlandse broker beïnvloedt vooral welke gegevens vooraf zijn ingevuld. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dragen DEGIRO of Interactive Brokers automatisch mijn Nederlandse inkomstenbelasting af?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ga er niet van uit dat een broker uw definitieve inkomstenbelasting betaalt. Controleer vooraf ingevulde gegevens, geef ontbrekende bezittingen op en verwerk eventuele dividendbelasting in de aangifte. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Moet ik buitenlandse beleggingen in Nederland aangeven?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wie in Nederland fiscaal inwoner is, moet doorgaans wereldwijd vermogen en inkomen in de beoordeling betrekken, waaronder buitenlandse effectenrekeningen. Verdragsvermindering en bijzondere regels kunnen gelden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat gebeurt er fiscaal met beleggingen als ik naar Nederland verhuis of vertrek?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De woonperiode, vermogenssoort en eventuele verdrags- of exitregels kunnen de aangifte veranderen. Een verhuisjaar vraagt om een aparte beoordeling. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Box 3 is de inkomstenbelastingbox voor gewoon spaargeld en beleggingen. Meestal wordt een berekend rendement op relevante bezittingen belast, met regels voor schulden en vrijstelling. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie moet box 3-belasting betalen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Iemand met relevant belastbaar vermogen of rendement kan box 3-belasting verschuldigd zijn. Woonplaats, vrijstellingen, schulden en de toepasselijke berekening spelen mee; aangifteplicht is een afzonderlijke vraag. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke bezittingen vallen in box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voorbeelden zijn banktegoeden, gewone aandelen, fondsen, crypto, tweede woningen en bepaalde vorderingen. Vrijstellingen en indeling in een andere box kunnen gelden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoeveel box 3-belasting betaal ik in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De uitkomst loopt van niets tot vele duizenden euro's, afhankelijk van de vermogensmix, aftrekbare schulden, fiscaal partnerschap, vrijstelling en werkelijk rendement. Alleen de koerswinst is onvoldoende voor een berekening. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is het box 3-tarief in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Het tarief over het berekende box 3-inkomen ligt grofweg midden in de dertig procent. Het wordt op een berekend rendement toegepast, niet rechtstreeks op de hele portefeuille. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is het heffingsvrij vermogen in box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bij de fictieve berekening van 2026 ligt de vrijstelling per persoon ruwweg tussen midden vijftigduizend en midden zestigduizend euro; voor kwalificerende fiscale partners is zij ongeveer dubbel zo hoog. Bij werkelijk rendement wordt zij niet toegepast. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Geldt het heffingsvrij vermogen per persoon of per huishouden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De vrijstelling wordt doorgaans per persoon vermeld. Kwalificerende fiscale partners kunnen bij de fictieve berekening samen ongeveer het dubbele bedrag gebruiken. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gebruikt box 3 de waarde op de eerste dag van het jaar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De fictieve berekening gebruikt doorgaans de waarde van bezittingen en schulden op de peildatum aan het begin van het jaar. Het werkelijke rendement kan veranderingen gedurende het jaar meenemen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat als ik na de box 3-peildatum aandelen koop of verkoop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een latere transactie verandert doorgaans niet de vermogensmix op de peildatum voor de fictieve berekening. Regels tegen peildatumarbitrage en de berekening van werkelijk rendement kunnen wel van belang zijn. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Worden spaargeld en aandelen in box 3 verschillend behandeld?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Bij fictief rendement gelden aparte categorieën voor banktegoeden en beleggingen met verschillende forfaitaire rendementen. Werkelijk rendement volgt de relevante inkomsten en waardeveranderingen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe worden schulden in box 3 verwerkt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kwalificerende schulden boven de toepasselijke drempel kunnen de rendementsgrondslag verlagen; voor fictief rendement geldt een afzonderlijk schuldenpercentage. Schuldrente kan bij werkelijk rendement relevant zijn. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Geldt een drempel voor schulden in box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Voor de fictieve berekening geldt een schuldendrempel met bedragen per jaar en voor partners. Schulden onder de drempel verlagen die grondslag niet. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat betekent rendementsgrondslag?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat zijn de relevante box 3-bezittingen min de kwalificerende schulden volgens de toepasselijke waarderingsregels, vóór aftrek van het heffingsvrij vermogen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat betekent grondslag sparen en beleggen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat is de box 3-grondslag die bij de fictieve berekening overblijft nadat het heffingsvrij vermogen van de netto vermogensgrondslag is afgetrokken. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe wordt het belastbare rendement in box 3 berekend?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bij fictief rendement worden vaste categoriepercentages toegepast op banktegoeden, overige bezittingen en schulden. Het resultaat wordt naar de belaste grondslag herleid; een lager opgegeven werkelijk rendement kan de einduitkomst wijzigen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Waarom gaat box 3 uit van een fictief rendement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Het tijdelijke stelsel schat het rendement met vaste percentages per vermogenscategorie. Met de huidige tegenbewijsregeling kan een lager kwalificerend werkelijk rendement in aanmerking worden genomen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke forfaitaire rendementspercentages gelden in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De voorlopige percentages voor banktegoeden en schulden liggen grofweg in het lage enkelcijferige gebied; voor beleggingen en overige bezittingen ongeveer rond het midden van dat gebied. Controleer de definitieve cijfers voor het belastingjaar. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik box 3-belasting betalen als mijn beleggingen verlies maakten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De fictieve berekening kan ook bij koersverlies inkomen tonen. Het opgeven van een lager totaal werkelijk rendement kan de aanslag verminderen, afhankelijk van de regels. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Heeft box 3 invloed op toeslagen of heffingskortingen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Box 3-inkomen kan meetellen voor het verzamelinkomen waarop bepaalde kortingen en inkomensafhankelijke toeslagen steunen. Voor toeslagen kunnen bovendien vermogensgrenzen gelden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan het verplaatsen van spaargeld naar beleggingen mijn box 3-belasting veranderen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De vermogenscategorie op de peildatum kan de fictieve berekening veranderen. Op tijdelijke verschuivingen rond die datum kunnen regels tegen peildatumarbitrage van toepassing zijn; werkelijk rendement wordt apart berekend. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is werkelijk rendement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat is het relevante inkomen uit box 3-bezittingen plus de veranderingen in hun waarde gedurende het kalenderjaar, na specifiek toegestane correcties. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is fictief rendement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat is rendement dat met wettelijk vastgestelde percentages en de vermogensmix op de peildatum wordt berekend, in plaats van met alle werkelijke transacties. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik werkelijk rendement gebruiken in plaats van fictief rendement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wie daarvoor in aanmerking komt, kan werkelijk rendement opgeven. De Belastingdienst gebruikt in beginsel het lagere kwalificerende resultaat; de procedure verschilt per belastingjaar. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tellen dividend en rente mee voor het werkelijke rendement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Relevant dividend en spaarrente tellen mee, evenals andere vermogensopbrengsten en waardeveranderingen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tellen ongerealiseerde winsten en verliezen mee voor het werkelijke rendement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In het algemeen wel. Zowel stijgingen als dalingen van de waarde van relevante bezittingen gedurende het jaar kunnen meetellen, ook zonder verkoop. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik aandelenverlies met cryptowinst verrekenen binnen het werkelijke box 3-rendement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Relevante winsten en verliezen op box 3-bezittingen worden binnen hetzelfde jaar samengenomen. Een negatief totaal wordt doorgaans op nihil gesteld. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik een negatief werkelijk rendement in box 3 meenemen naar een volgend jaar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Doorgaans niet. Een negatief totaal werkelijk rendement wordt voor dat jaar op nihil gesteld en niet naar een ander jaar doorgeschoven. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Geldt het heffingsvrij vermogen ook voor het werkelijke rendement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nee. De vergelijking met werkelijk rendement gaat uit van het rendement op alle relevante box 3-bezittingen, zonder de vrijstelling van de fictieve methode. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zijn brokerkosten en transactiekosten aftrekbaar bij werkelijk box 3-rendement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gewone beheers- en handelskosten zijn doorgaans niet aftrekbaar. Beperkte uitzonderingen bestaan onder meer voor relevante rente op box 3-schulden en bepaalde woningverbeteringen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke gegevens heb ik nodig om werkelijk rendement te berekenen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Verzamel begin- en eindwaarden, aan- en verkopen, rente, dividend, woningwaarden en relevante schuldrente. Ook veranderingen midden in het jaar zijn van belang. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat als ik gedurende het jaar een bezitting kocht?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Het rendement tijdens de bezitperiode kan meetellen, rekening houdend met aankoopprijs en latere waarde of opbrengst. De bezitting kan ontbreken op de peildatum van de fictieve berekening. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat als ik gedurende het jaar een bezitting verkocht?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Verkoopopbrengst en waardeverandering tijdens het bezit kunnen meetellen voor werkelijk rendement. Ook latere rente op de ontvangen gelden kan relevant zijn; tel overboekingen niet als opbrengst. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe geef ik werkelijk rendement bij een buitenlandse broker op?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Verzamel jaaroverzichten en transacties, reken bedragen volgens de toepasselijke regels consequent naar euro's om en gebruik de juiste Nederlandse aangifteprocedure. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe geef ik werkelijk rendement op cryptovaluta op?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Verzamel gegevens van wallets en platforms, euro-waarderingen aan begin en einde van het jaar, verkopen en ontvangen opbrengsten. Sommige opbrengsten vragen om een andere boxindeling. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik een eerdere box 3-berekening aanpassen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De mogelijkheden voor herstel of correctie hangen af van het aanslagjaar en de status van de aanslag. Controleer of een formulier voor werkelijk rendement of een formele wijziging mogelijk is. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Telt eigen gebruik van een tweede woning mee voor werkelijk rendement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voor 2026 kan bij een relevante tweede woning een bijtelling wegens eigen gebruik meetellen in het werkelijke box 3-rendement. Gebruiksdagen en de gekozen waarderingsmethode bepalen de hoogte. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe worden aandelen, ETF's en indexfondsen in Nederland belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gewone privébeleggingen vallen vaak in box 3; een aanmerkelijk belang kan in box 2 vallen. Voor de vergelijking met werkelijk rendement kunnen opbrengsten en waardeveranderingen meetellen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Worden accumulerende en uitkerende ETF's anders belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bij fictief rendement is de vermogenscategorie op de peildatum vaak vergelijkbaar. Bij werkelijk rendement verschijnt een uitkering als ontvangst, terwijl ingehouden opbrengsten in de fondswaarde kunnen zitten. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Betaal ik Nederlandse belasting over Amerikaanse of Europese aandelen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een Nederlandse fiscale inwoner moet buitenlandse gewone aandelen doorgaans in de Nederlandse beoordeling betrekken. Buitenlandse bronbelasting en verdragsvermindering kunnen de totale druk veranderen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke waarde gebruik ik voor aandelen op de box 3-peildatum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gebruik de voorgeschreven beurs- of marktwaarde in euro's op de peildatum en bewaar koersgegevens of het brokerafschrift. Voor bijzondere belangen kunnen andere waarderingsregels gelden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wanneer gaan werknemersaandelen van box 1 naar box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Na het relevante heffingsmoment voor loon kunnen aangehouden privéaandelen in box 3 terechtkomen. Het beloningsplan en eventuele regels voor een aanmerkelijk belang kunnen dat veranderen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan veelvuldig handelen beleggingen naar box 1 verplaatsen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Activiteiten die meer zijn dan normaal privévermogensbeheer kunnen een box 1-vraag oproepen. Alleen de handelsfrequentie is niet altijd doorslaggevend; arbeid, kennis en verwachte winst tellen mee. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe worden dividenden in Nederland belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dividend uit gewone portefeuilleaandelen kan in het werkelijke box 3-rendement meetellen. Dividend uit een aanmerkelijk belang valt doorgaans in box 2; bronbelasting kan verrekenbaar zijn. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Betaal ik twee keer belasting over dividend?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ingehouden dividendbelasting kan vaak met Nederlandse inkomstenbelasting worden verrekend, afhankelijk van herkomst en regels. Voor te hoge buitenlandse bronbelasting kan een afzonderlijke teruggaaf nodig zijn. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is Nederlandse dividendbelasting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat is belasting die een Nederlandse dividendbetaler doorgaans vóór uitbetaling inhoudt. De ontvanger kan deze onder voorwaarden met de uiteindelijke inkomstenbelasting verrekenen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik buitenlandse dividendbelasting terugvragen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een belastingverdrag en nationale regels kunnen een verrekening of teruggaaf in het bronland mogelijk maken, binnen grenzen. Procedure en bewijsstukken verschillen per land. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe wordt Amerikaans dividend voor een Nederlandse inwoner behandeld?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bekijk de Amerikaanse bronheffing volgens het toepasselijke verdrag en bepaal in welke Nederlandse box de aandelen vallen. Bewaar afrekeningen om vermindering te kunnen beoordelen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe wordt dividend uit mijn eigen bv belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bij een kwalificerend aanmerkelijk belang valt de uitkering doorgaans in box 2. Vennootschapsbelasting en ingehouden dividendbelasting zijn afzonderlijke onderdelen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is box 2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Box 2 belast inkomen uit een aanmerkelijk belang, waaronder kwalificerend dividend uit een vennootschap en winst bij verkoop van aandelen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is een aanmerkelijk belang?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat is een substantieel belang in een vennootschap of vergelijkbare entiteit. De grens ligt rond een twintigste deel van relevante rechten; ook partner- en verbondenheidsregels kunnen meespelen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Telt een aandelenbezit van precies vijf procent als aanmerkelijk belang?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. De wettelijke grens omvat ook een belang precies op die grens, afhankelijk van de betrokken rechten en optelregels. Controleer aandelensoorten en indirecte belangen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tellen de aandelen van mijn partner mee voor de toets op aanmerkelijk belang?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De relevante directe en indirecte rechten van fiscale partners kunnen worden samengenomen. Ook regels voor verbonden personen en fictieve belangen kunnen van belang zijn. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe bereken ik de winst bij verkoop van mijn bv-aandelen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Het vervreemdingsvoordeel in box 2 is doorgaans de tegenprestatie min de erkende verkrijgingsprijs, met eventuele correcties en bijzondere regels voor de transactie. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke box 2-tarieven gelden in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Het belastbare box 2-inkomen valt in progressieve tarieven van grofweg midden twintig tot begin dertig procent. De grens tussen de schijven verschilt per jaar. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik verliezen in box 2 naar een later jaar meenemen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Onder specifieke regels en termijnen is verliesverrekening mogelijk. Controleer de verliesbeschikking en het jaar waarin verrekening is toegestaan. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kunnen fiscale partners box 2-inkomen onderling verdelen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bepaalde gezamenlijke box 2-inkomsten mogen volgens de regels voor fiscaal partnerschap in de aangifte worden verdeeld. De gunstigste verdeling hangt af van beide situaties. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat gebeurt er als ik door verkoop onder de grens voor aanmerkelijk belang kom?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De verkoop kan zelf een box 2-voordeel opleveren en voor het resterende belang kunnen regels voor een fictief aanmerkelijk belang gelden. Neem niet zonder beoordeling aan dat het restant naar box 3 verhuist. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat gebeurt er als ik aandelen met een aanmerkelijk belang schenk of erf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een overdracht kan leiden tot een fictieve vervreemding of onder voorwaarden doorschuif- of andere faciliteiten. Schenk- en erfbelasting zijn afzonderlijke aandachtspunten. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat gebeurt er met mijn bv-aandelen als ik emigreer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bij emigratie kunnen een conserverende aanslag en andere regels voor een aanmerkelijk belang gelden. Verdragen en latere uitkeringen beïnvloeden het resultaat. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wordt salaris uit mijn eigen bv in box 2 belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Salaris van de vennootschap is doorgaans loon in box 1. Dividend en kwalificerende winst bij aandelenverkoop worden afzonderlijk in box 2 beoordeeld. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is fiscaal het verschil tussen dga-salaris en dividend?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Salaris is loon voor de loonheffingen en box 1; kwalificerend dividend valt na de vennootschappelijke aspecten in box 2. Ook regels voor gebruikelijk loon en vennootschapsbelasting spelen mee. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Worden Bitcoin en andere cryptovaluta in Nederland belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gewone privécryptobezittingen vallen vaak in box 3. Minen, beloningen of beroepsmatige activiteiten kunnen tot een andere indeling leiden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Betaal ik belasting wanneer ik cryptovaluta verkoop of omwissel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bij gewone box 3-bezittingen ontstaat niet automatisch een afzonderlijke vermogenswinstbelasting door verkoop of ruil. De transactie is wel relevant voor werkelijk rendement en de vermogenswaarde. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Telt ongerealiseerde cryptowinst mee voor werkelijk rendement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Doorgaans wel. De jaarlijkse verandering in de eurowaarde van relevante cryptobezittingen kan meetellen zonder dat tokens zijn verkocht. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kunnen verliezen op cryptovaluta mijn werkelijke box 3-rendement verlagen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Verlies op relevante box 3-bezittingen kan binnen hetzelfde jaar andere werkelijke box 3-opbrengsten compenseren. Een negatief totaal is doorgaans niet overdraagbaar. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke waarde en wisselkoers gebruik ik voor mijn cryptovaluta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gebruik een consistente, onderbouwde eurowaardering op de benodigde data en transactiemomenten. Leg de koersbron en berekeningswijze vast. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe worden opbrengsten uit staking en mining belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Beloningen kunnen box 3-opbrengsten zijn of box 1-inkomen als de activiteit een arbeids- of ondernemingskarakter heeft. De ontstaanswijze en het latere bezit zijn van belang. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vallen NFT's en stablecoins in box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Als privébezit met economische waarde kunnen ze in box 3 vallen, afhankelijk van indeling en waardering. De naam stablecoin maakt een token niet automatisch tot een banktegoed. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Moet ik cryptovaluta op buitenlandse platforms of in een hardwarewallet aangeven?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bewaarplaats en land van het platform halen een bezitting niet automatisch uit de Nederlandse belastingbeoordeling. Breng alle wallet- en platformsaldi bijeen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke cryptogegevens moet ik bewaren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bewaar walletadressen, platformoverzichten, stortingen, opnames, transacties, beloningen en eurowaarderingen gedurende het jaar. Daarmee kunt u overboekingen van opbrengsten onderscheiden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan professionele cryptohandel in box 1 worden belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Activiteiten die verder gaan dan gewoon privébeleggen kunnen box 1-inkomen opleveren. Arbeid, organisatie, kennis en winstverwachting bepalen mede de indeling. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Betaal ik belasting over vermogenswinst bij verkoop van mijn eigen woning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een normale verkoop van een eigen hoofdwoning leidt doorgaans niet tot een afzonderlijke heffing over beleggingswinst. Overwaarde kan wel gevolgen hebben voor hypotheekrenteaftrek op een volgende woning. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is de bijleenregeling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat is de eigenwoningreserve-regel waardoor na verkoop van een eerdere eigen woning met overwaarde de aftrekbare rente op een lening voor een nieuwe eigen woning kan worden beperkt. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Valt mijn hoofdwoning in box 1 of box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een kwalificerende eigen hoofdwoning wordt doorgaans in box 1 behandeld. Een tweede woning is meestal een bezitting in box 3. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe wordt een tweede woning of vakantiewoning belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een relevante tweede woning valt doorgaans in box 3, met specifieke waarderings- en schuldregels. Bij werkelijk rendement kunnen huur, waardeverandering en vanaf 2026 een bijtelling voor eigen gebruik meetellen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe worden inkomsten uit verhuurd vastgoed belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gewoon privéverhuurvastgoed wordt vaak in box 3 beoordeeld; bij werkelijk rendement kunnen huur en waardeverandering meetellen. Extra diensten of ondernemingsactiviteiten kunnen een andere indeling geven. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe wordt buitenlands vastgoed van een Nederlandse inwoner belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Buitenlands vastgoed moet mogelijk in de Nederlandse aangifte worden vermeld, met verdragsvermindering waar van toepassing. Land, fiscale woonplaats en gebruik zijn van belang. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke waarde gebruik ik voor een tweede woning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gebruik voor fictief box 3-rendement de voorgeschreven waarde op de toepasselijke peildatum. Voor werkelijk rendement kunnen waarden gedurende het jaar nodig zijn; binnen- en buitenlands vastgoed kennen verschillende regels. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik een hypotheek op een tweede woning aftrekken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een kwalificerende schuld kan na de schuldendrempel de box 3-grondslag verlagen; de rente kan bij werkelijk rendement relevant zijn. Dit is doorgaans niet de hypotheekrenteaftrek voor de eigen woning. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat gebeurt er fiscaal als ik een tweede woning verkoop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bij een box 3-bezitting geldt in de fictieve methode doorgaans geen afzonderlijke heffing over de verkoopwinst, maar verkoop en waardeverandering kunnen het werkelijke rendement beïnvloeden. Handel met een zakelijk karakter kan anders uitpakken. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wordt het opknappen en doorverkopen van woningen als arbeidsinkomen belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Veelvuldige of sterk georganiseerde vastgoedhandel kan afhankelijk van de feiten winst uit onderneming of resultaat uit overige werkzaamheden in box 1 zijn. Een vast aantal transacties beslist dit niet. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Heeft eigen gebruik van een vakantiewoning invloed op werkelijk rendement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Voor 2026 kan een voorgeschreven bijtelling gelden voor dagen waarop de woning voor eigen gebruik beschikbaar is. Voor verhuurde dagen geldt de behandeling van huurinkomsten. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is een fiscale partner in Nederland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een fiscale partner is iemand die voor een belastingjaar voldoet aan de wettelijke voorwaarden voor relatie en huishouden. Huwelijk voldoet doorgaans; ongehuwde partners moeten aan specifieke criteria voldoen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kunnen ongehuwde stellen fiscale partners zijn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, mits zij aan de toepasselijke voorwaarden voor gezamenlijk huishouden en juridische band voldoen. Alleen hetzelfde woonadres kan onvoldoende zijn. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Verandert het salaris van mijn partner mijn box 1-belasting over loon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ieders loon wordt doorgaans belast bij degene die het verdient. Partnerschap kan wel invloed hebben op de verdeling van gezamenlijke posten en inkomensafhankelijke regelingen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kunnen fiscale partners hun box 3-vrijstellingen samenvoegen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kwalificerende partners kunnen bij fictief rendement samen een vrijstelling van grofweg het dubbele individuele bedrag gebruiken en de gezamenlijke box 3-grondslag verdelen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kunnen partners box 3-bezittingen en inkomen onderling verdelen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bepaalde gezamenlijke box 3-posten kunnen in de aangifte worden verdeeld volgens de partnerregels. Eigendom en het opgeven van werkelijk rendement vragen daarbij aparte aandacht. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kunnen fiscale partners hun salaris onderling verdelen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Loon blijft doorgaans bij de werknemer die het verdiende. Alleen daarvoor in aanmerking komende gezamenlijke belastingposten zijn te verdelen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan een partner de ongebruikte heffingskorting van de ander benutten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Overdracht of uitbetaling van ongebruikte kortingen is beperkt en hangt af van overgangsrecht, leeftijd en gezinssituatie. Ga niet uit van automatische overdracht. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kunnen partners de hypotheekrenteaftrek onderling verdelen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In aanmerking komende inkomsten en aftrekposten van de eigen woning kunnen fiscale partners vaak in de aangifte verdelen. Vergelijk de gezamenlijke uitkomst. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat als wij in de loop van het jaar fiscale partners worden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voor bepaalde posten kunt u mogelijk kiezen voor behandeling alsof u het hele jaar partners was. De precieze data en voorwaarden bepalen het effect op de vrijstelling. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kunnen wij de verdeling na het indienen van de aangifte wijzigen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Correcties kunnen mogelijk zijn zolang de aanslagen en wijzigingstermijnen dat toelaten. Bewaar de oorspronkelijke verdeling en controleer beide aangiften samen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ik woon in Nederland en heb beleggingen in het buitenland: waar betaal ik belasting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een Nederlandse fiscale inwoner geeft doorgaans wereldwijd vermogen en inkomen op en onderzoekt daarna verdragsregels en voorkoming van dubbele belasting. Buitenlandse bronheffing vraagt soms een aparte beoordeling. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Moet ik buitenlandse bank- en effectenrekeningen aangeven?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die zijn doorgaans relevant voor de vermogens- en inkomensaangifte van een Nederlandse fiscale inwoner, ook als de rekening buiten Nederland ligt. Vergelijk vooraf ingevulde gegevens met buitenlandse overzichten. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat betekent een belastingverdrag voor mijn beleggingen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een verdrag kan heffingsrechten verdelen en bronbelasting beperken. Nationale voorkomingsregels behandelen mogelijke overlap; het antwoord hangt af van de bezitting en het andere land. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik vermindering krijgen voor in het buitenland betaalde belasting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een verrekening, vrijstelling of teruggaaf in het bronland kan onder voorwaarden en binnen grenzen mogelijk zijn. Voor dividend en vastgoed gelden verschillende regels. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat bepaalt of ik fiscaal inwoner van Nederland ben?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De beoordeling kijkt naar alle feitelijke banden, waaronder woning, gezin en werk, en eventueel naar een verdragsregel bij dubbele woonplaats. Inschrijving alleen beslist dit niet. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat gebeurt er fiscaal in het jaar waarin ik naar of uit Nederland verhuis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voor de perioden als inwoner en niet-inwoner kunnen andere regels gelden voor inkomen en vermogen. De aangifte voor het verhuisjaar heeft bijzondere rubrieken. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is een M-aangifte?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat is de Nederlandse aangifte voor een jaar waarin u naar Nederland immigreert of uit Nederland emigreert, met vragen over de verschillende woonperioden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Stelt de expatregeling mijn buitenlandse beleggingen vrij van box 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De onbelaste loonvergoeding van de expatregeling geeft op zichzelf geen vrijstelling voor buitenlandse bezittingen. Voor bepaalde eerdere gebruikers kan nog beperkt overgangsrecht voor partiële buitenlandse belastingplicht gelden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kunnen nieuwe gebruikers van de expatregeling kiezen voor partiële buitenlandse belastingplicht?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voor nieuwe gevallen is die keuze vanaf 2025 vervallen. Beperkt overgangsrecht kan voor daarvoor kwalificerende eerdere gebruikers nog tot en met 2026 gelden. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat verandert er als het overgangsrecht voor partiële buitenlandse belastingplicht eindigt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Buitenlandse posities in box 2 of box 3 kunnen dan anders in de Nederlandse aangifte worden behandeld. Controleer het belastingjaar en het toepasselijke verdrag. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe worden buitenlandse pensioenen belast of ingedeeld?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een buitenlands pensioen kan als pensioeninkomen in box 1 vallen of volgens verdrag en nationale regels anders worden behandeld. Deel het niet uitsluitend op basis van de rekeningvorm bij beleggingen in. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Worden bezittingen die ik vóór immigratie kocht daarna belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een eerdere aankoop stelt de bezitting niet automatisch vrij van latere Nederlandse belastingregels. Waardering tijdens de woonperiode en verdragen bepalen de relevante behandeling. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat gebeurt er met een aanmerkelijk belang als ik emigreer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een conserverende aanslag en verdragsregels kunnen gelden. Latere dividenduitkeringen, verkopen en betalingen kunnen daarop doorwerken. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoeveel totale belasting betaal ik mogelijk bij ongeveer € 80.000 salaris en € 200.000 beleggingen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bereken salaris volgens box 1 en relevante beleggingen volgens box 3 en combineer de uitkomsten na kortingen, inhoudingen en verminderingen. Vermogensmix, pensioen en partnerschap kunnen de uitkomst met vele duizenden euro's veranderen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Duwen beleggingswinsten mijn salaris in de hoogste box 1-schijf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Box 3-rendement verplaatst uw salaris op zichzelf niet naar een hogere box 1-schijf. Het verzamelinkomen kan wel invloed hebben op de algemene heffingskorting en bepaalde toeslagen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Beïnvloedt mijn salaris het box 3-tarief?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Salaris verandert het wettelijke box 3-tarief niet, maar kan via heffingskortingen het uiteindelijke totaal beïnvloeden. De vermogensmix bepaalt het fictieve rendement. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Worden salaris en vermogenswinsten tegen één tarief belast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De belastingboxen hebben afzonderlijke berekeningen; niet alles valt onder één loonbelastingtarief. Het verzamelinkomen kan wel tellen voor bepaalde kortingen en regelingen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vermindert inkomen in box 2 of box 3 mijn algemene heffingskorting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat kan. De algemene heffingskorting hangt af van het verzamelinkomen over de boxen, zodat extra belastbaar inkomen de korting kan verlagen hoewel de boxtarieven apart blijven. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is verzamelinkomen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat is het gezamenlijke belastbare inkomen over de Nederlandse belastingboxen na relevante aftrekposten, met eventuele bijzondere aanpassingen voor specifieke regelingen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke inkomsten en bezittingen tellen mee voor toeslagen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Iedere toeslag heeft eigen regels voor inkomen en soms vermogen, vaak inclusief de gegevens van een partner. Een hoger box 3-vermogen kan de aanspraak veranderen los van de loonbelastingschijf. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kunnen box 3-verliezen mijn belasting over salaris verlagen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een negatief werkelijk rendement in box 3 wordt doorgaans niet verrekend met salaris in box 1. Onderzoek verlies- en verminderingsregels per box. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik box 2-verliezen verrekenen met salaris in box 1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Box 2-verliezen volgen doorgaans eigen verrekeningsregels en verminderen niet eenvoudigweg het salaris. Voor beperkte situaties kunnen omzettingsregels bestaan. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat als ik in hetzelfde jaar salaris, dividend en beleggingen heb?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Deel salaris in bij box 1, dividend volgens de box van het aandelenbelang en gewone beleggingen in box 3. Verreken daarna inhoudingen, heffingskortingen en buitenlandse belastingvermindering. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe nauwkeurig is een Nederlandse belastingcalculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De uitkomst blijft een schatting tenzij belastingjaar, leeftijd, woonplaats, loonadministratie, kortingen, pensioen, vermogen, schulden en bewijs van werkelijk rendement juist zijn verwerkt. De aanslag kan afwijken. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welk belastingjaar moet de calculator gebruiken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gebruik het jaar waarin loon of relevant beleggingsrendement ontstaat. Schijfgrenzen, heffingskortingen, vrijstellingen en expatnormen kunnen per jaar veranderen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bevat een salariscalculator premies volksverzekeringen en heffingskortingen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De calculator moet duidelijk aangeven of de relevante premies en heffingskortingen van box 1 zijn verwerkt. Anders is een vergelijking met een loonstrook misleidend. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Moet een calculator vakantiegeld, bonussen en pensioenpremies meenemen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, als aparte invoer of duidelijk vermelde aannames. De hoogte en het betaalmoment kunnen het geschatte jaarlijkse nettoinkomen aanzienlijk veranderen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Moet een calculator bijtelling voor een auto en hypotheekrenteaftrek meenemen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alleen als daarvoor geschikte invoervelden en de juiste regels voor het gekozen jaar aanwezig zijn. Een eenvoudige bruto-nettoschatting kan deze belangrijke posten overslaan. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Moet een beleggingscalculator fictief en werkelijk box 3-rendement vergelijken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, waar het gekozen jaar opgave van werkelijk rendement mogelijk maakt. De vergelijking moet de officiële regels voor bezittingen, schulden, kosten en eventueel eigen gebruik van vastgoed volgen. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Waarom verschilt de calculator van Mijn Belastingdienst?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Het officiële systeem kan vooraf ingevulde gegevens, definitieve percentages en persoonlijke feiten gebruiken die een algemene schatting mist. Controleer iedere invoer en aanslagregel. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is de uitkomst van een calculator een definitieve belastingaanslag?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nee. Loonheffing en calculatoruitkomsten zijn schattingen of voorheffingen. De Belastingdienst bepaalt de uiteindelijke aanslag volgens de toepasselijke wetgeving. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Moet ik vermogenswaarden van januari of december invullen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Voor de fictieve box 3-berekening zijn doorgaans waarden op de peildatum aan het begin van het jaar nodig. Voor werkelijk rendement zijn ook relevante eindwaarden en transacties nodig. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik verschillende belastingjaren of expatscenario's vergelijken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, mits elk scenario de vastgestelde regels van het eigen belastingjaar en verder dezelfde feiten gebruikt. Pas de drempels van het ene jaar niet op een ander jaar toe. Raadpleeg een gekwalificeerde Nederlandse belastingadviseur voor advies dat past bij uw situatie."
+      }
+    }
+  ]
+}

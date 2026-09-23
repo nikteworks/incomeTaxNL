@@ -1,4 +1,5 @@
 import { languageCanonical } from '../utils/urlState.js'
+import { faqByLanguage } from './faq.js'
 
 export const pageCopy = {
   en: {
@@ -8,6 +9,8 @@ export const pageCopy = {
     introduction: 'Estimate gross-to-net salary in Box 1 (2019–2026), or savings and investment tax in Box 3 (2023–2026). Enter salary per year, month, week, day or hour.',
     loading: 'Loading calculator…',
     noScript: 'Enable JavaScript to use the interactive calculator.',
+    faqTitle: 'Frequently asked questions',
+    faqIntro: 'General answers about Dutch tax in 2026. The calculator estimates Box 1 salary and Box 3 tax; other topics below are for information only.',
   },
   nl: {
     title: 'Bruto-netto salaris en belasting berekenen | incomeTaxNL',
@@ -16,6 +19,8 @@ export const pageCopy = {
     introduction: 'Schat uw nettoloon in Box 1 (2019–2026), of uw belasting over sparen en beleggen in Box 3 (2023–2026). Vul uw salaris per jaar, maand, week, dag of uur in.',
     loading: 'Rekenhulp laden…',
     noScript: 'Schakel JavaScript in om de interactieve rekenhulp te gebruiken.',
+    faqTitle: 'Veelgestelde vragen',
+    faqIntro: 'Algemene antwoorden over Nederlandse belastingen in 2026. De rekenhulp schat loon in box 1 en belasting in box 3; andere onderwerpen hieronder zijn alleen ter informatie.',
   },
 }
 
@@ -51,6 +56,7 @@ export function metadata(language) {
       inLanguage: language,
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
     },
+    faqStructuredData: { ...faqByLanguage[language], url: canonical },
   }
 }
 
@@ -70,9 +76,14 @@ export function updateMetadata(language, document) {
       if (!element.parentNode) document.head.append(element)
     }
   }
-  const script = document.getElementById('page-structured-data') || document.createElement('script')
-  script.id = 'page-structured-data'
-  script.type = 'application/ld+json'
-  script.textContent = JSON.stringify(data.structuredData)
-  if (!script.parentNode) document.head.append(script)
+  for (const [id, structuredData] of [
+    ['page-structured-data', data.structuredData],
+    ['faq-structured-data', data.faqStructuredData],
+  ]) {
+    const script = document.getElementById(id) || document.createElement('script')
+    script.id = id
+    script.type = 'application/ld+json'
+    script.textContent = JSON.stringify(structuredData)
+    if (!script.parentNode) document.head.append(script)
+  }
 }
