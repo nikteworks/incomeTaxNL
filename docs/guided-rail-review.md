@@ -1,16 +1,20 @@
-# Issue #28: frontend shell review
+# Issue #28: Guided Rail implementation
 
-This is the first implementation milestone for [issue #28](https://github.com/nikteworks/incomeTaxNL/issues/28). Human review comes before edits and final field wiring.
+The frontend shell was reviewed and the requested modal, disclosure, main-form, tooltip, and compact period edits were applied. The user subsequently authorized final calculation wiring.
 
-## Open the shell
+## Open the calculator
 
-From `frontend`, run `npm run dev` and open `/?preview=guided-rail` on the local server. Add `&lang=nl` for Dutch, or use the header language control. The preview is development-only; the existing production calculator remains the default.
+From `frontend`, run `npm run dev` and open `/`. Add `?lang=nl` for Dutch, or use the header language control. The old `?preview=guided-rail` link also opens the live calculator; there is no separate mock calculator.
 
-The shell uses temporary component state. It does not read or write saved calculator inputs or calculate estimates. Result amounts deliberately remain unavailable. Changing an input period currently selects a period without converting salary.
+Both modes use the existing tax packages, saved inputs and configuration. Result display defaults to monthly for Box 1 and annual for Box 3. Input period changes keep a canonical annual amount, so rounding the displayed amount does not accumulate errors across period switches or reloads. Editing income or hourly hours establishes a new annual amount. The package's holiday allowance semantics are preserved, with its separate holiday deduction shown when applicable. The ruling amount uses the package's euro-valued `taxFreeYear`, not its percentage-valued `taxFree` field.
+
+Box 3 configuration is persisted, uses one authoritative tax year, and converts percentages at the dialog boundary. Entry Save commits pending adds/edits; cancel or dismissal protects unsaved entry changes. Empty and invalid inputs show an unavailable result, while an explicitly entered zero asset balance can produce a valid zero estimate.
+
+The prerendered introduction, calculator links, FAQ and structured data remain available without JavaScript. After hydration, the compact rail replaces the introductory fallback and the FAQ starts collapsed. The separate calculation explanation section is removed as requested.
 
 ## Review the interface
 
-- Switch between Box 1 and Box 3; entered preview values remain in place.
+- Switch between Box 1 and Box 3; entered values remain in place.
 - Inspect all salary periods and 30% ruling categories in the main form, the Advanced Options modal (tax year, hourly hours, pension age, social security), and reset confirmation.
 - Open each Box 3 account/debt group, Manage entries, tax-partner controls, and the configuration dialog.
 - Expand the tax calculation and use the category filters.
@@ -18,18 +22,14 @@ The shell uses temporary component state. It does not read or write saved calcul
 - Review the language switch, About/Help/GitHub controls, disclaimer, Credits, and Terms of Use.
 - Check the rail width, spacing, text, and mobile stacking.
 
-## After human review
-
-Apply the requested design edits, then connect the approved layout to the existing calculator hooks and settings. Complete period conversions, input validation/error states, synchronized headline/ledger/breakdown totals, net/gross percentage, persistence, URL behavior, and production integration. Preserve prerendered explanations and FAQ structured data. Review inherited dialog content/localization during that integration.
-
-## Shell verification
+## Historical shell verification
 
 - ESLint and production client/SSR/prerender build pass.
 - Existing Node test suite: 27 passing tests.
 - Browser checks in English and Dutch at 390, 768, and 1440 px: both modes, advanced controls, tax disclosure, FAQ coordination, keyboard focus, settings and entries dialogs, and no horizontal overflow.
 - Preview values survive mode and language switches; footer dialogs open. No browser JavaScript errors were observed.
 
-Tax correctness and saved-state integration are intentionally not claimed for this unwired preview.
+These initial checks covered the shell only; calculation integration is covered by the tests described below.
 
 ## Shared modal shell
 
@@ -46,3 +46,10 @@ Validation: eight browser tests cover English/Dutch dialogs at 390/768/1440 px, 
 - Replaced the Box 3 settings gear with an Advanced Options link and separated section headings, floating field labels, helper text, and field groups in its modal.
 - Moved Box 1 Advanced Options into the shared modal. All income periods and the 30% ruling/category controls now live in the main form; the modal contains no duplicate period selector.
 - Verified English/Dutch at 390, 768, and 1440 px. Ten modal browser tests cover focus, dismissal guards, field persistence, and configuration label spacing. Lint, production build/prerender, and all 27 Node tests pass. Calculator wiring remains deferred.
+
+## Calculation integration verification
+
+- Node coverage checks period round trips (including small amounts), edits to converted inputs, and invalid persisted data.
+- Browser tests compare headline, compact view, ledger and breakdown values directly with both installed calculation packages, including ruling categories, holiday allowance, pension age, social security, hourly hours, partner status, tax year and custom Box 3 rates.
+- Browser coverage also exercises entry add/edit/delete, unchanged configuration saves, reloads, resets, invalid inputs, filters, FAQ keyboard focus, localized metadata/FAQ, all shared modals, and populated layouts at 390/768/1440 px.
+- Changes are local to the issue branch; no deployment is performed.

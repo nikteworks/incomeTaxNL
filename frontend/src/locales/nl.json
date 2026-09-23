@@ -99,7 +99,9 @@
     "generalTaxCredit": "Algemene heffingskorting",
     "generalTaxCreditInfo": "Algemene heffingskorting - basiskorting voor alle belastingplichtigen.",
     "labourTaxCredit": "Arbeidskorting",
-    "labourTaxCreditInfo": "Arbeidskorting - korting voor werkenden."
+    "labourTaxCreditInfo": "Arbeidskorting - korting voor werkenden.",
+    "holidayAllowance": "Vakantiegeld (inbegrepen)",
+    "holidayAllowanceInfo": "Vakantiegeld volgens de calculator. Bij de 30%-regeling blijft dit onderdeel van het arbeidsinkomen voor de berekening."
   },
   "box3Result": {
     "results": "Resultaten",
@@ -125,7 +127,14 @@
     "showBreakdown": "Toon uitsplitsing",
     "hideBreakdown": "Verberg uitsplitsing",
     "actualReturnDisclaimer": "Deze rekenhulp berekent of vergelijkt geen werkelijk rendement. De Belastingdienst kan het werkelijk rendement gebruiken als dat voordeliger is. De voorwaarden en de manier van doorgeven hangen af van het belastingjaar.",
-    "learnMore": "Meer informatie"
+    "learnMore": "Meer informatie",
+    "debtThreshold": "Schuldendrempel",
+    "bankReturns": "Forfaitair rendement banktegoeden",
+    "investmentReturns": "Forfaitair rendement beleggingen",
+    "debtCosts": "Aftrekbare schuldenkosten",
+    "taxableReturns": "Rendement na schuldenkosten",
+    "taxableIncome": "Belastbaar inkomen uit sparen en beleggen",
+    "taxableShare": "Belastbaar aandeel"
   },
   "box3Form": {
     "bankAccounts": "Bankrekeningen",
@@ -153,7 +162,8 @@
     "delete": "Verwijderen",
     "save": "Opslaan",
     "cancel": "Annuleren",
-    "amount": "Bedrag"
+    "amount": "Bedrag",
+    "manageEntries": "Gegevens beheren"
   },
   "config": {
     "title": "Box 3 Belastingconfiguratie",
@@ -270,7 +280,6 @@
     "limitsText": "Deze rekenhulp berekent bruto naar netto, niet netto naar bruto. Er zijn geen invoervelden voor pensioeninhoudingen, hypotheekrenteaftrek, ander inkomen of een volledige belastingaangifte. De opties voor leeftijd en volksverzekeringen zijn vereenvoudigd; in het jaar waarin u de AOW-leeftijd bereikt, kan een andere berekening nodig zijn. Box 1 en Box 3 zijn afzonderlijke schattingen; Box 3-inkomen wordt niet gebruikt om de heffingskortingen in Box 1 opnieuw te berekenen. Vergelijk het resultaat met uw loonstrook en de officiële regels voor uw belastingjaar."
   },
   "guidedRail": {
-    "preview": "Ontwerpbeoordeling · Velden zijn tijdelijk; berekeningen zijn nog niet gekoppeld.",
     "salary": "Salaris vóór belasting",
     "salaryHelp": "Gebruik het brutobedrag op je contract of loonstrook.",
     "holidayHelp": "Vink dit aan als je ingevoerde salaris al 8% vakantiegeld bevat.",
@@ -282,10 +291,15 @@
     "gross": "Brutosalaris",
     "expand": "Resultaten uitklappen",
     "collapse": "Resultaten minimaliseren",
-    "monthlyNote": "Het maandgemiddelde spreidt het jaarlijkse vakantiegeld over 12 maanden, ook als het apart wordt uitbetaald.",
-    "pending": "Bedragen verschijnen zodra de calculator is gekoppeld.",
     "ratio": "Netto / bruto",
     "filter": "Berekeningsonderdelen filteren",
-    "inputs": "Calculatorinvoer"
+    "inputs": "Calculatorinvoer",
+    "emptySalary": "Vul je salaris in om een schatting te zien.",
+    "invalidSalary": "Vul een positief salaris en geldige uren per week in om je schatting te berekenen.",
+    "emptyAssets": "Voeg je spaargeld, beleggingen of schulden toe om een schatting te zien.",
+    "invalidAssets": "Controleer je opgeslagen bedragen en belastinginstellingen voor de berekening.",
+    "invalidHours": "Vul meer dan 0 en maximaal 168 uren per week in.",
+    "periodNote": "Alle bedragen gebruiken de gekozen periode. Maand- en weekbedragen zijn gemiddelden van de jaarberekening.",
+    "holidayNote": "De calculator houdt het inbegrepen vakantiegeld apart van het reguliere nettoloon."
   }
 }

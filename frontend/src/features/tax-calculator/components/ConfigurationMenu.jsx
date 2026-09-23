@@ -12,18 +12,20 @@ import {
   MenuItem,
 } from '@mui/material'
 import RestoreIcon from '@mui/icons-material/Restore'
-import { BOX3_DEFAULTS, BOX3_DEFAULTS_BY_YEAR, AVAILABLE_YEARS, getDefaultsForYear } from 'dutch-tax-box3-calculator'
+import { BOX3_DEFAULTS, AVAILABLE_YEARS, getDefaultsForYear } from 'dutch-tax-box3-calculator'
 import { useLanguage } from '../../../context/LanguageContext'
 import './ConfigurationMenu.css'
+
+const toDraft = config => ({ ...config, taxRate: String(Number((config.taxRate * 100).toFixed(10))), assumedReturnRates: Object.fromEntries(Object.entries(config.assumedReturnRates).map(([key, value]) => [key, String(Number((value * 100).toFixed(10)))])) })
 
 function ConfigurationMenu({ config, onConfigChange }) {
   const { t } = useLanguage()
   const [open, setOpen] = useState(false)
-  const [localConfig, setLocalConfig] = useState(config)
+  const [localConfig, setLocalConfig] = useState(() => toDraft(config))
   const [errors, setErrors] = useState({})
 
   const handleOpen = () => {
-    setLocalConfig(config)
+    setLocalConfig(toDraft(config))
     setErrors({})
     setOpen(true)
   }
@@ -34,7 +36,7 @@ function ConfigurationMenu({ config, onConfigChange }) {
 
   const validateField = (path, value) => {
     const numValue = Number(value)
-    if (value === '' || Number.isNaN(numValue)) {
+    if (value === '' || !Number.isFinite(numValue)) {
       return t('config.validNumber')
     }
     if (path.includes('Rate') && (numValue < 0 || numValue > 100)) {
@@ -74,7 +76,7 @@ function ConfigurationMenu({ config, onConfigChange }) {
   const handleResetDefaults = () => {
     const year = localConfig.year || BOX3_DEFAULTS.year
     const yearDefaults = getDefaultsForYear(year)
-    setLocalConfig({ year, ...yearDefaults })
+    setLocalConfig(toDraft({ year, ...yearDefaults }))
     setErrors({})
   }
 
@@ -82,7 +84,7 @@ function ConfigurationMenu({ config, onConfigChange }) {
     const yearNum = Number(newYear)
     const yearDefaults = getDefaultsForYear(yearNum)
     // When year changes, load that year's defaults
-    setLocalConfig({ year: yearNum, ...yearDefaults })
+    setLocalConfig(toDraft({ year: yearNum, ...yearDefaults }))
     setErrors({})
   }
 
@@ -110,22 +112,7 @@ function ConfigurationMenu({ config, onConfigChange }) {
     setOpen(false)
   }
 
-  // Convert rates from decimals to percentages for display
-  const displayConfig = {
-    ...localConfig,
-    taxRate: typeof localConfig.taxRate === 'number' ? localConfig.taxRate * 100 : localConfig.taxRate,
-    assumedReturnRates: {
-      bankBalance: typeof localConfig.assumedReturnRates?.bankBalance === 'number' 
-        ? localConfig.assumedReturnRates.bankBalance * 100 
-        : localConfig.assumedReturnRates?.bankBalance,
-      investmentAssets: typeof localConfig.assumedReturnRates?.investmentAssets === 'number'
-        ? localConfig.assumedReturnRates.investmentAssets * 100
-        : localConfig.assumedReturnRates?.investmentAssets,
-      debts: typeof localConfig.assumedReturnRates?.debts === 'number'
-        ? localConfig.assumedReturnRates.debts * 100
-        : localConfig.assumedReturnRates?.debts,
-    },
-  }
+  const displayConfig = localConfig
 
   return (
     <>

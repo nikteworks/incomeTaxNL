@@ -21,7 +21,6 @@
 .guided-page-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 .app-shell--guided .app-notice { min-height: 36px; padding: 6px 20px; font-size: 12px; }
 .app-shell--guided .app-notice__link { font-size: inherit; }
-.guided-preview-note { margin: 0; padding: 10px 32px; font-size: 13px; background: #e3eaf4; border-bottom: 1px solid #cbd4df; color: #465770; }
 .guided-rail { display: grid; grid-template-columns: 375px minmax(0, 1fr); width: 100%; }
 .guided-inputs { background: #e3eaf4; padding: 28px 28px 36px; min-width: 0; }
 .guided-reading { padding: 28px 48px 44px; min-width: 0; max-width: 1000px; width: 100%; margin-inline: auto; }
@@ -114,7 +113,6 @@
   .app-shell--guided .app-header { padding: 16px 20px; }
   .app-shell--guided .app-header__nav { gap: 10px; }
   .app-shell--guided .app-brand { font-size: 19px; }
-  .guided-preview-note { padding: 10px 24px; }
   .guided-result-heading { flex-wrap: wrap; }
   .guided-headline h3 { font-size: 16px; }
   .guided-headline--compact { gap: 16px; }
@@ -132,3 +130,15 @@
 }
 .guided-inputs .tax-form__actions-grid { justify-content: space-between; }
 .guided-inputs .box1-form__main-ruling { margin-top: 8px; }
+
+.guided-ratio { flex-basis: 100%; margin-top: 18px; font-size: 13px; }
+.guided-ratio > span { display: flex; justify-content: space-between; gap: 12px; }
+.guided-ratio meter { width: 100%; height: 10px; margin-top: 8px; }
+.guided-ratio meter::-webkit-meter-bar { background: #465770; border: 0; }
+.guided-ratio meter::-webkit-meter-optimum-value { background: #a9c5ff; }
+.guided-ratio meter::-moz-meter-bar { background: #a9c5ff; }
+.guided-amount strong { overflow-wrap: anywhere; min-width: 0; }
+.guided-headline > div { min-width: 0; max-width: 100%; }
+.guided-ledger-row strong, .guided-tax-row strong, .guided-detail-row strong { max-width: 60%; overflow-wrap: anywhere; text-align: right; }
+.guided-basic-fields input[aria-invalid='true'] { color: #a32929; }
+@media (max-width: 1050px) { .guided-amount strong { font-size: 36px; } }

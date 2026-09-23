@@ -48,7 +48,7 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
       return
     }
     const numVal = parseFloat(val)
-    if (!Number.isNaN(numVal) && numVal >= 0) {
+    if (!Number.isNaN(numVal)) {
       handleInputChange(field, numVal)
     }
   }, [handleInputChange])
@@ -93,9 +93,9 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
           <label htmlFor="guided-salary">{t('guidedRail.salary')}</label>
           <div className="guided-salary-input"><span aria-hidden="true">€</span><input
             id="guided-salary" type="number" min="0.01" step="any" value={values.grossIncome}
-            onChange={handleNumberChange('grossIncome')} aria-describedby="guided-salary-help"
+            onChange={handleNumberChange('grossIncome')} aria-describedby="guided-salary-help" aria-invalid={values.grossIncome !== '' && (!Number.isFinite(Number(values.grossIncome)) || Number(values.grossIncome) <= 0)}
           /></div>
-          <p id="guided-salary-help">{t('guidedRail.salaryHelp')}</p>
+          <p id="guided-salary-help">{values.grossIncome !== '' && Number(values.grossIncome) <= 0 ? t('guidedRail.invalidSalary') : t('guidedRail.salaryHelp')}</p>
           <div className="guided-income-period">
             <label htmlFor="guided-income-period">{t('box1Form.period')}</label>
             <select id="guided-income-period" value={values.period} onChange={handleSelectChange('period')}>
@@ -115,7 +115,6 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
 
         </div>
       )}
-      {/* Keep the default calculator input layout during design review. */}
       {!guided && <>
       <div className="box1-form__income-row">
         <TextField
@@ -222,7 +221,8 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
               InputProps={{
                 endAdornment: <InputAdornment position="end">{t('box1Form.hoursUnit')}</InputAdornment>,
               }}
-              helperText={t('box1Form.hoursHelperText')}
+              error={!Number.isFinite(Number(values.hoursPerWeek)) || Number(values.hoursPerWeek) <= 0 || Number(values.hoursPerWeek) > 168}
+              helperText={Number(values.hoursPerWeek) > 0 && Number(values.hoursPerWeek) <= 168 ? t('box1Form.hoursHelperText') : t('guidedRail.invalidHours')}
             />
           )}
 
@@ -327,7 +327,7 @@ Box1InputForm.propTypes = {
   values: PropTypes.shape({
     grossIncome: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     period: PropTypes.string,
-    hoursPerWeek: PropTypes.number,
+    hoursPerWeek: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     holidayAllowanceIncluded: PropTypes.bool,
     older: PropTypes.bool,
     ruling30Enabled: PropTypes.bool,

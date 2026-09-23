@@ -6,11 +6,13 @@ import { useLanguage } from '../context/LanguageContext.jsx'
 import CalculatorLink from '../features/tax-calculator/components/CalculatorLink.jsx'
 import LanguageSwitcher from '../components/LanguageSwitcher.jsx'
 import './PrimaryLayout.css'
+import { useHydrated } from '../hooks/useHydrated.js'
 import { pageCopy } from '../seo/metadata.js'
 
 
 function PrimaryLayout({ children, guided = false }) {
   const { t, language } = useLanguage()
+  const hydrated = useHydrated()
   const [showPrivacy, setShowPrivacy] = useState(false)
   const [showInfo, setShowInfo] = useState(false)
   const [showCredits, setShowCredits] = useState(false)
@@ -61,7 +63,7 @@ function PrimaryLayout({ children, guided = false }) {
         {t('app.notice')} <button onClick={() => setShowPrivacy(true)} className="app-notice__link">{t('app.noticeLink')}</button>
       </div>
       <main className="app-main">
-        {guided ? <h1 className="guided-page-title">{pageCopy[language].heading}</h1> : <section className="app-introduction">
+        {guided && hydrated ? <h1 className="guided-page-title">{pageCopy[language].heading}</h1> : <section className="app-introduction">
           <h1>{pageCopy[language].heading}</h1>
           <p>{pageCopy[language].introduction}</p>
           <nav className="calculator-links" aria-label={t('guide.navigation')}>

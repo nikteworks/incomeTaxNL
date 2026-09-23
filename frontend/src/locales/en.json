@@ -99,7 +99,9 @@
     "generalTaxCredit": "General Tax Credit",
     "generalTaxCreditInfo": "Algemene heffingskorting - basic tax credit for all taxpayers.",
     "labourTaxCredit": "Labour Tax Credit",
-    "labourTaxCreditInfo": "Arbeidskorting - credit for employed taxpayers."
+    "labourTaxCreditInfo": "Arbeidskorting - credit for employed taxpayers.",
+    "holidayAllowance": "Holiday allowance (included)",
+    "holidayAllowanceInfo": "Holiday allowance identified by the calculator. With the 30% ruling, it remains part of the employment income used for the calculation."
   },
   "box3Result": {
     "results": "Results",
@@ -125,7 +127,14 @@
     "showBreakdown": "Show Breakdown",
     "hideBreakdown": "Hide Breakdown",
     "actualReturnDisclaimer": "The tool does not calculate or compare actual returns. The Belastingdienst can use actual returns when that gives a lower result; the conditions and reporting process depend on the tax year.",
-    "learnMore": "Learn more"
+    "learnMore": "Learn more",
+    "debtThreshold": "Debt threshold",
+    "bankReturns": "Assumed bank returns",
+    "investmentReturns": "Assumed investment returns",
+    "debtCosts": "Deductible debt costs",
+    "taxableReturns": "Returns after debt costs",
+    "taxableIncome": "Taxable income from savings and investments",
+    "taxableShare": "Taxable share"
   },
   "box3Form": {
     "bankAccounts": "Bank accounts",
@@ -153,7 +162,8 @@
     "delete": "Delete",
     "save": "Save",
     "cancel": "Cancel",
-    "amount": "Amount"
+    "amount": "Amount",
+    "manageEntries": "Manage entries"
   },
   "config": {
     "title": "Box 3 Tax Configuration",
@@ -270,7 +280,6 @@
     "limitsText": "This tool calculates gross-to-net pay, not net-to-gross. It has no inputs for pension deductions, mortgage deductions, other income or a complete tax return. The age and national insurance switches are simplified, and the year you reach state pension age can require a different calculation. Box 1 and Box 3 are separate estimates; Box 3 income is not used to recalculate Box 1 tax credits. Check the result against your payslip and the official rules for your tax year."
   },
   "guidedRail": {
-    "preview": "Design review · Fields are temporary; calculations are not connected.",
     "salary": "Salary before tax",
     "salaryHelp": "Use the gross amount from your contract or payslip.",
     "holidayHelp": "Check this when your entered salary already includes 8% holiday allowance.",
@@ -282,10 +291,15 @@
     "gross": "Gross salary",
     "expand": "Expand results",
     "collapse": "Minimize results",
-    "monthlyNote": "The monthly average spreads annual holiday pay over 12 months, even if it is paid separately.",
-    "pending": "Amounts will appear after the calculator is connected.",
     "ratio": "Net / gross",
     "filter": "Filter calculation components",
-    "inputs": "Calculator inputs"
+    "inputs": "Calculator inputs",
+    "emptySalary": "Enter your salary to see an estimate.",
+    "invalidSalary": "Enter a positive salary and valid hours per week to calculate your estimate.",
+    "emptyAssets": "Add your savings, investments or debts to see an estimate.",
+    "invalidAssets": "Check your saved amounts and tax settings before calculating.",
+    "invalidHours": "Enter hours per week greater than 0 and no more than 168.",
+    "periodNote": "All amounts use the selected period. Monthly and weekly figures are averages of the annual calculation.",
+    "holidayNote": "The calculator separates the included holiday allowance from regular take-home pay."
   }
 }

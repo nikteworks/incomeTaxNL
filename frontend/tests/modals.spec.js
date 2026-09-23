@@ -58,7 +58,7 @@ for (const language of ['en', 'nl']) {
       await inspect(page.getByRole('button', { name: 'Where can I find this information?' }), copy.modals.statementTitle)
       for (const label of [copy.box3Form.bankAccounts, copy.box3Form.investmentAccounts, copy.box3Form.debts]) {
         await page.locator('.tax-form__accordion-summary').filter({ hasText: label }).click()
-        await inspect(page.locator('.tax-form__accordion').filter({ has: page.locator('.tax-form__accordion-summary').filter({ hasText: label }) }).getByRole('button', { name: 'Manage entries' }), label)
+        await inspect(page.locator('.tax-form__accordion').filter({ has: page.locator('.tax-form__accordion-summary').filter({ hasText: label }) }).getByRole('button', { name: copy.box3Form.manageEntries }), label)
       }
       expect(errors).toEqual([])
     })
@@ -69,8 +69,7 @@ for (const language of ['en', 'nl']) {
     await page.goto(`/?lang=${language}&calcType=box1`)
     await page.locator('.box1-form__main-ruling input[type="checkbox"]').check()
     await page.getByRole('radio', { name: copy.box1Form.researchWorker }).check()
-    await page.getByRole('combobox', { name: copy.box1Form.period, exact: false }).click()
-    await page.getByRole('option', { name: copy.periods.hourly, exact: true }).click()
+    await page.getByRole('combobox', { name: copy.box1Form.period, exact: false }).selectOption('hourly')
     const trigger = page.getByRole('button', { name: copy.box1Form.advancedOptions })
     await trigger.click()
     const dialog = page.getByRole('dialog', { name: copy.box1Form.advancedOptions })
@@ -88,7 +87,7 @@ for (const language of ['en', 'nl']) {
     const copy = translations[language]
     await page.goto(`/?lang=${language}&calcType=box3`)
     await page.locator('.tax-form__accordion-summary').first().click()
-    const trigger = page.getByRole('button', { name: 'Manage entries' }).filter({ visible: true })
+    const trigger = page.getByRole('button', { name: copy.box3Form.manageEntries }).filter({ visible: true })
     await trigger.click()
     const entry = page.getByRole('dialog', { name: copy.box3Form.bankAccounts, exact: true })
     await entry.getByLabel(copy.box3Form.accountName).fill('Review savings')

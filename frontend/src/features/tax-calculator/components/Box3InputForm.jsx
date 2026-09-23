@@ -209,7 +209,7 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
     if (!modalState || modalState.type !== 'multiCurrency') return false
     const nameValue = String(modalState.newEntry?.name ?? '').trim()
     const amountValue = String(modalState.newEntry?.amount ?? '').trim()
-    return nameValue !== '' || amountValue !== ''
+    return nameValue !== '' || amountValue !== '' || JSON.stringify(modalState.entries) !== JSON.stringify(getNormalizedEntries(modalState.fieldName))
   }
 
   const closeDialog = (force = false) => {
@@ -235,9 +235,9 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
       } else {
         const numericValue = Number(trimmed)
         if (Number.isNaN(numericValue) || !Number.isFinite(numericValue)) {
-          setAmountError('Please enter a valid number')
+          setAmountError(t('config.validNumber'))
         } else if (numericValue < 0) {
-          setAmountError('Amount cannot be negative')
+          setAmountError(t('config.notNegative'))
         } else {
           setAmountError('')
         }
@@ -337,7 +337,7 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
   }
 
   const handleConfirm = () => {
-    if (!modalState) return
+    if (!modalState || isConfirmDisabled()) return
     const field = fieldLookup.get(modalState.fieldName)
     if (!field) {
       closeDialog()
@@ -355,7 +355,8 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
       const numericValue = Number(trimmedAmount)
       if (!Number.isNaN(numericValue) && Number.isFinite(numericValue) && numericValue >= 0) {
         const nameValue = String(modalState.newEntry?.name ?? '').trim()
-        entries = [...entries, { name: nameValue, amount: numericValue }]
+        const updated = { name: nameValue, amount: numericValue }
+        entries = editingIndex === null ? [...entries, updated] : entries.map((entry, index) => index === editingIndex ? updated : entry)
       }
     }
     const sanitizedEntries = entries
@@ -369,12 +370,13 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
       })
       .filter((entry) => Number.isFinite(entry.amount) && entry.amount >= 0)
     onChange(field.name, sanitizedEntries)
-    closeDialog()
+    closeDialog(true)
   }
 
   const isConfirmDisabled = () => {
     if (!modalState) return true
-    return modalState.type !== 'multiCurrency'
+    const hasDraft = String(modalState.newEntry?.name ?? '').trim() !== '' || String(modalState.newEntry?.amount ?? '').trim() !== '' || editingIndex !== null
+    return modalState.type !== 'multiCurrency' || (hasDraft && isAddDisabled())
   }
 
   const handlePartnerToggle = (_event, value) => {
@@ -403,11 +405,11 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
         <TextField
           select
           size="small"
-          label="Tax year"
+          label={t('box1Form.taxYear')}
           value={year}
           onChange={(e) => onYearChange(Number(e.target.value))}
           className="tax-form__year-select"
-          aria-label="Tax year"
+          aria-label={t('box1Form.taxYear')}
         >
           {AVAILABLE_YEARS.map((y) => (
             <MenuItem key={y} value={y}>
@@ -467,7 +469,7 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
                     startIcon={<AddCircleIcon />}
                     onClick={() => openDialog(field.name)}
                   >
-                    Manage entries
+                    {t('box3Form.manageEntries')}
                   </Button>
                 </div>
               </AccordionDetails>
@@ -487,10 +489,10 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
           className="tax-form__partner-toggle"
           aria-label={t('box3Form.taxPartner')}
         >
-          <ToggleButton value="yes" aria-label="Yes">
+          <ToggleButton value="yes" aria-label={language === 'nl' ? 'Ja' : 'Yes'}>
             {language === 'nl' ? 'Ja' : 'Yes'}
           </ToggleButton>
-          <ToggleButton value="no" aria-label="No">
+          <ToggleButton value="no" aria-label={language === 'nl' ? 'Nee' : 'No'}>
             {language === 'nl' ? 'Nee' : 'No'}
           </ToggleButton>
         </ToggleButtonGroup>

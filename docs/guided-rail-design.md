@@ -1,6 +1,6 @@
 # Guided Rail — tax calculator design
 
-**Status:** design specification for a future implementation. The earlier interactive mockup has been removed from the application. This document defines the intended production design; it does not change the calculator today.
+**Status:** implemented for issue #28 after human review. The Guided Rail is now the production calculator and uses the existing Box 1 and Box 3 calculation packages. The original structure below records the design intent; the accepted review changes in `guided-rail-review.md` supersede its illustrative controls and explanation section.
 
 ## Purpose and direction
 
