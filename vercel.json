@@ -1,4 +1,7 @@
 {
+  "installCommand": "npm ci && npm ci --prefix frontend --include=dev",
+  "buildCommand": "npm run build --prefix frontend",
+  "outputDirectory": "frontend/dist",
   "trailingSlash": true,
   "redirects": [
     {
