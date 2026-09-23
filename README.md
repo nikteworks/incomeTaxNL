@@ -2,21 +2,18 @@
 # incomeTaxNL
 
 
-**Your financial data is your business.** incomeTaxNL is a privacy-focused free and open source tool to estimate Dutch Box 1 and Box 3 taxes. Any data you enter is only stored locally in your browser. All calculations run 100% locally in your browser — your personal financial data is never sent, stored, or collected by this app for any reason.
+**Your financial data is your business.** incomeTaxNL is a free and open source tool to estimate Dutch Box 1 and Box 3 taxes. Calculations run in your browser, and entered values are saved locally. The site uses Vercel Analytics for page visits. A URL containing financial values or account names exposes them to recipients and may appear in browser history or hosting logs.
 
-**Why local-only?**
-- No risk of leaks, hacks, or misuse: your sensitive information never leaves your device.
-- No tracking, no uploads, no analytics: you stay in control of your data.
-- Use incomeTaxNL with confidence for salary and capital gains calculations, knowing your privacy is protected.
+Check any URL before sharing it. Calculations are estimates for guidance, not a personal tax assessment.
 
 ### Box 1 (Salary Calculations)
-![TaxNL Screenshot Box 1](frontend/src/assets/Screenshot_box1.png)
+![TaxNL Screenshot Box 1](docs/screenshots/Screenshot_box1.png)
 
 ### Box 3 (Capital Gains Calculations)
-![TaxNL Screenshot Box 3](frontend/src/assets/Screenshot_box3.png)
+![TaxNL Screenshot Box 3](docs/screenshots/Screenshot_box3.png)
 
 ## Features
-- Privacy-first: Your financial data never leaves your device
+- Local calculations and browser-saved inputs
 - Pick up where you left off - localStorage function stores your input data in your browser. Close your tab confidently!
 - Instantly calculate Dutch salary (Box 1) and capital gains tax (Box 3)
 - Simple, clean input forms for salary, savings, investments, and debts
@@ -62,5 +59,5 @@
 - Dialogs announce counts and totals; focus is managed to reduce tab friction.
 
 ## Privacy & Disclaimer
-- No tracking, no uploads — all computation happens locally.
+- Calculations run locally; Vercel Analytics records page visits. Check URLs before sharing financial values.
 - This tool is for guidance and education only. For personal tax decisions, consult the Belastingdienst or a qualified advisor.
