@@ -19,8 +19,9 @@ share links avoid sending calculation payloads to analytics.
   supplied questions and answers, JSON-LD parity, language switching, and
   canonical metadata without financial values.
 - No preview image is used, so there is no image URL to check on deployment.
-- The Rich Results Test cannot validate this unpublished branch as a live URL.
-  After deployment, test both canonical pages and record the resulting reports.
+- Live URL validation cannot run against this unpublished branch. After
+  deployment, check both canonical pages with Schema Markup Validator for
+  `FAQPage`, and record Rich Results Test results for any still-supported markup.
 - Google discontinued FAQ rich results in May 2026. The `FAQPage` data is retained
   to describe visible content, with no expectation of a special Google display.
 - The supplied tax answers are preserved as provided. A tax subject matter review
