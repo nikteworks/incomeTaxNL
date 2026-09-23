@@ -1,27 +1,23 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { createRoot, hydrateRoot } from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
-import { LanguageProvider, DEFAULT_LANGUAGE } from './context/LanguageContext.jsx'
+import { LanguageProvider } from './context/LanguageContext.jsx'
 import './styles/global.css'
 import App from './app/App.jsx'
 
-function AppWithLanguage() {
-  return (
-    <LanguageProvider>
-      <App />
-    </LanguageProvider>
-  )
-}
-
-createRoot(document.getElementById('root')).render(
+const app = (
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/:lang/*" element={<AppWithLanguage />} />
-        <Route path="*" element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />} />
+        <Route path="/" element={<LanguageProvider><App /></LanguageProvider>} />
+        <Route path="*" element={<main><h1>404 — Page not found</h1><a href="/">Return to calculator</a></main>} />
       </Routes>
     </BrowserRouter>
     <Analytics />
-  </StrictMode>,
+  </StrictMode>
 )
+
+const root = document.getElementById('root')
+if (root.dataset.prerendered) hydrateRoot(root, app)
+else createRoot(root).render(app)

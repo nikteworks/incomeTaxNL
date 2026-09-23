@@ -4,10 +4,11 @@ import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext.jsx'
 import LanguageSwitcher from '../components/LanguageSwitcher.jsx'
 import './PrimaryLayout.css'
+import { pageCopy } from '../seo/metadata.js'
 
 
 function PrimaryLayout({ children }) {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [showPrivacy, setShowPrivacy] = useState(false)
   const [showInfo, setShowInfo] = useState(false)
   const [showCredits, setShowCredits] = useState(false)
@@ -15,7 +16,7 @@ function PrimaryLayout({ children }) {
   return (
     <div className="app-shell">
       <header className="app-header">
-        <h1>{t('app.title')}</h1>
+        <span className="app-brand">{t('app.title')}</span>
         <nav className="app-header__nav">
           <LanguageSwitcher />
           <button
@@ -57,7 +58,7 @@ function PrimaryLayout({ children }) {
       <div className="app-notice">
         {t('app.notice')} <button onClick={() => setShowPrivacy(true)} className="app-notice__link">{t('app.noticeLink')}</button>
       </div>
-      <main className="app-main">{children}</main>
+      <main className="app-main"><section className="app-introduction"><h1>{pageCopy[language].heading}</h1><p>{pageCopy[language].introduction}</p></section>{children}</main>
       <footer className="app-footer">
         <div className="app-footer__disclaimer">
           <p>

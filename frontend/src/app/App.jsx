@@ -1,12 +1,12 @@
 import PrimaryLayout from '../layouts/PrimaryLayout.jsx'
-import TaxCalculatorFeature from '../features/tax-calculator'
+import ClientCalculator from '../components/ClientCalculator.jsx'
 import ErrorBoundary from '../components/ErrorBoundary.jsx'
 
 function App() {
   return (
     <ErrorBoundary>
       <PrimaryLayout>
-        <TaxCalculatorFeature />
+        <ClientCalculator />
       </PrimaryLayout>
     </ErrorBoundary>
   )

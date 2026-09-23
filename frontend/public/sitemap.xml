@@ -3,11 +3,14 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://incometax.nl/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://incometax.nl/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://incometax.nl/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://incometax.nl/?lang=nl"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://incometax.nl/"/>
-    <lastmod>2026-02-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://incometax.nl/?lang=nl</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://incometax.nl/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://incometax.nl/?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://incometax.nl/"/>
   </url>
 </urlset>

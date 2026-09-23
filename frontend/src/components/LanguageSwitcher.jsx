@@ -1,14 +1,19 @@
 import { useLanguage } from '../context/LanguageContext.jsx'
+import { useHydrated } from '../hooks/useHydrated.js'
+import { Link } from 'react-router-dom'
 import './LanguageSwitcher.css'
 
 function LanguageSwitcher() {
-  const { language, toggleLanguage, t } = useLanguage()
+  const { language, languageHref, t } = useLanguage()
+
+  const hydrated = useHydrated()
+  const target = language === 'en' ? 'nl' : 'en'
 
   return (
-    <button
-      type="button"
+    <Link
+      to={hydrated ? languageHref(target) : (target === 'nl' ? '/?lang=nl' : '/')}
+      hrefLang={language === 'en' ? 'nl' : 'en'}
       className="language-switcher"
-      onClick={toggleLanguage}
       aria-label={t('language.switchTo')}
       title={t('language.switchTo')}
     >
@@ -18,7 +23,7 @@ function LanguageSwitcher() {
       <span className="language-switcher__label">
         {language === 'en' ? 'NL' : 'EN'}
       </span>
-    </button>
+    </Link>
   )
 }
 
