@@ -1,6 +1,10 @@
 import { rewrite, next } from '@vercel/functions'
 import { readLanguage } from './frontend/src/utils/urlState.js'
 
+export const config = {
+  matcher: ['/', '/index.html', '/localized/:path*'],
+}
+
 export default function middleware(request) {
   const url = new URL(request.url)
   const internal = /^\/localized\/(en|nl)\.html$/.exec(url.pathname)

@@ -44,8 +44,8 @@ artifacts redirect to the corresponding public language URL. Middleware does not
 rerun for its internal rewrite.
 
 Reference: https://vercel.com/docs/routing-middleware — middleware executes before
-cache lookup. `proxy.entrypoint` and `proxy.matcher` are documented at
-https://vercel.com/docs/project-configuration/vercel-json#proxy.
+cache lookup. The supported matcher is exported from `middleware.js` as `config`;
+Vercel discovers that file at the project root.
 
 ### Production domain correction (2026-09-23)
 
@@ -61,8 +61,9 @@ to it (308). Subsequent public HTTP checks returned 200 for the apex and 308
 from www to the apex, preserving `?lang=nl&check=1`. The old production build is
 still live; these checks verify the domain correction, not the #21/#22 migration.
 
-Before publishing the branch, confirm the repository-root build setting so this
-`vercel.json` and middleware are used. Test www legacy paths after deployment:
+The Vercel Root Directory setting was cleared on 2026-09-23, so the next
+deployment uses the repository root and loads this `vercel.json` and middleware.
+Test www legacy paths after deployment:
 the platform domain redirect may add a hop before the route migration, even though
 the domain correction itself no longer creates a loop.
 
