@@ -1,3 +1,4 @@
+import StandardModal from '../components/StandardModal.jsx'
 
 import PropTypes from 'prop-types'
 import { useState } from 'react'
@@ -43,9 +44,9 @@ function PrimaryLayout({ children, guided = false }) {
               <path d="M12 2C6.48 2 2 5.58 2 10c0 2.03 1.01 3.87 2.64 5.24-.17 1.89-1.05 3.47-1.07 3.5a.5.5 0 0 0 .42.76c2.31 0 4.13-1.06 5.24-1.88.57.1 1.16.16 1.77.16 5.52 0 10-3.58 10-8S17.52 2 12 2Zm-3 9.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm3 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm3 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Z"/>
             </svg>
           </a>
-          <a 
-            href="https://github.com/nikteworks/Dutch_Tax" 
-            target="_blank" 
+          <a
+            href="https://github.com/nikteworks/Dutch_Tax"
+            target="_blank"
             rel="noopener noreferrer"
             className="app-header__github-link"
             aria-label={t('header.githubAriaLabel')}
@@ -98,175 +99,116 @@ function PrimaryLayout({ children, guided = false }) {
           </button>
         </div>
       </footer>
-      {showPrivacy && (
-        <div className="privacy-modal__backdrop" onClick={() => setShowPrivacy(false)}>
-          <div className="privacy-modal" onClick={e => e.stopPropagation()} role="dialog" aria-modal="true" aria-label={t('modals.privacyTitle')}>
-            <button className="privacy-modal__close" onClick={() => setShowPrivacy(false)} aria-label="Close">×</button>
-            <h2>{t('modals.privacyTitle')}</h2>
-            <p><strong>{t('modals.privacyIntro')}</strong> {t('modals.privacyText')}</p>
-            <ul>
-              <li>{t('modals.privacyBullet1')}</li>
-              <li>{t('modals.privacyBullet2')}</li>
-              <li>{t('modals.privacyBullet3')}</li>
-            </ul>
-          </div>
-        </div>
-      )}
-      {showInfo && (
-        <div className="info-modal__backdrop" onClick={() => setShowInfo(false)}>
-          <div
-            className="info-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="about-incometaxnl-title"
-            onClick={e => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="info-modal__close"
-              onClick={() => setShowInfo(false)}
-              aria-label="Close"
-            >
-              ×
-            </button>
-            <h2 id="about-incometaxnl-title">{t('modals.aboutTitle')}</h2>
-            <p>{t('modals.aboutText')}</p>
-            <section className="info-modal__section">
-              <h3>{t('modals.howToUseTitle')}</h3>
-              <ol>
-                <li>{t('modals.howToUse1')}</li>
-                <li>{t('modals.howToUse2')}</li>
-                <li>{t('modals.howToUse3')}</li>
-                <li>{t('modals.howToUse4')}</li>
-              </ol>
-            </section>
-            <section className="info-modal__section">
-              <h3>{t('modals.originTitle')}</h3>
-              <p>{t('modals.originText')}</p>
-            </section>
-          </div>
-        </div>
-      )}
-      {showCredits && (
-        <div className="credits-modal__backdrop" onClick={() => setShowCredits(false)}>
-          <div
-            className="credits-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="credits-modal-title"
-            onClick={e => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="credits-modal__close"
-              onClick={() => setShowCredits(false)}
-              aria-label="Close"
-            >
-              ×
-            </button>
-            <h2 id="credits-modal-title">{t('modals.creditsTitle')}</h2>
-            <p>
-              {t('modals.creditsText')} <a href="https://github.com/nikteworks" target="_blank" rel="noopener noreferrer">@nikteworks</a> {t('modals.creditsTextEnd')}
-            </p>
-            <section className="credits-modal__section">
-              <h3>{t('modals.specialThanks')}</h3>
-              <p>
-                {t('modals.salaryCalculations')} <a href="https://github.com/stevermeister/dutch-tax-income-calculator-npm" target="_blank" rel="noopener noreferrer">{t('modals.salaryLibrary')}</a> {t('modals.salaryLibraryBy')} <a href="https://buymeacoffee.com/stevermeister" target="_blank" rel="noopener noreferrer">{t('modals.byStepan')}</a>
-              </p>
-              <p>{t('modals.feedbackThanks')}</p>
-            </section>
-          </div>
-        </div>
-      )}
-      {showTerms && (
-        <div className="terms-modal__backdrop" onClick={() => setShowTerms(false)}>
-          <div
-            className="terms-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="terms-modal-title"
-            onClick={e => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="terms-modal__close"
-              onClick={() => setShowTerms(false)}
-              aria-label="Close"
-            >
-              ×
-            </button>
-            <h2 id="terms-modal-title">{t('modals.termsTitle')}</h2>
-            <p><strong>{t('modals.termsEffectiveDate')}</strong> December 13, 2025</p>
-            
-            <section className="terms-modal__section">
-              <h3>{t('modals.termsAcceptanceTitle')}</h3>
-              <p>{t('modals.termsAcceptanceText')}</p>
-            </section>
+      <StandardModal open={showPrivacy} onClose={() => setShowPrivacy(false)}
+        title={t('modals.privacyTitle')} size="sm">
+        <p><strong>{t('modals.privacyIntro')}</strong> {t('modals.privacyText')}</p>
+        <ul>
+          <li>{t('modals.privacyBullet1')}</li>
+          <li>{t('modals.privacyBullet2')}</li>
+          <li>{t('modals.privacyBullet3')}</li>
+        </ul>
+      </StandardModal>
+      <StandardModal open={showInfo} onClose={() => setShowInfo(false)}
+        title={t('modals.aboutTitle')} size="sm">
+        <p>{t('modals.aboutText')}</p>
+        <section className="standard-modal__section">
+          <h3>{t('modals.howToUseTitle')}</h3>
+          <ol>
+            <li>{t('modals.howToUse1')}</li>
+            <li>{t('modals.howToUse2')}</li>
+            <li>{t('modals.howToUse3')}</li>
+            <li>{t('modals.howToUse4')}</li>
+          </ol>
+        </section>
+        <section className="standard-modal__section">
+          <h3>{t('modals.originTitle')}</h3>
+          <p>{t('modals.originText')}</p>
+        </section>
+      </StandardModal>
+      <StandardModal open={showCredits} onClose={() => setShowCredits(false)}
+        title={t('modals.creditsTitle')} size="sm">
+        <p>
+          {t('modals.creditsText')} <a href="https://github.com/nikteworks" target="_blank" rel="noopener noreferrer">@nikteworks</a> {t('modals.creditsTextEnd')}
+        </p>
+        <section className="standard-modal__section">
+          <h3>{t('modals.specialThanks')}</h3>
+          <p>
+            {t('modals.salaryCalculations')} <a href="https://github.com/stevermeister/dutch-tax-income-calculator-npm" target="_blank" rel="noopener noreferrer">{t('modals.salaryLibrary')}</a> {t('modals.salaryLibraryBy')} <a href="https://buymeacoffee.com/stevermeister" target="_blank" rel="noopener noreferrer">{t('modals.byStepan')}</a>
+          </p>
+          <p>{t('modals.feedbackThanks')}</p>
+        </section>
+      </StandardModal>
+      <StandardModal open={showTerms} onClose={() => setShowTerms(false)}
+        title={t('modals.termsTitle')} size="md">
+        <p><strong>{t('modals.termsEffectiveDate')}</strong> December 13, 2025</p>
 
-            <section className="terms-modal__section">
-              <h3>{t('modals.termsEducationalTitle')}</h3>
-              <p>{t('modals.termsEducationalText')}</p>
-            </section>
+        <section className="standard-modal__section">
+          <h3>{t('modals.termsAcceptanceTitle')}</h3>
+          <p>{t('modals.termsAcceptanceText')}</p>
+        </section>
 
-            <section className="terms-modal__section">
-              <h3>{t('modals.termsWarrantyTitle')}</h3>
-              <p>{t('modals.termsWarrantyText')}</p>
-            </section>
+        <section className="standard-modal__section">
+          <h3>{t('modals.termsEducationalTitle')}</h3>
+          <p>{t('modals.termsEducationalText')}</p>
+        </section>
 
-            <section className="terms-modal__section">
-              <h3>{t('modals.termsLiabilityTitle')}</h3>
-              <p>{t('modals.termsLiabilityText')}</p>
-            </section>
+        <section className="standard-modal__section">
+          <h3>{t('modals.termsWarrantyTitle')}</h3>
+          <p>{t('modals.termsWarrantyText')}</p>
+        </section>
 
-            <section className="terms-modal__section">
-              <h3>{t('modals.termsConsultationTitle')}</h3>
-              <p>
-                {t('modals.termsConsultationText')}{' '}
-                <a href="https://www.belastingdienst.nl" target="_blank" rel="noopener noreferrer">
-                  {t('footer.belastingdienst')}
-                </a>{' '}
-                {t('modals.termsConsultationEnd')}
-              </p>
-            </section>
+        <section className="standard-modal__section">
+          <h3>{t('modals.termsLiabilityTitle')}</h3>
+          <p>{t('modals.termsLiabilityText')}</p>
+        </section>
 
-            <section className="terms-modal__section">
-              <h3>{t('modals.termsPrivacyTitle')}</h3>
-              <p>{t('modals.termsPrivacyText')}</p>
-            </section>
+        <section className="standard-modal__section">
+          <h3>{t('modals.termsConsultationTitle')}</h3>
+          <p>
+            {t('modals.termsConsultationText')}{' '}
+            <a href="https://www.belastingdienst.nl" target="_blank" rel="noopener noreferrer">
+              {t('footer.belastingdienst')}
+            </a>{' '}
+            {t('modals.termsConsultationEnd')}
+          </p>
+        </section>
 
-            <section className="terms-modal__section">
-              <h3>{t('modals.termsOpenSourceTitle')}</h3>
-              <p>
-                {t('modals.termsOpenSourceText')}{' '}
-                <a href="https://github.com/nikteworks/Dutch_Tax" target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-                {t('modals.termsOpenSourceEnd')}
-              </p>
-            </section>
+        <section className="standard-modal__section">
+          <h3>{t('modals.termsPrivacyTitle')}</h3>
+          <p>{t('modals.termsPrivacyText')}</p>
+        </section>
 
-            <section className="terms-modal__section">
-              <h3>{t('modals.termsChangesTitle')}</h3>
-              <p>{t('modals.termsChangesText')}</p>
-            </section>
+        <section className="standard-modal__section">
+          <h3>{t('modals.termsOpenSourceTitle')}</h3>
+          <p>
+            {t('modals.termsOpenSourceText')}{' '}
+            <a href="https://github.com/nikteworks/Dutch_Tax" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+            {t('modals.termsOpenSourceEnd')}
+          </p>
+        </section>
 
-            <section className="terms-modal__section">
-              <h3>{t('modals.termsContactTitle')}</h3>
-              <p>
-                {t('modals.termsContactText')}{' '}
-                <a href="https://github.com/nikteworks/Dutch_Tax/issues" target="_blank" rel="noopener noreferrer">
-                  GitHub Issues
-                </a>{' '}
-                {t('modals.termsContactOr')}{' '}
-                <a href="https://twitter.com/messages/compose?recipient_id=718363377798615041" target="_blank" rel="noopener noreferrer">
-                  {t('modals.termsContactDM')}
-                </a>
-                .
-              </p>
-            </section>
-          </div>
-        </div>
-      )}
+        <section className="standard-modal__section">
+          <h3>{t('modals.termsChangesTitle')}</h3>
+          <p>{t('modals.termsChangesText')}</p>
+        </section>
+
+        <section className="standard-modal__section">
+          <h3>{t('modals.termsContactTitle')}</h3>
+          <p>
+            {t('modals.termsContactText')}{' '}
+            <a href="https://github.com/nikteworks/Dutch_Tax/issues" target="_blank" rel="noopener noreferrer">
+              GitHub Issues
+            </a>{' '}
+            {t('modals.termsContactOr')}{' '}
+            <a href="https://twitter.com/messages/compose?recipient_id=718363377798615041" target="_blank" rel="noopener noreferrer">
+              {t('modals.termsContactDM')}
+            </a>
+            .
+          </p>
+        </section>
+      </StandardModal>
     </div>
   )
 }

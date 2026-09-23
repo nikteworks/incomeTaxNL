@@ -1,3 +1,4 @@
+import StandardModal from '../../../components/StandardModal.jsx'
 import { useState, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import {
@@ -16,10 +17,6 @@ import {
   FormControl,
   FormLabel,
   Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
   Typography,
 } from '@mui/material'
 import RestartAltIcon from '@mui/icons-material/RestartAlt'
@@ -311,14 +308,9 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
       </Box>
 
       {/* Reset confirmation dialog */}
-      <Dialog open={showResetConfirm} onClose={() => setShowResetConfirm(false)} maxWidth="xs">
-        <DialogTitle>{t('box1Form.resetTitle')}</DialogTitle>
-        <DialogContent>
-          <Typography variant="body2">
-            {t('box1Form.resetMessage')}
-          </Typography>
-        </DialogContent>
-        <DialogActions>
+      <StandardModal open={showResetConfirm} onClose={() => setShowResetConfirm(false)} size="xs"
+        title={t('box1Form.resetTitle')}
+        actions={<>
           <Button onClick={() => setShowResetConfirm(false)} color="inherit">
             {t('box1Form.cancel')}
           </Button>
@@ -332,8 +324,12 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
           >
             {t('box1Form.reset')}
           </Button>
-        </DialogActions>
-      </Dialog>
+        </>}
+      >
+        <Typography variant="body2">
+          {t('box1Form.resetMessage')}
+        </Typography>
+      </StandardModal>
     </form>
   )
 }

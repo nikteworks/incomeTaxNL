@@ -20,7 +20,7 @@ The shell uses temporary component state. It does not read or write saved calcul
 
 ## After human review
 
-Apply the requested design edits, then connect the approved layout to the existing calculator hooks and settings. Complete period conversions, input validation/error states, synchronized headline/ledger/breakdown totals, net/gross percentage, persistence, URL behavior, and production integration. Preserve prerendered explanations and FAQ structured data. Review inherited dialog copy/localization and focus behavior during that integration.
+Apply the requested design edits, then connect the approved layout to the existing calculator hooks and settings. Complete period conversions, input validation/error states, synchronized headline/ledger/breakdown totals, net/gross percentage, persistence, URL behavior, and production integration. Preserve prerendered explanations and FAQ structured data. Review inherited dialog content/localization during that integration.
 
 ## Shell verification
 
@@ -30,3 +30,11 @@ Apply the requested design edits, then connect the approved layout to the existi
 - Preview values survive mode and language switches; footer dialogs open. No browser JavaScript errors were observed.
 
 Tax correctness and saved-state integration are intentionally not claimed for this unwired preview.
+
+## Shared modal shell
+
+All popups now use `StandardModal`: Privacy, About, Credits, Terms, Box 1/Box 3 resets, Box 3 settings, account/investment/debt entries, the unsaved-entry warning, and the annual-statement guide. The shared frame applies the Guided Rail colours and typography, three content widths, a consistent close control, a scrolling body, and persistent footer actions. Informational dialogs receive a standard Close action. Header tools and entry totals use dedicated slots.
+
+The shell uses Material UI focus trapping, Escape/backdrop dismissal, accessible titles, and focus restoration. Entry dismissal still calls the existing unsaved-change guard. Modal shell labels are localized; existing informational content is retained.
+
+Validation: eight browser tests cover English/Dutch dialogs at 390/768/1440 px, focus trapping/restoration, visible footer actions, and nested discard/cancel behavior. The shared frame also applies to the default calculator's dialogs.

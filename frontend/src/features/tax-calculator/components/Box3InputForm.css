@@ -280,26 +280,6 @@
   box-shadow: 0px 16px 40px rgba(15, 23, 42, 0.16), 0px 6px 20px rgba(15, 23, 42, 0.12);
 }
 
-.tax-form__entry-dialog-paper {
-  border-radius: 20px;
-  max-height: calc(100dvh - 2rem);
-  overflow: hidden;
-}
-
-.tax-form__entry-dialog-paper .MuiDialogContent-root {
-  padding: 1.5rem 1.5rem 1rem;
-}
-
-.tax-form__entry-dialog-paper--mobile {
-  border-radius: 18px 18px 0 0;
-  max-height: none;
-  height: 100%;
-}
-
-.tax-form__entry-dialog-paper--mobile .MuiDialogContent-root {
-  padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
-}
-
 .tax-form__modal-header h3 {
   margin: 0;
   font-size: 1.25rem;

@@ -7,12 +7,6 @@
   color: var(--brand-primary);
 }
 
-.config-menu__title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .config-menu__section-title {
   color: var(--brand-primary);
   font-weight: 600;

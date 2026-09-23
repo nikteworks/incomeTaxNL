@@ -234,7 +234,12 @@
     "termsContactTitle": "9. Contact",
     "termsContactText": "Voor vragen of opmerkingen kunt u contact met ons opnemen via",
     "termsContactOr": "of",
-    "termsContactDM": "direct bericht op X"
+    "termsContactDM": "direct bericht op X",
+    "close": "Sluiten",
+    "statementTitle": "Je jaaropgave lezen",
+    "discardTitle": "Deze invoer verwerpen?",
+    "discardText": "Deze invoer is nog niet toegevoegd. Verwerp deze of annuleer om verder te bewerken.",
+    "discard": "Invoer verwerpen"
   },
   "language": {
     "switchTo": "Schakel over naar Engels"

@@ -1,0 +1,68 @@
+/* Dialogs are portaled outside the page: keep their complete visual contract here. */
+.standard-modal {
+  --brand-primary: #2246ae;
+  --brand-primary-light: #19388f;
+  --brand-text: #172941;
+  --brand-text-muted: #465770;
+  --brand-text-soft: #465770;
+  --brand-border: #cbd4df;
+  --brand-surface: #f9fbfd;
+  --brand-surface-alt: #e3eaf4;
+}
+.standard-modal .MuiBackdrop-root { background: rgb(23 41 65 / 42%); }
+.standard-modal .MuiDialog-paper {
+  margin: 24px;
+  width: calc(100% - 48px);
+  max-height: calc(100dvh - 48px);
+  border-radius: 12px;
+  background: #f9fbfd;
+  color: #172941;
+  box-shadow: 0 20px 60px rgb(23 41 65 / 18%);
+}
+.standard-modal .MuiDialog-paperWidthXs { max-width: 420px; }
+.standard-modal .MuiDialog-paperWidthSm { max-width: 600px; }
+.standard-modal .MuiDialog-paperWidthMd { max-width: 760px; }
+.standard-modal__header { display: flex; align-items: flex-start; gap: 16px; padding: 24px 24px 20px; flex-shrink: 0; }
+.standard-modal__heading { flex: 1; min-width: 0; }
+.standard-modal .MuiDialogTitle-root { padding: 0; font-size: 21px; line-height: 1.35; font-weight: 600; overflow-wrap: anywhere; }
+.standard-modal__header-actions { display: flex; align-items: center; flex-shrink: 0; gap: 4px; margin-top: -6px; margin-right: -8px; }
+.standard-modal__header-actions .MuiIconButton-root { color: #465770; width: 40px; height: 40px; border-radius: 6px; }
+.standard-modal__header-actions .MuiIconButton-root:hover { color: #2246ae; background: #e3eaf4; }
+.standard-modal__summary { margin-top: 10px; color: #465770; font-size: 14px; }
+.standard-modal .standard-modal__content { padding: 4px 24px 24px; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; }
+.standard-modal__content > p { margin: 0 0 16px; font-size: 14px; color: #465770; }
+.standard-modal__content > p:last-child { margin-bottom: 0; }
+.standard-modal__content > ul { margin: 0; padding-left: 20px; color: #465770; font-size: 14px; }
+.standard-modal__content li { margin-bottom: 8px; overflow-wrap: anywhere; }
+.standard-modal__section + .standard-modal__section { margin-top: 24px; }
+.standard-modal__section h3 { font-size: 16px; color: #172941; margin: 0 0 8px; }
+.standard-modal__section p, .standard-modal__section ol { font-size: 14px; color: #465770; margin: 0; }
+.standard-modal__section ol { padding-left: 20px; }
+.standard-modal a { color: #2246ae; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.standard-modal .standard-modal__actions { flex-wrap: wrap; gap: 8px; padding: 16px 24px; padding-bottom: max(16px, env(safe-area-inset-bottom)); border-top: 1px solid #cbd4df; flex-shrink: 0; }
+.standard-modal .standard-modal__actions > :not(style) ~ :not(style) { margin-left: 0; }
+.standard-modal .MuiButton-root { border-radius: 6px; min-height: 40px; padding-inline: 16px; text-transform: none; box-shadow: none; }
+.standard-modal .MuiButton-containedPrimary.Mui-disabled { background: #dce2ec !important; color: #657188 !important; }
+.standard-modal .MuiOutlinedInput-root { background: #fff; }
+.standard-modal .MuiFormHelperText-root { margin-left: 0; }
+.standard-modal .MuiAccordion-root { box-shadow: none; border-radius: 0 !important; border: 0; border-bottom: 1px solid #cbd4df; background: transparent; }
+.standard-modal .MuiAccordionSummary-root { padding-inline: 0; }
+.standard-modal .MuiAccordionDetails-root { padding-inline: 0; }
+.standard-modal .tax-form__modal-stats { flex-wrap: wrap; gap: 8px 20px; }
+.standard-modal .tax-form__modal-count { padding: 0; background: transparent; border: 0; font: inherit; color: inherit; letter-spacing: normal; }
+.standard-modal .tax-form__modal-total { color: #172941; }
+.standard-modal .tax-form__modal-empty { text-align: left; padding-block: 8px; }
+.standard-modal :is(button, a, input, select, [role='button']):focus-visible { outline: 3px solid #2246ae; outline-offset: 2px; }
+@media (max-width: 600px) {
+  .standard-modal .MuiDialog-paper { margin: 12px; width: calc(100% - 24px); max-height: calc(100dvh - 24px); }
+  .standard-modal__header { padding: 20px 20px 16px; gap: 8px; }
+  .standard-modal .MuiDialogTitle-root { font-size: 19px; }
+  .standard-modal .standard-modal__content { padding: 4px 20px 20px; }
+  .standard-modal .standard-modal__actions { padding-inline: 20px; }
+  .standard-modal .tax-form__modal-add-row { display: flex; flex-direction: column; align-items: stretch; }
+  .standard-modal .tax-form__modal-add-row .MuiTextField-root { flex: auto; width: 100%; min-width: 0; }
+  .standard-modal .tax-form__modal-add-row .MuiButton-root { align-self: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .standard-modal *, .standard-modal .MuiBackdrop-root { transition-duration: 0s !important; animation-duration: 0s !important; }
+}

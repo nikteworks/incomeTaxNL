@@ -1,0 +1,76 @@
+import { test, expect } from '@playwright/test'
+import { readFileSync } from 'node:fs'
+
+const translations = Object.fromEntries(['en', 'nl'].map(language => [language,
+  JSON.parse(readFileSync(new URL(`../src/locales/${language}.json`, import.meta.url), 'utf8')),
+]))
+
+for (const language of ['en', 'nl']) {
+  for (const width of [390, 768, 1440]) {
+    test(`shared dialogs fit and restore focus: ${language}, ${width}px`, async ({ page }) => {
+      const copy = translations[language]
+      const errors = []
+      page.on('pageerror', error => errors.push(error.message))
+      await page.setViewportSize({ width, height: 800 })
+      await page.goto(`/?lang=${language}&calcType=box1`)
+
+      async function inspect(trigger, title, closeWithEscape = false) {
+        await trigger.click()
+        const dialog = page.getByRole('dialog', { name: title, exact: true })
+        await expect(dialog).toBeVisible()
+        await expect(dialog).toHaveCSS('background-color', 'rgb(249, 251, 253)')
+        const bounds = await dialog.boundingBox()
+        expect(bounds.x).toBeGreaterThanOrEqual(12)
+        expect(bounds.x + bounds.width).toBeLessThanOrEqual(width - 12)
+        expect(await dialog.evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true)
+        const footer = dialog.locator('.standard-modal__actions')
+        await expect(footer).toBeInViewport()
+        // Wrapping backwards from the first button must stay inside the dialog.
+        await dialog.locator('button').first().focus()
+        await page.keyboard.press('Shift+Tab')
+        expect(await dialog.evaluate(el => el.contains(document.activeElement))).toBe(true)
+        if (closeWithEscape) await page.keyboard.press('Escape')
+        else await dialog.locator('.standard-modal__close').click()
+        await expect(dialog).toBeHidden()
+        await expect(trigger).toBeFocused()
+      }
+
+      await inspect(page.getByRole('button', { name: copy.header.aboutAriaLabel }), copy.modals.aboutTitle, true)
+      await inspect(page.getByRole('button', { name: copy.app.noticeLink }), copy.modals.privacyTitle)
+      await inspect(page.getByRole('button', { name: copy.footer.credits, exact: true }), copy.modals.creditsTitle)
+      await inspect(page.getByRole('button', { name: copy.footer.termsOfUse, exact: true }), copy.modals.termsTitle, true)
+      await inspect(page.getByRole('button', { name: copy.box1Form.reset, exact: true }), copy.box1Form.resetTitle)
+      await page.getByRole('button', { name: 'Box 3', exact: true }).click()
+      await inspect(page.getByRole('button', { name: copy.box3Form.reset, exact: true }), copy.box1Form.resetTitle)
+      await inspect(page.getByRole('button', { name: copy.config.openSettings }), copy.config.title, true)
+      await inspect(page.getByRole('button', { name: 'Where can I find this information?' }), copy.modals.statementTitle)
+      for (const label of [copy.box3Form.bankAccounts, copy.box3Form.investmentAccounts, copy.box3Form.debts]) {
+        await page.locator('.tax-form__accordion-summary').filter({ hasText: label }).click()
+        await inspect(page.locator('.tax-form__accordion').filter({ has: page.locator('.tax-form__accordion-summary').filter({ hasText: label }) }).getByRole('button', { name: 'Manage entries' }), label)
+      }
+      expect(errors).toEqual([])
+    })
+  }
+
+  test(`entry dismissal guard survives shared close controls: ${language}`, async ({ page }) => {
+    const copy = translations[language]
+    await page.goto(`/?lang=${language}&calcType=box3`)
+    await page.locator('.tax-form__accordion-summary').first().click()
+    const trigger = page.getByRole('button', { name: 'Manage entries' }).filter({ visible: true })
+    await trigger.click()
+    const entry = page.getByRole('dialog', { name: copy.box3Form.bankAccounts, exact: true })
+    await entry.getByLabel(copy.box3Form.accountName).fill('Review savings')
+    await entry.locator('.standard-modal__close').click()
+    const warning = page.getByRole('dialog', { name: copy.modals.discardTitle })
+    await expect(warning).toBeVisible()
+    await page.keyboard.press('Escape')
+    await expect(warning).toBeHidden()
+    await expect(entry.getByLabel(copy.box3Form.accountName)).toHaveValue('Review savings')
+    await expect(entry.locator('.standard-modal__close')).toBeFocused()
+    await page.keyboard.press('Escape')
+    await expect(warning).toBeVisible()
+    await warning.getByRole('button', { name: copy.modals.discard, exact: true }).click()
+    await expect(page.getByRole('dialog')).toHaveCount(0)
+    await expect(trigger).toBeFocused()
+  })
+}

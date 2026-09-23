@@ -1,11 +1,8 @@
+import StandardModal from '../../../components/StandardModal.jsx'
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 import {
   IconButton,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
   Button,
   TextField,
   Typography,
@@ -143,133 +140,130 @@ function ConfigurationMenu({ config, onConfigChange }) {
         </IconButton>
       </Tooltip>
 
-      <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
-        <DialogTitle className="config-menu__title">
-          <span>{t('config.title')}</span>
-          <Tooltip title={t('config.resetToDefaults')}>
+      <StandardModal open={open} onClose={handleClose} size="sm"
+        title={t('config.title')}
+        headerActions={<Tooltip title={t('config.resetToDefaults')}>
             <IconButton onClick={handleResetDefaults} size="small" aria-label={t('config.resetToDefaults')}>
               <RestoreIcon />
             </IconButton>
-          </Tooltip>
-        </DialogTitle>
-        <DialogContent dividers>
-          <Stack spacing={3}>
-            {/* Year */}
-            <TextField
-              select
-              label={t('config.taxYear')}
-              size="small"
-              value={displayConfig.year}
-              onChange={(e) => handleYearChange(e.target.value)}
-              helperText={t('config.yearHelperText')}
-            >
-              {AVAILABLE_YEARS.map((year) => (
-                <MenuItem key={year} value={year}>
-                  {year}
-                </MenuItem>
-              ))}
-            </TextField>
-
-            {/* Thresholds Section */}
-            <div>
-              <Typography variant="subtitle2" className="config-menu__section-title">
-                {t('config.thresholds')}
-              </Typography>
-              <Stack spacing={2}>
-                <TextField
-                  label={t('config.taxFreeAssets')}
-                  type="number"
-                  size="small"
-                  value={displayConfig.thresholds?.taxFreeAssetsPerIndividual ?? ''}
-                  onChange={(e) => handleFieldChange('thresholds', 'taxFreeAssetsPerIndividual', e.target.value)}
-                  error={!!errors['thresholds.taxFreeAssetsPerIndividual']}
-                  helperText={errors['thresholds.taxFreeAssetsPerIndividual'] || t('config.taxFreeAssetsHelper')}
-                  fullWidth
-                />
-                <TextField
-                  label={t('config.debtsThreshold')}
-                  type="number"
-                  size="small"
-                  value={displayConfig.thresholds?.debtsThresholdPerIndividual ?? ''}
-                  onChange={(e) => handleFieldChange('thresholds', 'debtsThresholdPerIndividual', e.target.value)}
-                  error={!!errors['thresholds.debtsThresholdPerIndividual']}
-                  helperText={errors['thresholds.debtsThresholdPerIndividual'] || t('config.debtsThresholdHelper')}
-                  fullWidth
-                />
-              </Stack>
-            </div>
-
-            <Divider />
-
-            {/* Tax Rate */}
-            <TextField
-              label={t('config.taxRate')}
-              type="number"
-              size="small"
-              value={displayConfig.taxRate ?? ''}
-              onChange={(e) => handleFieldChange('root', 'taxRate', e.target.value)}
-              error={!!errors['root.taxRate']}
-              helperText={errors['root.taxRate'] || t('config.taxRateHelper')}
-              inputProps={{ min: 0, max: 100, step: 0.01 }}
-            />
-
-            <Divider />
-
-            {/* Assumed Return Rates */}
-            <div>
-              <Typography variant="subtitle2" className="config-menu__section-title">
-                {t('config.assumedReturnRates')}
-              </Typography>
-              <Typography variant="caption" color="text.secondary" className="config-menu__section-description">
-                {t('config.assumedReturnRatesDesc')}
-              </Typography>
-              <Stack spacing={2} sx={{ mt: 1 }}>
-                <TextField
-                  label={t('config.bankBalanceRate')}
-                  type="number"
-                  size="small"
-                  value={displayConfig.assumedReturnRates?.bankBalance ?? ''}
-                  onChange={(e) => handleFieldChange('assumedReturnRates', 'bankBalance', e.target.value)}
-                  error={!!errors['assumedReturnRates.bankBalance']}
-                  helperText={errors['assumedReturnRates.bankBalance']}
-                  inputProps={{ min: 0, max: 100, step: 0.01 }}
-                  fullWidth
-                />
-                <TextField
-                  label={t('config.investmentAssetsRate')}
-                  type="number"
-                  size="small"
-                  value={displayConfig.assumedReturnRates?.investmentAssets ?? ''}
-                  onChange={(e) => handleFieldChange('assumedReturnRates', 'investmentAssets', e.target.value)}
-                  error={!!errors['assumedReturnRates.investmentAssets']}
-                  helperText={errors['assumedReturnRates.investmentAssets']}
-                  inputProps={{ min: 0, max: 100, step: 0.01 }}
-                  fullWidth
-                />
-                <TextField
-                  label={t('config.debtsRate')}
-                  type="number"
-                  size="small"
-                  value={displayConfig.assumedReturnRates?.debts ?? ''}
-                  onChange={(e) => handleFieldChange('assumedReturnRates', 'debts', e.target.value)}
-                  error={!!errors['assumedReturnRates.debts']}
-                  helperText={errors['assumedReturnRates.debts']}
-                  inputProps={{ min: 0, max: 100, step: 0.01 }}
-                  fullWidth
-                />
-              </Stack>
-            </div>
-          </Stack>
-        </DialogContent>
-        <DialogActions>
+          </Tooltip>}
+        actions={<>
           <Button onClick={handleClose} color="inherit">
             {t('config.cancel')}
           </Button>
           <Button onClick={handleSave} variant="contained" disabled={hasErrors}>
             {t('config.save')}
           </Button>
-        </DialogActions>
-      </Dialog>
+        </>}
+      >
+        <Stack spacing={3}>
+          {/* Year */}
+          <TextField
+            select
+            label={t('config.taxYear')}
+            size="small"
+            value={displayConfig.year}
+            onChange={(e) => handleYearChange(e.target.value)}
+            helperText={t('config.yearHelperText')}
+          >
+            {AVAILABLE_YEARS.map((year) => (
+              <MenuItem key={year} value={year}>
+                {year}
+              </MenuItem>
+            ))}
+          </TextField>
+
+          {/* Thresholds Section */}
+          <div>
+            <Typography variant="subtitle2" className="config-menu__section-title">
+              {t('config.thresholds')}
+            </Typography>
+            <Stack spacing={2}>
+              <TextField
+                label={t('config.taxFreeAssets')}
+                type="number"
+                size="small"
+                value={displayConfig.thresholds?.taxFreeAssetsPerIndividual ?? ''}
+                onChange={(e) => handleFieldChange('thresholds', 'taxFreeAssetsPerIndividual', e.target.value)}
+                error={!!errors['thresholds.taxFreeAssetsPerIndividual']}
+                helperText={errors['thresholds.taxFreeAssetsPerIndividual'] || t('config.taxFreeAssetsHelper')}
+                fullWidth
+              />
+              <TextField
+                label={t('config.debtsThreshold')}
+                type="number"
+                size="small"
+                value={displayConfig.thresholds?.debtsThresholdPerIndividual ?? ''}
+                onChange={(e) => handleFieldChange('thresholds', 'debtsThresholdPerIndividual', e.target.value)}
+                error={!!errors['thresholds.debtsThresholdPerIndividual']}
+                helperText={errors['thresholds.debtsThresholdPerIndividual'] || t('config.debtsThresholdHelper')}
+                fullWidth
+              />
+            </Stack>
+          </div>
+
+          <Divider />
+
+          {/* Tax Rate */}
+          <TextField
+            label={t('config.taxRate')}
+            type="number"
+            size="small"
+            value={displayConfig.taxRate ?? ''}
+            onChange={(e) => handleFieldChange('root', 'taxRate', e.target.value)}
+            error={!!errors['root.taxRate']}
+            helperText={errors['root.taxRate'] || t('config.taxRateHelper')}
+            inputProps={{ min: 0, max: 100, step: 0.01 }}
+          />
+
+          <Divider />
+
+          {/* Assumed Return Rates */}
+          <div>
+            <Typography variant="subtitle2" className="config-menu__section-title">
+              {t('config.assumedReturnRates')}
+            </Typography>
+            <Typography variant="caption" color="text.secondary" className="config-menu__section-description">
+              {t('config.assumedReturnRatesDesc')}
+            </Typography>
+            <Stack spacing={2} sx={{ mt: 1 }}>
+              <TextField
+                label={t('config.bankBalanceRate')}
+                type="number"
+                size="small"
+                value={displayConfig.assumedReturnRates?.bankBalance ?? ''}
+                onChange={(e) => handleFieldChange('assumedReturnRates', 'bankBalance', e.target.value)}
+                error={!!errors['assumedReturnRates.bankBalance']}
+                helperText={errors['assumedReturnRates.bankBalance']}
+                inputProps={{ min: 0, max: 100, step: 0.01 }}
+                fullWidth
+              />
+              <TextField
+                label={t('config.investmentAssetsRate')}
+                type="number"
+                size="small"
+                value={displayConfig.assumedReturnRates?.investmentAssets ?? ''}
+                onChange={(e) => handleFieldChange('assumedReturnRates', 'investmentAssets', e.target.value)}
+                error={!!errors['assumedReturnRates.investmentAssets']}
+                helperText={errors['assumedReturnRates.investmentAssets']}
+                inputProps={{ min: 0, max: 100, step: 0.01 }}
+                fullWidth
+              />
+              <TextField
+                label={t('config.debtsRate')}
+                type="number"
+                size="small"
+                value={displayConfig.assumedReturnRates?.debts ?? ''}
+                onChange={(e) => handleFieldChange('assumedReturnRates', 'debts', e.target.value)}
+                error={!!errors['assumedReturnRates.debts']}
+                helperText={errors['assumedReturnRates.debts']}
+                inputProps={{ min: 0, max: 100, step: 0.01 }}
+                fullWidth
+              />
+            </Stack>
+          </div>
+        </Stack>
+      </StandardModal>
     </>
   )
 }

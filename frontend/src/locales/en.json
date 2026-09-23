@@ -234,7 +234,12 @@
     "termsContactTitle": "9. Contact",
     "termsContactText": "For questions or concerns, please contact us via",
     "termsContactOr": "or",
-    "termsContactDM": "direct message on X"
+    "termsContactDM": "direct message on X",
+    "close": "Close",
+    "statementTitle": "Reading your annual statement",
+    "discardTitle": "Discard this entry?",
+    "discardText": "This entry has not been added yet. Discard it or cancel to keep editing.",
+    "discard": "Discard entry"
   },
   "language": {
     "switchTo": "Switch to Dutch"
