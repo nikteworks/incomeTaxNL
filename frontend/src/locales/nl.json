@@ -274,6 +274,7 @@
     "salary": "Salaris vóór belasting",
     "salaryHelp": "Gebruik het brutobedrag op je contract of loonstrook.",
     "holidayHelp": "Vink dit aan als je ingevoerde salaris al 8% vakantiegeld bevat.",
+    "holidayHelpLabel": "Over vakantiegeld",
     "pensionAge": "AOW-leeftijd bereikt",
     "takeHome": "Geschat nettoloon",
     "tax": "Belasting en premies",

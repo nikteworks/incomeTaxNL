@@ -35,7 +35,11 @@
 .guided-basic-fields { display: flex; flex-direction: column; gap: 8px; }
 .guided-basic-fields > label { font-weight: 600; }
 .guided-basic-fields p { font-size: 13px; color: #465770; margin: 0; }
-.guided-basic-fields > fieldset, .guided-basic-fields > div:has(.MuiFormControlLabel-root), .guided-basic-fields > button { margin-top: 20px; }
+.guided-income-period { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 20px; }
+.guided-income-period label { font-weight: 600; }
+.guided-income-period select { min-width: 0; width: 160px; max-width: 65%; padding: 8px 12px; border: 1px solid #7b8da5; border-radius: 6px; background: #f9fbfd; color: #172941; font-size: 14px; }
+.guided-holiday { display: flex; align-items: center; gap: 4px; margin-top: 20px; }
+.guided-holiday .MuiIconButton-root { flex-shrink: 0; color: #465770; }
 .guided-salary-input { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border: 1px solid #7b8da5; border-radius: 6px; background: #f9fbfd; font-size: 26px; }
 .guided-salary-input input { width: 100%; min-width: 0; border: 0; background: transparent; color: #172941; outline: 0; }
 .guided-salary-input:focus-within { outline: 3px solid #2246ae; outline-offset: 2px; }

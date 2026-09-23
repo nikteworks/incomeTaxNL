@@ -10,6 +10,7 @@ import {
   FormControlLabel,
   MenuItem,
   InputAdornment,
+  IconButton,
   Tooltip,
   Collapse,
   RadioGroup,
@@ -95,14 +96,21 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
             onChange={handleNumberChange('grossIncome')} aria-describedby="guided-salary-help"
           /></div>
           <p id="guided-salary-help">{t('guidedRail.salaryHelp')}</p>
-          <fieldset className="guided-period"><legend>{t('box1Form.period')}</legend>
-            {INCOME_PERIODS.map(({ value: period }) => <button key={period} type="button"
-              aria-pressed={values.period === period} onClick={() => onChange('period', period)}>{t(`periods.${period}`)}</button>)}
-          </fieldset>
-          <div><FormControlLabel control={<Checkbox checked={values.holidayAllowanceIncluded}
-            onChange={handleToggleChange('holidayAllowanceIncluded')} />}
-            label={t('box1Form.holidayAllowanceIncluded')} />
-            <p>{t('guidedRail.holidayHelp')}</p>
+          <div className="guided-income-period">
+            <label htmlFor="guided-income-period">{t('box1Form.period')}</label>
+            <select id="guided-income-period" value={values.period} onChange={handleSelectChange('period')}>
+              {translatedPeriods.map(period => <option key={period.value} value={period.value}>{period.label}</option>)}
+            </select>
+          </div>
+          <div className="guided-holiday">
+            <FormControlLabel control={<Checkbox checked={values.holidayAllowanceIncluded}
+              onChange={handleToggleChange('holidayAllowanceIncluded')} />}
+              label={t('box1Form.holidayAllowanceIncluded')} />
+            <Tooltip title={t('guidedRail.holidayHelp')} describeChild>
+              <IconButton size="small" aria-label={t('guidedRail.holidayHelpLabel')}>
+                <InfoOutlinedIcon fontSize="small" />
+              </IconButton>
+            </Tooltip>
           </div>
 
         </div>

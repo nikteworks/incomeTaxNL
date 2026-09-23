@@ -274,6 +274,7 @@
     "salary": "Salary before tax",
     "salaryHelp": "Use the gross amount from your contract or payslip.",
     "holidayHelp": "Check this when your entered salary already includes 8% holiday allowance.",
+    "holidayHelpLabel": "About holiday allowance",
     "pensionAge": "At or above state pension age (AOW)",
     "takeHome": "Estimated take-home pay",
     "tax": "Tax and contributions",
