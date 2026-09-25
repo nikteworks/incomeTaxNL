@@ -9,6 +9,7 @@ import {
   FormControlLabel,
   MenuItem,
   InputAdornment,
+  IconButton,
   Tooltip,
   RadioGroup,
   Radio,
@@ -203,22 +204,18 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
           )}
 
           <Box className="box1-form__toggles">
-            <FormControlLabel
-              control={
-                <Switch
-                  checked={values.holidayAllowanceIncluded}
-                  onChange={handleToggleChange('holidayAllowanceIncluded')}
-                />
-              }
-              label={
-                <Stack direction="row" alignItems="center" spacing={0.5}>
-                  <span>{t('box1Form.holidayAllowanceIncluded')}</span>
-                  <Tooltip title={t('box1Form.holidayAllowanceTooltip')}>
-                    <InfoOutlinedIcon fontSize="small" color="action" />
-                  </Tooltip>
-                </Stack>
-              }
-            />
+            <div className="box1-form__toggle-row">
+              <FormControlLabel
+                control={<Switch checked={values.holidayAllowanceIncluded}
+                  onChange={handleToggleChange('holidayAllowanceIncluded')} />}
+                label={t('box1Form.holidayAllowanceIncluded')}
+              />
+              <Tooltip title={t(guided ? 'guidedRail.holidayHelp' : 'box1Form.holidayAllowanceTooltip')} describeChild>
+                <IconButton size="small" aria-label={t('guidedRail.holidayHelpLabel')}>
+                  <InfoOutlinedIcon fontSize="small" />
+                </IconButton>
+              </Tooltip>
+            </div>
 
             <FormControlLabel
               control={
