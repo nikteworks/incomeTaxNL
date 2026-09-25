@@ -103,12 +103,9 @@ function PrimaryLayout({ children }) {
           <div className="privacy-modal" onClick={e => e.stopPropagation()} role="dialog" aria-modal="true" aria-label={t('modals.privacyTitle')}>
             <button className="privacy-modal__close" onClick={() => setShowPrivacy(false)} aria-label="Close">×</button>
             <h2>{t('modals.privacyTitle')}</h2>
-            <p><strong>{t('modals.privacyIntro')}</strong> {t('modals.privacyText')}</p>
-            <ul>
-              <li>{t('modals.privacyBullet1')}</li>
-              <li>{t('modals.privacyBullet2')}</li>
-              <li>{t('modals.privacyBullet3')}</li>
-            </ul>
+            <p><strong>{t('modals.privacyIntro')}</strong></p>
+            <p>{t('modals.privacyText')}</p>
+            <p>{t('modals.privacyBullet1')}</p>
           </div>
         </div>
       )}
