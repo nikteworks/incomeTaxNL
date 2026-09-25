@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { validBox3Config } from '../utils/calculatorState.js'
 import { BOX3_DEFAULTS, getDefaultsForYear, calculateBox3Tax } from 'dutch-tax-box3-calculator'
 
 /**
@@ -22,9 +23,19 @@ export function useBox3Calculator(inputs, config = BOX3_DEFAULTS) {
     // If config has a year, merge with year-specific defaults as base
     const yearDefaults = configYear ? getDefaultsForYear(configYear) : {}
     const mergedConfig = { ...yearDefaults, ...config }
-    return calculateBox3Tax(
+    if (![bankBalance, investmentAssets, debts].every(value => Number.isFinite(value) && value >= 0) || !validBox3Config(mergedConfig)) return null
+    const result = calculateBox3Tax(
       { bankBalance, investmentAssets, debts, hasTaxPartner },
       mergedConfig,
     )
+    if (Object.values(result).some(value => typeof value === 'number' && !Number.isFinite(value))) return null
+    // Adapt the package result to stable, localized UI fields rather than matching English descriptions.
+    const deductibleDebts = Math.max(0, debts - result.totalDebtsThreshold)
+    const netAssets = bankBalance + investmentAssets - deductibleDebts
+    const taxableShare = netAssets > 0 ? result.taxableBase / netAssets : 0
+    return { ...result, deductibleDebts, netAssets, taxableShare,
+      bankReturns: bankBalance * mergedConfig.assumedReturnRates.bankBalance,
+      investmentReturns: investmentAssets * mergedConfig.assumedReturnRates.investmentAssets,
+      taxableIncome: result.taxableReturns * taxableShare }
   }, [bankBalance, investmentAssets, debts, hasTaxPartner, configYear, config])
 }

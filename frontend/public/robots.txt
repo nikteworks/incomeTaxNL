@@ -1,6 +1,7 @@
-# Robots.txt for incometax.nl
+# Public English/Dutch pages and their rendering assets are crawlable.
+# Keep language and calculator query URLs crawlable so canonical tags can be read.
+# Search and AI-search crawlers use the same public content; no bot-only pages.
 User-agent: *
 Allow: /
 
-# Sitemap location
 Sitemap: https://incometax.nl/sitemap.xml

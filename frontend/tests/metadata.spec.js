@@ -57,13 +57,12 @@ test('alternating requests never select the other language artifact', async ({ r
 })
 
 for (const width of [390, 1280]) {
-  test(`intro stays above the calculator at ${width}px`, async ({ page }) => {
+  test(`guided calculator fits the viewport at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 })
     await page.goto('/?lang=nl')
     await expect(page.locator('.calculator-shell')).toBeVisible()
-    const intro = await page.locator('.app-introduction').boundingBox()
     const calculator = await page.locator('.calculator-shell').boundingBox()
-    expect(intro.y + intro.height).toBeLessThanOrEqual(calculator.y)
+    await expect(page.locator('.guided-page-title')).toHaveText(pageCopy.nl.heading)
     expect(calculator.x).toBeGreaterThanOrEqual(0)
     expect(calculator.x + calculator.width).toBeLessThanOrEqual(width)
   })

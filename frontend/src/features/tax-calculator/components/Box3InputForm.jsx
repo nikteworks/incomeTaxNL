@@ -1,12 +1,9 @@
+import StandardModal from '../../../components/StandardModal.jsx'
 import { useMemo, useState } from 'react'
 import PropTypes from 'prop-types'
 import { monetaryEntryPropType } from '../../../utils/propTypes.js'
 import {
   Box,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
   IconButton,
   Accordion,
   AccordionSummary,
@@ -21,7 +18,6 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   MenuItem,
-  useMediaQuery,
 } from '@mui/material'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline'
@@ -104,7 +100,6 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
   const [amountError, setAmountError] = useState('')
   const [showCloseWarning, setShowCloseWarning] = useState(false)
   const [showResetConfirm, setShowResetConfirm] = useState(false)
-  const isCompactViewport = useMediaQuery('(max-width: 640px)')
 
   // Build translated FIELD_CONFIG
   const FIELD_CONFIG = useMemo(() => FIELD_CONFIG_KEYS.map(field => ({
@@ -214,7 +209,7 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
     if (!modalState || modalState.type !== 'multiCurrency') return false
     const nameValue = String(modalState.newEntry?.name ?? '').trim()
     const amountValue = String(modalState.newEntry?.amount ?? '').trim()
-    return nameValue !== '' || amountValue !== ''
+    return nameValue !== '' || amountValue !== '' || JSON.stringify(modalState.entries) !== JSON.stringify(getNormalizedEntries(modalState.fieldName))
   }
 
   const closeDialog = (force = false) => {
@@ -240,9 +235,9 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
       } else {
         const numericValue = Number(trimmed)
         if (Number.isNaN(numericValue) || !Number.isFinite(numericValue)) {
-          setAmountError('Please enter a valid number')
+          setAmountError(t('config.validNumber'))
         } else if (numericValue < 0) {
-          setAmountError('Amount cannot be negative')
+          setAmountError(t('config.notNegative'))
         } else {
           setAmountError('')
         }
@@ -342,7 +337,7 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
   }
 
   const handleConfirm = () => {
-    if (!modalState) return
+    if (!modalState || isConfirmDisabled()) return
     const field = fieldLookup.get(modalState.fieldName)
     if (!field) {
       closeDialog()
@@ -360,7 +355,8 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
       const numericValue = Number(trimmedAmount)
       if (!Number.isNaN(numericValue) && Number.isFinite(numericValue) && numericValue >= 0) {
         const nameValue = String(modalState.newEntry?.name ?? '').trim()
-        entries = [...entries, { name: nameValue, amount: numericValue }]
+        const updated = { name: nameValue, amount: numericValue }
+        entries = editingIndex === null ? [...entries, updated] : entries.map((entry, index) => index === editingIndex ? updated : entry)
       }
     }
     const sanitizedEntries = entries
@@ -374,12 +370,13 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
       })
       .filter((entry) => Number.isFinite(entry.amount) && entry.amount >= 0)
     onChange(field.name, sanitizedEntries)
-    closeDialog()
+    closeDialog(true)
   }
 
   const isConfirmDisabled = () => {
     if (!modalState) return true
-    return modalState.type !== 'multiCurrency'
+    const hasDraft = String(modalState.newEntry?.name ?? '').trim() !== '' || String(modalState.newEntry?.amount ?? '').trim() !== '' || editingIndex !== null
+    return modalState.type !== 'multiCurrency' || (hasDraft && isAddDisabled())
   }
 
   const handlePartnerToggle = (_event, value) => {
@@ -399,9 +396,6 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
   }
 
   const modalTotals = getModalTotals()
-  const entryDialogPaperClass = isCompactViewport
-    ? 'tax-form__entry-dialog-paper tax-form__entry-dialog-paper--mobile'
-    : 'tax-form__entry-dialog-paper'
 
   return (
     <form className="tax-form" onSubmit={(event) => event.preventDefault()} noValidate>
@@ -411,11 +405,11 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
         <TextField
           select
           size="small"
-          label="Tax year"
+          label={t('box1Form.taxYear')}
           value={year}
           onChange={(e) => onYearChange(Number(e.target.value))}
           className="tax-form__year-select"
-          aria-label="Tax year"
+          aria-label={t('box1Form.taxYear')}
         >
           {AVAILABLE_YEARS.map((y) => (
             <MenuItem key={y} value={y}>
@@ -475,7 +469,7 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
                     startIcon={<AddCircleIcon />}
                     onClick={() => openDialog(field.name)}
                   >
-                    Manage entries
+                    {t('box3Form.manageEntries')}
                   </Button>
                 </div>
               </AccordionDetails>
@@ -495,10 +489,10 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
           className="tax-form__partner-toggle"
           aria-label={t('box3Form.taxPartner')}
         >
-          <ToggleButton value="yes" aria-label="Yes">
+          <ToggleButton value="yes" aria-label={language === 'nl' ? 'Ja' : 'Yes'}>
             {language === 'nl' ? 'Ja' : 'Yes'}
           </ToggleButton>
-          <ToggleButton value="no" aria-label="No">
+          <ToggleButton value="no" aria-label={language === 'nl' ? 'Nee' : 'No'}>
             {language === 'nl' ? 'Nee' : 'No'}
           </ToggleButton>
         </ToggleButtonGroup>
@@ -523,14 +517,9 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
       </Box>
 
       {/* Reset confirmation dialog */}
-      <Dialog open={showResetConfirm} onClose={() => setShowResetConfirm(false)} maxWidth="xs">
-        <DialogTitle>{t('box1Form.resetTitle')}</DialogTitle>
-        <DialogContent>
-          <Typography variant="body2">
-            {t('box1Form.resetMessage')}
-          </Typography>
-        </DialogContent>
-        <DialogActions>
+      <StandardModal open={showResetConfirm} onClose={() => setShowResetConfirm(false)} size="xs"
+        title={t('box1Form.resetTitle')}
+        actions={<>
           <Button onClick={() => setShowResetConfirm(false)} color="inherit">
             {t('box3Form.cancel')}
           </Button>
@@ -544,165 +533,157 @@ function Box3InputForm({ values, onChange, year, onYearChange, onReset, configMe
           >
             {t('box3Form.reset')}
           </Button>
-        </DialogActions>
-      </Dialog>
+        </>}
+      >
+        <Typography variant="body2">
+          {t('box1Form.resetMessage')}
+        </Typography>
+      </StandardModal>
 
       {modalState && (
         <>
-          <Dialog
+          <StandardModal
             open
-            onClose={() => closeDialog()}
-            fullWidth
-            maxWidth="sm"
-            fullScreen={isCompactViewport}
-            scroll="paper"
-            PaperProps={{ className: entryDialogPaperClass }}
-          >
-            <DialogTitle className="tax-form__modal-title">
-              <span>{activeField?.label}</span>
-              <div className="tax-form__modal-stats">
+            onClose={() => closeDialog()} size="sm"
+            title={activeField?.label}
+            summary={<div className="tax-form__modal-stats">
                 <span className="tax-form__modal-count">
                   {modalTotals.count} {modalTotals.count === 1 ? activeField?.detailLabel : activeField?.detailLabelPlural}
                 </span>
                 <span className="tax-form__modal-total">
                   {formatEuro(modalTotals.total, locale)}
                 </span>
-              </div>
-            </DialogTitle>
-            <DialogContent dividers>
-              {modalState.type === 'multiCurrency' && (
-                <Stack spacing={2} className="tax-form__modal-group">
-                  {modalState.entries.length > 0 ? (
-                    <List className="tax-form__modal-list">
-                      {modalState.entries.map((entry, index) => (
-                        <ListItem
-                          key={`entry-${index}`}
-                          alignItems="flex-start"
-                          className={editingIndex === index ? 'tax-form__modal-list-item--editing' : ''}
-                          secondaryAction={
-                            <Stack direction="row" spacing={0.5}>
-                              <IconButton
-                                edge="end"
-                                onClick={() => handleEditEntry(index)}
-                                aria-label={`${t('box3Form.edit')} ${entry.name || activeField?.detailLabel || 'entry'}`}
-                                disabled={editingIndex !== null}
-                              >
-                                <EditIcon color="primary" />
-                              </IconButton>
-                              <IconButton
-                                edge="end"
-                                onClick={() => handleRemoveEntry(index)}
-                                aria-label={`${t('box3Form.delete')} ${entry.name || activeField?.detailLabel || 'entry'}`}
-                                disabled={editingIndex !== null}
-                              >
-                                <DeleteOutlineIcon color="error" />
-                              </IconButton>
-                            </Stack>
-                          }
-                        >
-                          <ListItemText
-                            primary={
-                              entry.name && entry.name.trim() !== ''
-                                ? entry.name
-                                : `Unnamed ${activeField?.detailLabel ?? 'entry'}`
-                            }
-                            secondary={`${t('box3Form.amount')}: ${formatEuro(Number(entry.amount) || 0, locale)}`}
-                            primaryTypographyProps={{
-                              variant: 'body1',
-                              fontWeight: entry.name ? 600 : 500,
-                            }}
-                            secondaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }}
-                          />
-                        </ListItem>
-                      ))}
-                    </List>
-                  ) : (
-                    <Typography className="tax-form__modal-empty" align="center">
-                      {activeField?.emptyLabel || 'No amounts added yet.'}
-                    </Typography>
-                  )}
-
-                  <div className="tax-form__modal-add-section">
-                    <Typography variant="subtitle2" className="tax-form__modal-add-title">
-                      {editingIndex !== null ? t('box3Form.edit') : t('box3Form.add')}
-                    </Typography>
-                    <div className="tax-form__modal-add-row">
-                      <TextField
-                        variant="outlined"
-                        size="small"
-                        label={activeField?.entryNameLabel || t('box3Form.accountName')}
-                        placeholder={activeField?.entryNamePlaceholder || t('box3Form.accountPlaceholder')}
-                        value={modalState.newEntry?.name ?? ''}
-                        onChange={(event) => handleNewEntryChange('name', event.target.value)}
-                        onKeyDown={handleKeyDown}
-                        className="tax-form__modal-field tax-form__modal-field--name"
-                        autoFocus
-                      />
-                      <TextField
-                        variant="outlined"
-                        size="small"
-                        type="number"
-                        inputProps={{ inputMode: 'decimal', step: '0.01', min: 0 }}
-                        value={modalState.newEntry?.amount ?? ''}
-                        onChange={(event) => handleNewEntryChange('amount', event.target.value)}
-                        onKeyDown={handleKeyDown}
-                        placeholder="0.00"
-                        label={`${t('box3Form.amount')} (EUR)`}
-                        className="tax-form__modal-field tax-form__modal-field--amount"
-                        error={!!amountError}
-                        helperText={amountError}
-                      />
-                      {editingIndex !== null && (
-                        <Button
-                          onClick={handleCancelEdit}
-                          variant="outlined"
-                          color="inherit"
-                          size="small"
-                        >
-                          {t('box3Form.cancel')}
-                        </Button>
-                      )}
-                      <Button
-                        onClick={handleAddEntry}
-                        disabled={isAddDisabled()}
-                        variant="contained"
-                        color="primary"
-                        size="small"
-                      >
-                        {editingIndex !== null ? t('box3Form.save') : t('box3Form.add')}
-                      </Button>
-                    </div>
-                  </div>
-                </Stack>
-              )}
-            </DialogContent>
-            <DialogActions>
+              </div>}
+            actions={<>
               <Button onClick={() => closeDialog()} color="inherit">
                 {t('box3Form.cancel')}
               </Button>
               <Button onClick={handleConfirm} disabled={isConfirmDisabled()} variant="contained">
                 {t('box3Form.save')}
               </Button>
-            </DialogActions>
-          </Dialog>
+            </>}
+          >
+            {modalState.type === 'multiCurrency' && (
+              <Stack spacing={2} className="tax-form__modal-group">
+                {modalState.entries.length > 0 ? (
+                  <List className="tax-form__modal-list">
+                    {modalState.entries.map((entry, index) => (
+                      <ListItem
+                        key={`entry-${index}`}
+                        alignItems="flex-start"
+                        className={editingIndex === index ? 'tax-form__modal-list-item--editing' : ''}
+                        secondaryAction={
+                          <Stack direction="row" spacing={0.5}>
+                            <IconButton
+                              edge="end"
+                              onClick={() => handleEditEntry(index)}
+                              aria-label={`${t('box3Form.edit')} ${entry.name || activeField?.detailLabel || 'entry'}`}
+                              disabled={editingIndex !== null}
+                            >
+                              <EditIcon color="primary" />
+                            </IconButton>
+                            <IconButton
+                              edge="end"
+                              onClick={() => handleRemoveEntry(index)}
+                              aria-label={`${t('box3Form.delete')} ${entry.name || activeField?.detailLabel || 'entry'}`}
+                              disabled={editingIndex !== null}
+                            >
+                              <DeleteOutlineIcon color="error" />
+                            </IconButton>
+                          </Stack>
+                        }
+                      >
+                        <ListItemText
+                          primary={
+                            entry.name && entry.name.trim() !== ''
+                              ? entry.name
+                              : `Unnamed ${activeField?.detailLabel ?? 'entry'}`
+                          }
+                          secondary={`${t('box3Form.amount')}: ${formatEuro(Number(entry.amount) || 0, locale)}`}
+                          primaryTypographyProps={{
+                            variant: 'body1',
+                            fontWeight: entry.name ? 600 : 500,
+                          }}
+                          secondaryTypographyProps={{ variant: 'body2', color: 'text.secondary' }}
+                        />
+                      </ListItem>
+                    ))}
+                  </List>
+                ) : (
+                  <Typography className="tax-form__modal-empty" align="center">
+                    {activeField?.emptyLabel || 'No amounts added yet.'}
+                  </Typography>
+                )}
+
+                <div className="tax-form__modal-add-section">
+                  <Typography variant="subtitle2" className="tax-form__modal-add-title">
+                    {editingIndex !== null ? t('box3Form.edit') : t('box3Form.add')}
+                  </Typography>
+                  <div className="tax-form__modal-add-row">
+                    <TextField
+                      variant="outlined"
+                      size="small"
+                      label={activeField?.entryNameLabel || t('box3Form.accountName')}
+                      placeholder={activeField?.entryNamePlaceholder || t('box3Form.accountPlaceholder')}
+                      value={modalState.newEntry?.name ?? ''}
+                      onChange={(event) => handleNewEntryChange('name', event.target.value)}
+                      onKeyDown={handleKeyDown}
+                      className="tax-form__modal-field tax-form__modal-field--name"
+                      autoFocus
+                    />
+                    <TextField
+                      variant="outlined"
+                      size="small"
+                      type="number"
+                      inputProps={{ inputMode: 'decimal', step: '0.01', min: 0 }}
+                      value={modalState.newEntry?.amount ?? ''}
+                      onChange={(event) => handleNewEntryChange('amount', event.target.value)}
+                      onKeyDown={handleKeyDown}
+                      placeholder="0.00"
+                      label={`${t('box3Form.amount')} (EUR)`}
+                      className="tax-form__modal-field tax-form__modal-field--amount"
+                      error={!!amountError}
+                      helperText={amountError}
+                    />
+                    {editingIndex !== null && (
+                      <Button
+                        onClick={handleCancelEdit}
+                        variant="outlined"
+                        color="inherit"
+                        size="small"
+                      >
+                        {t('box3Form.cancel')}
+                      </Button>
+                    )}
+                    <Button
+                      onClick={handleAddEntry}
+                      disabled={isAddDisabled()}
+                      variant="contained"
+                      color="primary"
+                      size="small"
+                    >
+                      {editingIndex !== null ? t('box3Form.save') : t('box3Form.add')}
+                    </Button>
+                  </div>
+                </div>
+              </Stack>
+            )}
+          </StandardModal>
 
           {/* Unsaved changes warning dialog */}
-          <Dialog open={showCloseWarning} onClose={() => setShowCloseWarning(false)} maxWidth="xs">
-            <DialogTitle>{t('box1Form.resetTitle')}</DialogTitle>
-            <DialogContent>
-              <Typography variant="body2">
-                You have started entering a new {activeField?.detailLabel || 'entry'} but haven't added it yet. Are you sure you want to discard it?
-              </Typography>
-            </DialogContent>
-            <DialogActions>
+          <StandardModal open={showCloseWarning} onClose={() => setShowCloseWarning(false)} size="xs"
+            title={t('modals.discardTitle')}
+            actions={<>
               <Button onClick={() => setShowCloseWarning(false)} color="inherit">
                 {t('box3Form.cancel')}
               </Button>
               <Button onClick={forceCloseDialog} variant="contained" color="error">
-                {t('box3Form.delete')}
+                {t('modals.discard')}
               </Button>
-            </DialogActions>
-          </Dialog>
+            </>}
+          >
+            <Typography variant="body2">{t('modals.discardText')}</Typography>
+          </StandardModal>
         </>
       )}
     </form>

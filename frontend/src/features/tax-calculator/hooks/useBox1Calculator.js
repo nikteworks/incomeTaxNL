@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { SalaryPaycheck, constants } from 'dutch-tax-income-calculator'
-import { PERIOD_MULTIPLIERS } from '../constants/box1Defaults.js'
+import { annualIncome } from '../utils/calculatorState.js'
 
 /**
  * Available years supported by dutch-tax-income-calculator
@@ -11,35 +11,6 @@ export const BOX1_AVAILABLE_YEARS = constants.years
   .sort((a, b) => b - a)
 
 export const BOX1_DEFAULT_YEAR = BOX1_AVAILABLE_YEARS[0] ?? 2026
-
-/**
- * Map period values to SalaryPaycheck startFrom parameter
- */
-const PERIOD_TO_START_FROM = {
-  yearly: 'Year',
-  monthly: 'Month',
-  weekly: 'Week',
-  daily: 'Day',
-  hourly: 'Hour',
-}
-
-/**
- * Convert the user's input income to yearly based on the period
- * @param {number} income - The income amount entered by user
- * @param {string} period - The period (yearly, monthly, weekly, daily, hourly)
- * @param {number} hoursPerWeek - Hours worked per week (needed for hourly)
- * @returns {number} The annualized income
- */
-function convertToYearlyIncome(income, period, hoursPerWeek) {
-  if (!income || income <= 0) return 0
-
-  const multiplier = PERIOD_MULTIPLIERS[period]
-  if (multiplier === null) {
-    // Hourly: hours per week * 52 weeks
-    return income * hoursPerWeek * 52
-  }
-  return income * multiplier
-}
 
 /**
  * Custom hook for calculating Box 1 income tax using dutch-tax-income-calculator
@@ -69,9 +40,11 @@ export function useBox1Calculator(inputs, year = BOX1_DEFAULT_YEAR) {
     socialSecurity = true,
   } = inputs ?? {}
 
+  const annual = annualIncome(inputs ?? {})
+
   return useMemo(() => {
     // Return empty summary if no income
-    if (!grossIncome || grossIncome <= 0) {
+    if (annual === null || !Number.isFinite(annual) || annual <= 0 || !BOX1_AVAILABLE_YEARS.includes(year) || (period === 'hourly' && (!Number.isFinite(Number(hoursPerWeek)) || Number(hoursPerWeek) <= 0 || Number(hoursPerWeek) > 168))) {
       return {
         taxableBase: 0,
         estimatedTax: 0,
@@ -82,9 +55,6 @@ export function useBox1Calculator(inputs, year = BOX1_DEFAULT_YEAR) {
     }
 
     try {
-      // Get the startFrom parameter based on the period
-      const startFrom = PERIOD_TO_START_FROM[period] || 'Year'
-
       // Map ruling30Category to the package's expected choice values
       // Package expects: 'normal', 'young', 'research'
       const rulingChoiceMap = {
@@ -95,15 +65,15 @@ export function useBox1Calculator(inputs, year = BOX1_DEFAULT_YEAR) {
 
       const paycheck = new SalaryPaycheck(
         {
-          income: Number(grossIncome),
+          income: annual,
           // If holiday allowance IS included in the input, tell the library to extract it
           // If holiday allowance is NOT included, the library shouldn't extract anything
           allowance: holidayAllowanceIncluded,
           socialSecurity,
           older,
-          hours: hoursPerWeek,
+          hours: Number(hoursPerWeek) > 0 ? Number(hoursPerWeek) : 40,
         },
-        startFrom,
+        'Year',
         year,
         {
           checked: ruling30Enabled,
@@ -112,7 +82,7 @@ export function useBox1Calculator(inputs, year = BOX1_DEFAULT_YEAR) {
       )
 
       // Calculate the yearly income for display purposes
-      const yearlyInputIncome = convertToYearlyIncome(Number(grossIncome), period, hoursPerWeek)
+      const yearlyInputIncome = annual
 
       // Extract all relevant fields from the paycheck
       const details = {
@@ -126,7 +96,7 @@ export function useBox1Calculator(inputs, year = BOX1_DEFAULT_YEAR) {
         grossHour: paycheck.grossHour ?? 0,
         grossAllowance: paycheck.grossAllowance ?? 0,
         taxableYear: paycheck.taxableYear ?? 0,
-        taxFree: paycheck.taxFree ?? 0,
+        taxFree: paycheck.taxFreeYear ?? 0,
         payrollTax: paycheck.payrollTax ?? 0,
         socialTax: paycheck.socialTax ?? 0,
         generalCredit: paycheck.generalCredit ?? 0,
@@ -140,6 +110,8 @@ export function useBox1Calculator(inputs, year = BOX1_DEFAULT_YEAR) {
         netHour: paycheck.netHour ?? 0,
         netAllowance: paycheck.netAllowance ?? 0,
       }
+
+      if (Object.values(details).some(value => typeof value === 'number' && !Number.isFinite(value))) throw new Error('Invalid calculation result')
 
       // Build breakdown for display
       const breakdown = [
@@ -216,6 +188,7 @@ export function useBox1Calculator(inputs, year = BOX1_DEFAULT_YEAR) {
       }
     }
   }, [
+    annual,
     grossIncome,
     period,
     hoursPerWeek,

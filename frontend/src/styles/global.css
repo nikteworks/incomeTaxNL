@@ -110,3 +110,19 @@ h6 {
 .MuiToggleButton-root.Mui-selected:hover {
   background-color: rgba(0, 48, 130, 0.18) !important;
 }
+
+.advanced-options-link {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 6px 0;
+  border: 0;
+  background: transparent;
+  color: var(--brand-primary);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.advanced-options-link:hover { text-decoration-thickness: 2px; }
+.advanced-options-link:focus-visible { outline: 3px solid #2246ae; outline-offset: 3px; }

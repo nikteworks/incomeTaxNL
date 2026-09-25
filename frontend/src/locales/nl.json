@@ -99,7 +99,9 @@
     "generalTaxCredit": "Algemene heffingskorting",
     "generalTaxCreditInfo": "Algemene heffingskorting - basiskorting voor alle belastingplichtigen.",
     "labourTaxCredit": "Arbeidskorting",
-    "labourTaxCreditInfo": "Arbeidskorting - korting voor werkenden."
+    "labourTaxCreditInfo": "Arbeidskorting - korting voor werkenden.",
+    "holidayAllowance": "Vakantiegeld (inbegrepen)",
+    "holidayAllowanceInfo": "Vakantiegeld volgens de calculator. Bij de 30%-regeling blijft dit onderdeel van het arbeidsinkomen voor de berekening."
   },
   "box3Result": {
     "results": "Resultaten",
@@ -125,7 +127,14 @@
     "showBreakdown": "Toon uitsplitsing",
     "hideBreakdown": "Verberg uitsplitsing",
     "actualReturnDisclaimer": "Deze rekenhulp berekent of vergelijkt geen werkelijk rendement. De Belastingdienst kan het werkelijk rendement gebruiken als dat voordeliger is. De voorwaarden en de manier van doorgeven hangen af van het belastingjaar.",
-    "learnMore": "Meer informatie"
+    "learnMore": "Meer informatie",
+    "debtThreshold": "Schuldendrempel",
+    "bankReturns": "Forfaitair rendement banktegoeden",
+    "investmentReturns": "Forfaitair rendement beleggingen",
+    "debtCosts": "Aftrekbare schuldenkosten",
+    "taxableReturns": "Rendement na schuldenkosten",
+    "taxableIncome": "Belastbaar inkomen uit sparen en beleggen",
+    "taxableShare": "Belastbaar aandeel"
   },
   "box3Form": {
     "bankAccounts": "Bankrekeningen",
@@ -153,7 +162,8 @@
     "delete": "Verwijderen",
     "save": "Opslaan",
     "cancel": "Annuleren",
-    "amount": "Bedrag"
+    "amount": "Bedrag",
+    "manageEntries": "Gegevens beheren"
   },
   "config": {
     "title": "Box 3 Belastingconfiguratie",
@@ -232,7 +242,12 @@
     "termsContactTitle": "9. Contact",
     "termsContactText": "Voor vragen of opmerkingen kunt u contact met ons opnemen via",
     "termsContactOr": "of",
-    "termsContactDM": "direct bericht op X"
+    "termsContactDM": "direct bericht op X",
+    "close": "Sluiten",
+    "statementTitle": "Je jaaropgave lezen",
+    "discardTitle": "Deze invoer verwerpen?",
+    "discardText": "Deze invoer is nog niet toegevoegd. Verwerp deze of annuleer om verder te bewerken.",
+    "discard": "Invoer verwerpen"
   },
   "language": {
     "switchTo": "Schakel over naar Engels"
@@ -261,5 +276,68 @@
     "actualSource": "Belastingdienst: werkelijk rendement en doorgeven",
     "limitsTitle": "Wat de schatting niet meeneemt",
     "limitsText": "Deze rekenhulp berekent bruto naar netto, niet netto naar bruto. Er zijn geen invoervelden voor pensioeninhoudingen, hypotheekrenteaftrek, ander inkomen of een volledige belastingaangifte. De opties voor leeftijd en volksverzekeringen zijn vereenvoudigd; in het jaar waarin u de AOW-leeftijd bereikt, kan een andere berekening nodig zijn. Box 1 en Box 3 zijn afzonderlijke schattingen; Box 3-inkomen wordt niet gebruikt om de heffingskortingen in Box 1 opnieuw te berekenen. Vergelijk het resultaat met uw loonstrook en de officiële regels voor uw belastingjaar."
+  },
+  "guidedRail": {
+    "salary": "Salaris vóór belasting",
+    "salaryHelp": "Gebruik het brutobedrag op je contract of loonstrook.",
+    "holidayHelp": "Vink dit aan als je ingevoerde salaris al 8% vakantiegeld bevat.",
+    "holidayHelpLabel": "Over vakantiegeld",
+    "pensionAge": "AOW-leeftijd bereikt",
+    "takeHome": "Geschat nettoloon",
+    "tax": "Belasting en premies",
+    "net": "Nettoloon",
+    "gross": "Brutosalaris",
+    "expand": "Resultaten uitklappen",
+    "collapse": "Resultaten minimaliseren",
+    "ratio": "Netto / bruto",
+    "filter": "Berekeningsonderdelen filteren",
+    "inputs": "Calculatorinvoer",
+    "emptySalary": "Vul je salaris in om een schatting te zien.",
+    "invalidSalary": "Vul een positief salaris en geldige uren per week in om je schatting te berekenen.",
+    "emptyAssets": "Voeg je spaargeld, beleggingen of schulden toe om een schatting te zien.",
+    "invalidAssets": "Controleer je opgeslagen bedragen en belastinginstellingen voor de berekening.",
+    "invalidHours": "Vul meer dan 0 en maximaal 168 uren per week in.",
+    "periodNote": "Alle bedragen gebruiken de gekozen periode. Maand- en weekbedragen zijn gemiddelden van de jaarberekening.",
+    "holidayNote": "De calculator houdt het inbegrepen vakantiegeld apart van het reguliere nettoloon."
+  },
+  "box3Breakdown": {
+    "introduction": "Hier zie je de berekening stap voor stap, met eenvoudige uitleg:",
+    "minimumZero": "minimaal €0",
+    "noPositiveBase": "Na aftrekbare schulden blijft geen positief bedrag over",
+    "deductibleDebts": "Alleen schulden boven de schuldendrempel zijn aftrekbaar:",
+    "bankReturns": "Forfaitair rendement op je banktegoeden:",
+    "investmentReturns": "Forfaitair rendement op je beleggingen:",
+    "debtCosts": "Kosten voor je aftrekbare schulden:",
+    "taxableReturns": "Tel de forfaitaire rendementen op en trek de schuldenkosten af:",
+    "totalAssets": {
+      "title": "Totale bezittingen",
+      "formula": "banktegoeden + beleggingen",
+      "explanation": "Dit is al het geld op je bankrekeningen en in je beleggingen bij elkaar opgeteld."
+    },
+    "netAssets": {
+      "title": "Rendementsgrondslag",
+      "formula": "totale bezittingen − aftrekbare schulden",
+      "explanation": "We trekken de schulden die je mag aftrekken van je totale bezittingen af. Dit geeft het bedrag voor de volgende stap."
+    },
+    "taxableBase": {
+      "title": "Grondslag sparen en beleggen",
+      "formula": "rendementsgrondslag − heffingsvrij vermogen",
+      "explanation": "Je krijgt een belastingvrije vrijstelling. We trekken deze af van het bedrag hierboven. Alleen wat overblijft telt mee, met een minimum van nul. Bij een fiscaal partner verdubbelt de calculator de vrijstelling en de schuldendrempel."
+    },
+    "taxableShare": {
+      "title": "Aandeel in de rendementsgrondslag",
+      "formula": "grondslag sparen en beleggen ÷ rendementsgrondslag",
+      "explanation": "Dit laat zien welk deel van je vermogen overblijft na de vrijstelling. We passen dit aandeel in de volgende stap toe op het forfaitaire rendement. Is de rendementsgrondslag nul of negatief, dan is dit aandeel nul."
+    },
+    "taxableIncome": {
+      "title": "Inkomen uit sparen en beleggen",
+      "formula": "belastbaar rendement × aandeel",
+      "explanation": "Dit is het inkomen waarmee je belasting wordt geschat. De calculator gebruikt forfaitaire rendementen op spaargeld en beleggingen, trekt schuldenkosten af en past het aandeel hierboven toe. Dit is een aangenomen rendement, niet je werkelijke opbrengst."
+    },
+    "estimatedTax": {
+      "title": "Geschatte belasting",
+      "formula": "inkomen × Box 3-belastingtarief",
+      "explanation": "We vermenigvuldigen het inkomen uit de vorige stap met het gekozen Box 3-belastingtarief. Dit geeft je geschatte belasting voor het jaar."
+    }
   }
 }

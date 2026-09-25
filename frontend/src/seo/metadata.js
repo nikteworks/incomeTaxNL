@@ -1,6 +1,9 @@
 import { languageCanonical } from '../utils/urlState.js'
 import { faqByLanguage } from './faq.js'
 
+// Change only when the public page content changes, never on every build.
+export const PAGE_UPDATED_AT = '2026-09-25'
+
 export const pageCopy = {
   en: {
     title: 'Netherlands Salary & Tax Calculator | incomeTaxNL',
@@ -51,12 +54,23 @@ export function metadata(language) {
     ],
     structuredData: {
       '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+      '@id': `${canonical}#calculator`,
       name: 'incomeTaxNL', url: canonical, description: copy.description,
+      isAccessibleForFree: true,
+      mainEntityOfPage: {
+        '@type': 'WebPage', '@id': `${canonical}#webpage`, url: canonical,
+        name: copy.title, description: copy.description, inLanguage: language,
+        dateModified: PAGE_UPDATED_AT,
+        isPartOf: {
+          '@type': 'WebSite', '@id': 'https://incometax.nl/#website',
+          name: 'incomeTaxNL', url: 'https://incometax.nl/', inLanguage: ['en', 'nl'],
+        },
+      },
       applicationCategory: 'FinanceApplication', operatingSystem: 'Web',
       inLanguage: language,
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
     },
-    faqStructuredData: { ...faqByLanguage[language], url: canonical },
+    faqStructuredData: { ...faqByLanguage[language], '@id': `${canonical}#faq`, url: canonical, isPartOf: { '@id': `${canonical}#webpage` } },
   }
 }
 

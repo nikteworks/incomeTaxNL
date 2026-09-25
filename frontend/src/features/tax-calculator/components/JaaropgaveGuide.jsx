@@ -1,20 +1,16 @@
+import { useLanguage } from '../../../context/LanguageContext.jsx'
+import StandardModal from '../../../components/StandardModal.jsx'
 import { useState } from 'react'
 import {
   Button,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
   Typography,
   Stack,
   Accordion,
   AccordionSummary,
   AccordionDetails,
   Box,
-  Chip,
   Divider,
 } from '@mui/material'
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
@@ -101,7 +97,7 @@ const GENERAL_INFO = {
       heading: 'Key date: 1 January (Peildatum)',
       items: [
         'Box 3 tax is based on your wealth on 1 January of the tax year',
-        'For 2025 taxes, use balances from 1 January 2025',
+        'Use balances from 1 January of the tax year selected in the calculator',
         'This is called the "peildatum" (reference date)',
       ],
     },
@@ -122,17 +118,21 @@ const GENERAL_INFO = {
         'Personal loans and credit',
         'Debts for investments',
         'Note: Primary home mortgage is NOT deductible in Box 3',
-        'Threshold: First €3,400 per person is not deductible',
+        'The debt threshold depends on the tax year and tax-partner setting; check Advanced Options',
       ],
     },
   ],
 }
 
 function JaaropgaveGuide() {
+  const { t } = useLanguage()
   const [open, setOpen] = useState(false)
-  const [expanded, setExpanded] = useState('panel-bank')
+  const [expanded, setExpanded] = useState(false)
 
-  const handleOpen = () => setOpen(true)
+  const handleOpen = () => {
+    setExpanded(false)
+    setOpen(true)
+  }
   const handleClose = () => setOpen(false)
 
   const handleAccordionChange = (panel) => (_event, isExpanded) => {
@@ -189,32 +189,25 @@ function JaaropgaveGuide() {
         Where can I find this information?
       </Button>
 
-      <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
-        <DialogTitle className="jaaropgave-guide__title">
-          <Stack direction="row" spacing={1} alignItems="center">
-            <HelpOutlineIcon color="primary" />
-            <span>Reading Your Jaaropgave (Annual Statement)</span>
-          </Stack>
-          <Chip label="Box 3" size="small" color="primary" variant="outlined" />
-        </DialogTitle>
-        <DialogContent dividers className="jaaropgave-guide__content">
-          <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-            A jaaropgave is the annual statement from your bank or broker showing your balances for tax purposes.
-            Here's how to find the values you need for Box 3.
-          </Typography>
-          <Divider sx={{ mb: 2 }} />
-          <Stack spacing={1}>
-            {renderGuideSection(BANK_GUIDE, 'panel-bank')}
-            {renderGuideSection(INVESTMENT_GUIDE, 'panel-investment')}
-            {renderGuideSection(GENERAL_INFO, 'panel-general')}
-          </Stack>
-        </DialogContent>
-        <DialogActions>
+      <StandardModal open={open} onClose={handleClose} size="md"
+        title={t('modals.statementTitle')}
+        actions={<>
           <Button onClick={handleClose} variant="contained">
-            Got it
+            {t('modals.close')}
           </Button>
-        </DialogActions>
-      </Dialog>
+        </>}
+      >
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+          A jaaropgave is the annual statement from your bank or broker showing your balances for tax purposes.
+          Here's how to find the values you need for Box 3.
+        </Typography>
+        <Divider sx={{ mb: 2 }} />
+        <Stack spacing={1}>
+          {renderGuideSection(BANK_GUIDE, 'panel-bank')}
+          {renderGuideSection(INVESTMENT_GUIDE, 'panel-investment')}
+          {renderGuideSection(GENERAL_INFO, 'panel-general')}
+        </Stack>
+      </StandardModal>
     </>
   )
 }

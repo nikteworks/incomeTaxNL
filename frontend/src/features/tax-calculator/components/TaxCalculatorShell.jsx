@@ -1,7 +1,7 @@
-import { useState, useMemo, useCallback, useEffect, useRef, lazy, Suspense } from 'react'
-import Box3InputForm from './Box3InputForm.jsx'
-import Box1InputForm from './Box1InputForm.jsx'
-import CalculatorToggleSwitch from './CalculatorToggleSwitch.jsx'
+import { useState, useMemo, useCallback, useEffect } from 'react'
+import GuidedRailCalculator from './GuidedRailCalculator.jsx'
+import { annualIncome, assetInputs, changeSalaryField, validBox3Config } from '../utils/calculatorState.js'
+import { INCOME_PERIODS, RULING_30_CATEGORIES } from '../constants/box1Defaults.js'
 import { useBox3Calculator } from '../hooks/useBox3Calculator.js'
 import { BOX1_EMPTY_FORM } from '../constants/box1Defaults.js'
 import {
@@ -9,20 +9,10 @@ import {
   BOX1_AVAILABLE_YEARS,
   BOX1_DEFAULT_YEAR,
 } from '../hooks/useBox1Calculator.js'
-import { DEFAULT_YEAR, getDefaultsForYear } from 'dutch-tax-box3-calculator'
-import { useLanguage } from '../../../context/LanguageContext.jsx'
+import { AVAILABLE_YEARS, DEFAULT_YEAR, getDefaultsForYear } from 'dutch-tax-box3-calculator'
 import { useQueryState } from '../../../hooks/useQueryState.js'
 import { readCalculatorType } from '../../../utils/urlState.js'
 import { storage, STORAGE_KEYS } from '../../../utils/storage.js'
-import './TaxCalculatorShell.css'
-import './CalculatorToggleSwitch.css'
-import './CalculationExplanation.css'
-
-// Lazy load components for better initial bundle size
-const ConfigurationMenu = lazy(() => import('./ConfigurationMenu.jsx'))
-const Box3ResultPanel = lazy(() => import('./Box3ResultPanel.jsx'))
-const Box1ResultPanel = lazy(() => import('./Box1ResultPanel.jsx'))
-
 const BOX3_EMPTY_FORM = {
   bankAccounts: [],
   investmentAccounts: [],
@@ -62,12 +52,13 @@ const getInitialBox1FormValues = () => {
   if (saved && typeof saved === 'object') {
     return {
       grossIncome: typeof saved.grossIncome === 'number' ? saved.grossIncome : '',
-      period: saved.period || 'yearly',
+      annualIncome: saved.annualIncome,
+      period: INCOME_PERIODS.some(item => item.value === saved.period) ? saved.period : 'yearly',
       hoursPerWeek: typeof saved.hoursPerWeek === 'number' ? saved.hoursPerWeek : 40,
       holidayAllowanceIncluded: saved.holidayAllowanceIncluded !== false, // default to true
       older: Boolean(saved.older),
       ruling30Enabled: Boolean(saved.ruling30Enabled),
-      ruling30Category: saved.ruling30Category || 'other',
+      ruling30Category: RULING_30_CATEGORIES.some(item => item.value === saved.ruling30Category) ? saved.ruling30Category : 'other',
       socialSecurity: saved.socialSecurity !== false, // default to true
     }
   }
@@ -79,7 +70,7 @@ const getInitialBox1FormValues = () => {
  */
 const getInitialBox3Year = () => {
   const saved = storage.get(STORAGE_KEYS.BOX3_SELECTED_YEAR)
-  return typeof saved === 'number' ? saved : DEFAULT_YEAR
+  return AVAILABLE_YEARS.includes(saved) ? saved : DEFAULT_YEAR
 }
 
 const getInitialBox1Year = () => {
@@ -94,55 +85,18 @@ const getInitialBox1Year = () => {
  * Load initial box3 config from localStorage, falling back to defaults.
  */
 const getInitialBox3Config = () => {
+  const saved = storage.get(STORAGE_KEYS.BOX3_CONFIG)
+  if (AVAILABLE_YEARS.includes(saved?.year) && validBox3Config(saved)) return saved
   const savedYear = getInitialBox3Year()
   const yearDefaults = getDefaultsForYear(savedYear)
   return { year: savedYear, ...yearDefaults }
 }
 
-const useDebouncedStorage = (key, value, delay = 250) => {
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      storage.set(key, value)
-    }, delay)
-    return () => clearTimeout(handler)
-  }, [key, value, delay])
+const usePersistedValue = (key, value) => {
+  useEffect(() => { storage.set(key, value) }, [key, value])
 }
 
 function TaxCalculatorShell() {
-  const { t } = useLanguage()
-  // Refs for scroll navigation
-  const inputPanelRef = useRef(null)
-  const resultsPanelRef = useRef(null)
-  
-  // Track if user has scrolled to results (for showing 'Go to Top' button)
-  const [showGoToTop, setShowGoToTop] = useState(false)
-  
-  // Scroll event handler to determine which button to show
-  useEffect(() => {
-    const handleScroll = () => {
-      if (resultsPanelRef.current) {
-        const resultsRect = resultsPanelRef.current.getBoundingClientRect()
-        // Show 'Go to Top' when results panel is mostly in view (top half of viewport)
-        setShowGoToTop(resultsRect.top < window.innerHeight / 2)
-      }
-    }
-    
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll() // Check initial state
-    
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-  
-  // Scroll to results panel
-  const scrollToResults = useCallback(() => {
-    resultsPanelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }, [])
-  
-  // Scroll to top (input panel)
-  const scrollToTop = useCallback(() => {
-    inputPanelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }, [])
-  
   // Box type state (box1 or box3)
   const { location, updateQuery } = useQueryState()
   const [savedBoxType] = useState(getInitialBoxType)
@@ -156,18 +110,19 @@ function TaxCalculatorShell() {
   
   // Box 3 state
   const [box3FormValues, setBox3FormValues] = useState(getInitialBox3FormValues)
-  const [box3SelectedYear, setBox3SelectedYear] = useState(getInitialBox3Year)
   const [box3Config, setBox3Config] = useState(getInitialBox3Config)
+  const box3SelectedYear = box3Config.year
   
   // Box 1 state
   const [box1FormValues, setBox1FormValues] = useState(getInitialBox1FormValues)
   const [box1SelectedYear, setBox1SelectedYear] = useState(getInitialBox1Year)
 
-  useDebouncedStorage(STORAGE_KEYS.SELECTED_BOX_TYPE, boxType)
-  useDebouncedStorage(STORAGE_KEYS.FORM_VALUES, box3FormValues)
-  useDebouncedStorage(STORAGE_KEYS.BOX1_FORM_VALUES, box1FormValues)
-  useDebouncedStorage(STORAGE_KEYS.BOX3_SELECTED_YEAR, box3SelectedYear)
-  useDebouncedStorage(STORAGE_KEYS.BOX1_SELECTED_YEAR, box1SelectedYear)
+  usePersistedValue(STORAGE_KEYS.BOX3_CONFIG, box3Config)
+  usePersistedValue(STORAGE_KEYS.SELECTED_BOX_TYPE, boxType)
+  usePersistedValue(STORAGE_KEYS.FORM_VALUES, box3FormValues)
+  usePersistedValue(STORAGE_KEYS.BOX1_FORM_VALUES, box1FormValues)
+  usePersistedValue(STORAGE_KEYS.BOX3_SELECTED_YEAR, box3SelectedYear)
+  usePersistedValue(STORAGE_KEYS.BOX1_SELECTED_YEAR, box1SelectedYear)
 
   // Box type change handler
   const handleBoxTypeChange = useCallback((_event, newBoxType) => {
@@ -182,7 +137,6 @@ function TaxCalculatorShell() {
   }, [])
 
   const handleBox3YearChange = useCallback((newYear) => {
-    setBox3SelectedYear(newYear)
     // Update config with the new year's defaults
     const yearDefaults = getDefaultsForYear(newYear)
     setBox3Config({ year: newYear, ...yearDefaults })
@@ -190,14 +144,13 @@ function TaxCalculatorShell() {
 
   const handleBox3Reset = useCallback(() => {
     setBox3FormValues(BOX3_EMPTY_FORM)
-    setBox3SelectedYear(DEFAULT_YEAR)
     const yearDefaults = getDefaultsForYear(DEFAULT_YEAR)
     setBox3Config({ year: DEFAULT_YEAR, ...yearDefaults })
   }, [])
 
   // Box 1 handlers
   const handleBox1FieldChange = useCallback((name, value) => {
-    setBox1FormValues((current) => ({ ...current, [name]: value }))
+    setBox1FormValues((current) => changeSalaryField(current, name, value))
   }, [])
 
   const handleBox1YearChange = useCallback((newYear) => {
@@ -209,124 +162,25 @@ function TaxCalculatorShell() {
     setBox1SelectedYear(BOX1_DEFAULT_YEAR)
   }, [])
 
-  // Box 3: Memoize calculated values to prevent unnecessary recalculations
-  const bankBalance = useMemo(
-    () =>
-      (box3FormValues.bankAccounts ?? []).reduce(
-        (sum, entry) => sum + (Number(entry?.amount ?? entry) || 0),
-        0,
-      ),
-    [box3FormValues.bankAccounts],
-  )
-
-  const investmentAssets = useMemo(
-    () =>
-      (box3FormValues.investmentAccounts ?? []).reduce(
-        (sum, entry) => sum + (Number(entry?.amount ?? entry) || 0),
-        0,
-      ),
-    [box3FormValues.investmentAccounts],
-  )
-
-  const debts = useMemo(
-    () =>
-      (box3FormValues.debts ?? []).reduce(
-        (sum, entry) => sum + (Number(entry?.amount ?? entry) || 0),
-        0,
-      ),
-    [box3FormValues.debts],
-  )
-
-  // Box 3: Memoize calculator inputs to ensure stable reference for useBox3Calculator
-  const box3CalculatorInputs = useMemo(
-    () => ({
-      bankBalance,
-      investmentAssets,
-      debts,
-      hasTaxPartner: box3FormValues.hasTaxPartner,
-    }),
-    [bankBalance, investmentAssets, debts, box3FormValues.hasTaxPartner],
-  )
+  const box3CalculatorInputs = useMemo(() => assetInputs(box3FormValues), [box3FormValues])
 
   const box3Summary = useBox3Calculator(box3CalculatorInputs, box3Config)
 
-  // Box 1: Memoize calculator inputs
-  const box1CalculatorInputs = useMemo(
-    () => ({
-      grossIncome: Number(box1FormValues.grossIncome) || 0,
-      period: box1FormValues.period,
-      hoursPerWeek: box1FormValues.hoursPerWeek,
-      holidayAllowanceIncluded: box1FormValues.holidayAllowanceIncluded,
-      older: box1FormValues.older,
-      ruling30Enabled: box1FormValues.ruling30Enabled,
-      ruling30Category: box1FormValues.ruling30Category,
-      socialSecurity: box1FormValues.socialSecurity,
-    }),
-    [box1FormValues],
-  )
+  const box1Summary = useBox1Calculator(box1FormValues, box1SelectedYear)
+  const hasAssets = ['bankAccounts', 'investmentAccounts', 'debts'].some(key => box3FormValues[key].length > 0)
+  const salaryEmpty = box1FormValues.grossIncome === ''
+  const salaryInvalid = !salaryEmpty && (!box1Summary.details || annualIncome(box1FormValues) <= 0)
 
-  const box1Summary = useBox1Calculator(box1CalculatorInputs, box1SelectedYear)
-
-
-  return (
-    <section className="calculator-shell" id="calculator" tabIndex={-1}>
-      <div className="calculator-shell__content">
-        <div className="calculator-panel" ref={inputPanelRef}>
-          {/* Toggle switch above the input panel */}
-          <CalculatorToggleSwitch value={boxType} onChange={handleBoxTypeChange} />
-          {boxType === 'box1' ? (
-            <Box1InputForm
-              values={box1FormValues}
-              onChange={handleBox1FieldChange}
-              year={box1SelectedYear}
-              onYearChange={handleBox1YearChange}
-              onReset={handleBox1Reset}
-            />
-          ) : (
-            <Box3InputForm
-              values={box3FormValues}
-              onChange={handleBox3FieldChange}
-              year={box3SelectedYear}
-              onYearChange={handleBox3YearChange}
-              onReset={handleBox3Reset}
-              configMenu={
-                <Suspense fallback={<div className="config-menu-placeholder" />}>
-                  <ConfigurationMenu config={box3Config} onConfigChange={setBox3Config} />
-                </Suspense>
-              }
-            />
-          )}
-        </div>
-        <div className="calculator-panel calculator-panel--results" ref={resultsPanelRef}>
-          <Suspense fallback={<div className="results-panel-placeholder">Loading results...</div>}>
-            {boxType === 'box1' ? (
-              <Box1ResultPanel
-                inputs={box1CalculatorInputs}
-                summary={box1Summary}
-                year={box1SelectedYear}
-              />
-            ) : (
-              <Box3ResultPanel
-                inputs={box3CalculatorInputs}
-                summary={box3Summary}
-                config={box3Config}
-              />
-            )}
-          </Suspense>
-        </div>
-      </div>
-      
-      {/* Floating navigation button for mobile */}
-      <button
-        className={`floating-nav-btn ${showGoToTop ? 'floating-nav-btn--top' : 'floating-nav-btn--results'}`}
-        onClick={showGoToTop ? scrollToTop : scrollToResults}
-        aria-label={showGoToTop ? t('calculator.goToTop') : t('calculator.seeResults')}
-      >
-        <span className="floating-nav-btn__icon">{showGoToTop ? '↑' : '↓'}</span>
-        <span className="floating-nav-btn__text">{showGoToTop ? t('calculator.goToTop') : t('calculator.seeResults')}</span>
-      </button>
-    </section>
-  )
+  return <GuidedRailCalculator
+    mode={boxType} onModeChange={mode => handleBoxTypeChange(null, mode)}
+    salary={box1FormValues} salaryYear={box1SelectedYear} salarySummary={box1Summary}
+    salaryStatus={salaryEmpty ? 'emptySalary' : salaryInvalid ? 'invalidSalary' : null}
+    onSalaryChange={handleBox1FieldChange} onSalaryYearChange={handleBox1YearChange} onSalaryReset={handleBox1Reset}
+    assets={box3FormValues} assetInputs={box3CalculatorInputs} assetSummary={hasAssets ? box3Summary : null}
+    assetStatus={!box3Summary ? 'invalidAssets' : !hasAssets ? 'emptyAssets' : null}
+    config={box3Config} onConfigChange={setBox3Config}
+    onAssetChange={handleBox3FieldChange} onAssetYearChange={handleBox3YearChange} onAssetReset={handleBox3Reset}
+  />
 }
 
 export default TaxCalculatorShell

@@ -20,7 +20,9 @@ visible, alongside a notice that calculations require JavaScript.
 
 `/` is English canonical; `/?lang=en` is its alias; `/?lang=nl` is Dutch canonical.
 Hreflang is reciprocal with `/` as English and x-default. #21's sitemap already
-contains both canonical pages without fabricated lastmod dates. Metadata is built
+contains both canonical pages. Issue #28 adds a factual `lastmod` date of
+2026-09-25 for the updated calculator/FAQ content, matching WebPage `dateModified`.
+Update these dates together for meaningful public content changes, not every build. Metadata is built
 only from the validated language, never request state or tracking parameters.
 
 The old unsupported aggregate rating, FAQ markup without matching visible FAQ,

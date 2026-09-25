@@ -5,6 +5,30 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "Wat kan ik berekenen met incomeTaxNL?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "incomeTaxNL is een gratis rekenhulp voor Nederlands nettoloon in Box 1 en belasting over sparen en beleggen in Box 3. Box 1 ondersteunt belastingjaren 2019–2026, vakantiegeld, de 30%-regeling, de AOW-leeftijd en sociale premies. Box 3 ondersteunt 2023–2026, banktegoeden, beleggingen, schulden en een fiscaal partner. Via Geavanceerde opties kun je de instellingen bekijken of wijzigen. De uitkomsten zijn schattingen, geen definitieve belastingaanslag."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe berekent incomeTaxNL de Box 3-schatting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De rekenhulp telt banktegoeden en beleggingen op, trekt schulden boven de gekozen schuldendrempel af en past het heffingsvrije vermogen toe. Daarna berekent de tool welk aandeel na die vrijstelling overblijft, vermenigvuldigt het forfaitaire rendement na schuldenkosten met dat aandeel en past het gekozen Box 3-tarief toe. Toon uitsplitsing laat deze zes stappen met jouw bedragen zien. De rekenhulp vergelijkt geen werkelijk rendement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe werken salarisperiodes in incomeTaxNL?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Je kunt je brutosalaris per jaar, maand, week, dag of uur invullen. Als je de invoerperiode wijzigt, wordt het bedrag omgerekend met behoud van de jaarwaarde. Uurberekeningen gebruiken de uren per week uit Geavanceerde opties. Maand-, jaar- en weekresultaten gebruiken dezelfde jaarberekening. Vink Vakantiegeld inbegrepen aan als je ingevoerde salaris dit al bevat."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Hoeveel belasting betaal ik over mijn salaris in Nederland?",
       "acceptedAnswer": {
         "@type": "Answer",

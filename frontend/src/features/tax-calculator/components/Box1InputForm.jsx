@@ -1,3 +1,4 @@
+import StandardModal from '../../../components/StandardModal.jsx'
 import { useState, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import {
@@ -5,9 +6,11 @@ import {
   Stack,
   TextField,
   Switch,
+  Checkbox,
   FormControlLabel,
   MenuItem,
   InputAdornment,
+  IconButton,
   Tooltip,
   Collapse,
   RadioGroup,
@@ -15,10 +18,6 @@ import {
   FormControl,
   FormLabel,
   Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
   Typography,
 } from '@mui/material'
 import RestartAltIcon from '@mui/icons-material/RestartAlt'
@@ -32,7 +31,7 @@ import {
 import { useLanguage } from '../../../context/LanguageContext.jsx'
 import './Box1InputForm.css'
 
-function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
+function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided = false }) {
   const { t } = useLanguage()
   const [showResetConfirm, setShowResetConfirm] = useState(false)
   const [showAdvanced, setShowAdvanced] = useState(false)
@@ -49,7 +48,7 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
       return
     }
     const numVal = parseFloat(val)
-    if (!Number.isNaN(numVal) && numVal >= 0) {
+    if (!Number.isNaN(numVal)) {
       handleInputChange(field, numVal)
     }
   }, [handleInputChange])
@@ -89,11 +88,35 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
   return (
     <form className="box1-form" onSubmit={(e) => e.preventDefault()} noValidate>
 
-      {/* Income, Period, and Advanced Options Switch Row */}
-      <div
-        className="box1-form__income-row"
-        style={{ marginBottom: showAdvanced ? '1.5rem' : '0.5rem' }}
-      >
+      {guided && (
+        <div className="guided-basic-fields">
+          <label htmlFor="guided-salary">{t('guidedRail.salary')}</label>
+          <div className="guided-salary-input"><span aria-hidden="true">€</span><input
+            id="guided-salary" type="number" min="0.01" step="any" value={values.grossIncome}
+            onChange={handleNumberChange('grossIncome')} aria-describedby="guided-salary-help" aria-invalid={values.grossIncome !== '' && (!Number.isFinite(Number(values.grossIncome)) || Number(values.grossIncome) <= 0)}
+          /></div>
+          <p id="guided-salary-help">{values.grossIncome !== '' && Number(values.grossIncome) <= 0 ? t('guidedRail.invalidSalary') : t('guidedRail.salaryHelp')}</p>
+          <div className="guided-income-period">
+            <label htmlFor="guided-income-period">{t('box1Form.period')}</label>
+            <select id="guided-income-period" value={values.period} onChange={handleSelectChange('period')}>
+              {translatedPeriods.map(period => <option key={period.value} value={period.value}>{period.label}</option>)}
+            </select>
+          </div>
+          <div className="guided-holiday">
+            <FormControlLabel control={<Checkbox checked={values.holidayAllowanceIncluded}
+              onChange={handleToggleChange('holidayAllowanceIncluded')} />}
+              label={t('box1Form.holidayAllowanceIncluded')} />
+            <Tooltip title={t('guidedRail.holidayHelp')} describeChild>
+              <IconButton size="small" aria-label={t('guidedRail.holidayHelpLabel')}>
+                <InfoOutlinedIcon fontSize="small" />
+              </IconButton>
+            </Tooltip>
+          </div>
+
+        </div>
+      )}
+      {!guided && <>
+      <div className="box1-form__income-row">
         <TextField
           label={getIncomeLabel()}
           type="number"
@@ -120,22 +143,55 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
             </MenuItem>
           ))}
         </TextField>
-        {/* Advanced Options Switch */}
-        <FormControlLabel
-          control={
-            <Switch
-              checked={showAdvanced}
-              onChange={() => setShowAdvanced((prev) => !prev)}
-              color="primary"
-            />
-          }
-          label={t('box1Form.advancedOptions')}
-          className="box1-form__advanced-switch"
-        />
       </div>
 
-      {/* Collapse for showing advanced options, including tax year */}
-      <Collapse in={showAdvanced}>
+      </>}
+      <div className="box1-form__main-ruling">
+        <div className="box1-form__ruling-section">
+          <FormControlLabel
+            control={
+              <Switch
+                checked={values.ruling30Enabled}
+                onChange={handleToggleChange('ruling30Enabled')}
+              />
+            }
+            label={
+              <Stack direction="row" alignItems="center" spacing={0.5}>
+                <span>{t('box1Form.ruling30')}</span>
+                <Tooltip title={t('box1Form.ruling30Tooltip')}>
+                  <InfoOutlinedIcon fontSize="small" color="action" />
+                </Tooltip>
+              </Stack>
+            }
+          />
+          <Collapse in={values.ruling30Enabled}>
+            <FormControl component="fieldset" className="box1-form__ruling-options">
+              <FormLabel component="legend" className="box1-form__ruling-legend">
+                {t('box1Form.category')}
+              </FormLabel>
+              <RadioGroup
+                value={values.ruling30Category}
+                onChange={handleSelectChange('ruling30Category')}
+                className="box1-form__ruling-radio-group"
+              >
+                {translatedCategories.map((cat) => (
+                  <FormControlLabel
+                    key={cat.value}
+                    value={cat.value}
+                    control={<Radio size="small" />}
+                    label={cat.label}
+                    className="box1-form__ruling-radio-label"
+                  />
+                ))}
+              </RadioGroup>
+            </FormControl>
+          </Collapse>
+        </div>
+      </div>
+      <button type="button" className="advanced-options-link" aria-haspopup="dialog"
+        onClick={() => setShowAdvanced(true)}>{t('box1Form.advancedOptions')}</button>
+      <StandardModal open={showAdvanced} onClose={() => setShowAdvanced(false)}
+        title={t('box1Form.advancedOptions')}>
         <Stack spacing={3} component={Box} className="box1-form__fields">
           <div className="box1-form__year-row">
             <TextField
@@ -165,12 +221,13 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
               InputProps={{
                 endAdornment: <InputAdornment position="end">{t('box1Form.hoursUnit')}</InputAdornment>,
               }}
-              helperText={t('box1Form.hoursHelperText')}
+              error={!Number.isFinite(Number(values.hoursPerWeek)) || Number(values.hoursPerWeek) <= 0 || Number(values.hoursPerWeek) > 168}
+              helperText={Number(values.hoursPerWeek) > 0 && Number(values.hoursPerWeek) <= 168 ? t('box1Form.hoursHelperText') : t('guidedRail.invalidHours')}
             />
           )}
 
           <Box className="box1-form__toggles">
-            <FormControlLabel
+            {!guided && <FormControlLabel
               control={
                 <Switch
                   checked={values.holidayAllowanceIncluded}
@@ -185,7 +242,7 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
                   </Tooltip>
                 </Stack>
               }
-            />
+            />}
 
             <FormControlLabel
               control={
@@ -196,55 +253,13 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
               }
               label={
                 <Stack direction="row" alignItems="center" spacing={0.5}>
-                  <span>{t('box1Form.olderAge')}</span>
+                  <span>{guided ? t('guidedRail.pensionAge') : t('box1Form.olderAge')}</span>
                   <Tooltip title={t('box1Form.olderAgeTooltip')}>
                     <InfoOutlinedIcon fontSize="small" color="action" />
                   </Tooltip>
                 </Stack>
               }
             />
-
-            {/* 30% Ruling Section */}
-            <div className="box1-form__ruling-section">
-              <FormControlLabel
-                control={
-                  <Switch
-                    checked={values.ruling30Enabled}
-                    onChange={handleToggleChange('ruling30Enabled')}
-                  />
-                }
-                label={
-                  <Stack direction="row" alignItems="center" spacing={0.5}>
-                    <span>{t('box1Form.ruling30')}</span>
-                    <Tooltip title={t('box1Form.ruling30Tooltip')}>
-                      <InfoOutlinedIcon fontSize="small" color="action" />
-                    </Tooltip>
-                  </Stack>
-                }
-              />
-              <Collapse in={values.ruling30Enabled}>
-                <FormControl component="fieldset" className="box1-form__ruling-options">
-                  <FormLabel component="legend" className="box1-form__ruling-legend">
-                    {t('box1Form.category')}
-                  </FormLabel>
-                  <RadioGroup
-                    value={values.ruling30Category}
-                    onChange={handleSelectChange('ruling30Category')}
-                    className="box1-form__ruling-radio-group"
-                  >
-                    {translatedCategories.map((cat) => (
-                      <FormControlLabel
-                        key={cat.value}
-                        value={cat.value}
-                        control={<Radio size="small" />}
-                        label={cat.label}
-                        className="box1-form__ruling-radio-label"
-                      />
-                    ))}
-                  </RadioGroup>
-                </FormControl>
-              </Collapse>
-            </div>
 
             <FormControlLabel
               control={
@@ -264,7 +279,7 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
             />
           </Box>
         </Stack>
-      </Collapse>
+      </StandardModal>
 
       {/* Reset button always visible below advanced options */}
       <Box className="box1-form__reset-section">
@@ -281,14 +296,9 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
       </Box>
 
       {/* Reset confirmation dialog */}
-      <Dialog open={showResetConfirm} onClose={() => setShowResetConfirm(false)} maxWidth="xs">
-        <DialogTitle>{t('box1Form.resetTitle')}</DialogTitle>
-        <DialogContent>
-          <Typography variant="body2">
-            {t('box1Form.resetMessage')}
-          </Typography>
-        </DialogContent>
-        <DialogActions>
+      <StandardModal open={showResetConfirm} onClose={() => setShowResetConfirm(false)} size="xs"
+        title={t('box1Form.resetTitle')}
+        actions={<>
           <Button onClick={() => setShowResetConfirm(false)} color="inherit">
             {t('box1Form.cancel')}
           </Button>
@@ -302,17 +312,22 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset }) {
           >
             {t('box1Form.reset')}
           </Button>
-        </DialogActions>
-      </Dialog>
+        </>}
+      >
+        <Typography variant="body2">
+          {t('box1Form.resetMessage')}
+        </Typography>
+      </StandardModal>
     </form>
   )
 }
 
 Box1InputForm.propTypes = {
+  guided: PropTypes.bool,
   values: PropTypes.shape({
     grossIncome: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     period: PropTypes.string,
-    hoursPerWeek: PropTypes.number,
+    hoursPerWeek: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     holidayAllowanceIncluded: PropTypes.bool,
     older: PropTypes.bool,
     ruling30Enabled: PropTypes.bool,

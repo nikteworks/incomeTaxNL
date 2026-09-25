@@ -15,15 +15,9 @@
   background: transparent;
 }
 
-.jaaropgave-guide__title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.jaaropgave-guide__content {
-  max-height: 70vh;
-}
+
+
 
 .jaaropgave-guide__accordion {
   border: 1px solid rgba(26, 31, 44, 0.08);

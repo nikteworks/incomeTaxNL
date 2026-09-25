@@ -24,7 +24,7 @@ test('canonical and all discovery metadata are parameter-free except Dutch langu
     assert.equal(data.faqStructuredData.url, data.canonical)
     assert.equal(data.faqStructuredData.inLanguage, language)
     assert.deepEqual(data.faqStructuredData.mainEntity, faqByLanguage[language].mainEntity)
-    assert.equal(data.faqStructuredData.mainEntity.length, 216)
+    assert.equal(data.faqStructuredData.mainEntity.length, 219)
     assert.equal('aggregateRating' in data.structuredData, false)
     assert.equal('image' in data.structuredData, false)
     assert.equal(data.metas.some((meta) => /image|rating/i.test(meta.name || meta.property)), false)
