@@ -301,5 +301,45 @@
     "invalidHours": "Vul meer dan 0 en maximaal 168 uren per week in.",
     "periodNote": "Alle bedragen gebruiken de gekozen periode. Maand- en weekbedragen zijn gemiddelden van de jaarberekening.",
     "holidayNote": "De calculator houdt het inbegrepen vakantiegeld apart van het reguliere nettoloon."
+  },
+  "box3Breakdown": {
+    "introduction": "Hier zie je de berekening stap voor stap, met eenvoudige uitleg:",
+    "minimumZero": "minimaal €0",
+    "noPositiveBase": "Na aftrekbare schulden blijft geen positief bedrag over",
+    "deductibleDebts": "Alleen schulden boven de schuldendrempel zijn aftrekbaar:",
+    "bankReturns": "Forfaitair rendement op je banktegoeden:",
+    "investmentReturns": "Forfaitair rendement op je beleggingen:",
+    "debtCosts": "Kosten voor je aftrekbare schulden:",
+    "taxableReturns": "Tel de forfaitaire rendementen op en trek de schuldenkosten af:",
+    "totalAssets": {
+      "title": "Totale bezittingen",
+      "formula": "banktegoeden + beleggingen",
+      "explanation": "Dit is al het geld op je bankrekeningen en in je beleggingen bij elkaar opgeteld."
+    },
+    "netAssets": {
+      "title": "Rendementsgrondslag",
+      "formula": "totale bezittingen − aftrekbare schulden",
+      "explanation": "We trekken de schulden die je mag aftrekken van je totale bezittingen af. Dit geeft het bedrag voor de volgende stap."
+    },
+    "taxableBase": {
+      "title": "Grondslag sparen en beleggen",
+      "formula": "rendementsgrondslag − heffingsvrij vermogen",
+      "explanation": "Je krijgt een belastingvrije vrijstelling. We trekken deze af van het bedrag hierboven. Alleen wat overblijft telt mee, met een minimum van nul. Bij een fiscaal partner verdubbelt de calculator de vrijstelling en de schuldendrempel."
+    },
+    "taxableShare": {
+      "title": "Aandeel in de rendementsgrondslag",
+      "formula": "grondslag sparen en beleggen ÷ rendementsgrondslag",
+      "explanation": "Dit laat zien welk deel van je vermogen overblijft na de vrijstelling. We passen dit aandeel in de volgende stap toe op het forfaitaire rendement. Is de rendementsgrondslag nul of negatief, dan is dit aandeel nul."
+    },
+    "taxableIncome": {
+      "title": "Inkomen uit sparen en beleggen",
+      "formula": "belastbaar rendement × aandeel",
+      "explanation": "Dit is het inkomen waarmee je belasting wordt geschat. De calculator gebruikt forfaitaire rendementen op spaargeld en beleggingen, trekt schuldenkosten af en past het aandeel hierboven toe. Dit is een aangenomen rendement, niet je werkelijke opbrengst."
+    },
+    "estimatedTax": {
+      "title": "Geschatte belasting",
+      "formula": "inkomen × Box 3-belastingtarief",
+      "explanation": "We vermenigvuldigen het inkomen uit de vorige stap met het gekozen Box 3-belastingtarief. Dit geeft je geschatte belasting voor het jaar."
+    }
   }
 }

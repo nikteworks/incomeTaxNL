@@ -53,3 +53,7 @@ Validation: eight browser tests cover English/Dutch dialogs at 390/768/1440 px, 
 - Browser tests compare headline, compact view, ledger and breakdown values directly with both installed calculation packages, including ruling categories, holiday allowance, pension age, social security, hourly hours, partner status, tax year and custom Box 3 rates.
 - Browser coverage also exercises entry add/edit/delete, unchanged configuration saves, reloads, resets, invalid inputs, filters, FAQ keyboard focus, localized metadata/FAQ, all shared modals, and populated layouts at 390/768/1440 px.
 - Changes are local to the issue branch; no deployment is performed.
+
+## Step-by-step Box 3 explanation
+
+The Box 3 disclosure now follows the six-step explanation from `main`: total assets, assets after deductible debts, the tax-free allowance, the taxable share, assumed income, and estimated tax. Each step shows its formula with live values followed by a plain-language explanation in English or Dutch. Supporting calculations explain the debt threshold and assumed returns. Empty values remain unavailable; non-positive bases show a zero share without displaying a division by zero. The calculation hooks and tax rules are unchanged.

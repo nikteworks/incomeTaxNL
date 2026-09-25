@@ -211,6 +211,8 @@ for (const width of [390, 768, 1440]) {
     await page.getByRole('button', { name: 'Box 3', exact: true }).click()
     await expect(headline(page)).not.toHaveText('—')
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width)
+    await page.locator('.guided-calculation-steps > li').last().scrollIntoViewIfNeeded()
+    await expect(page.locator('.guided-calculation-steps > li').last()).toBeInViewport()
     await page.screenshot({ path: `test-results/guided-box3-${width}.png`, fullPage: true })
   })
 }
@@ -224,4 +226,37 @@ test('invalid saved assets show no estimate; an explicit zero balance is valid',
   await dialog.getByRole('spinbutton').fill('0')
   await dialog.locator('.standard-modal__actions').getByRole('button', { name: 'Save', exact: true }).click()
   await expect(headline(page)).toHaveText(money(0))
+})
+
+for (const language of ['en', 'nl']) {
+  test(`Box 3 explains the six calculation steps with live amounts: ${language}`, async ({ page }) => {
+    await page.addInitScript(() => localStorage.setItem('dutch_tax:form.values.v1', JSON.stringify({ bankAccounts: [{ amount: 150000 }], investmentAccounts: [{ amount: 90000 }], debts: [{ amount: 10000 }], hasTaxPartner: false })))
+    await page.goto(`/?lang=${language}&calcType=box3`)
+    await page.locator('.guided-tax-row > button').click()
+    const steps = page.locator('.guided-calculation-steps > li')
+    await expect(steps).toHaveCount(6)
+    for (const [index, key] of ['totalAssets', 'netAssets', 'taxableBase', 'taxableShare', 'taxableIncome', 'estimatedTax'].entries()) {
+      await expect(steps.nth(index)).toContainText(translations[language].box3Breakdown[key].explanation)
+      await expect(steps.nth(index).locator('.guided-calculation-formula')).toContainText(translations[language].box3Breakdown[key].formula)
+    }
+    const expected = calculateBox3Tax({ bankBalance: 150000, investmentAssets: 90000, debts: 10000 }, getDefaultsForYear(DEFAULT_YEAR))
+    await expect(steps.last().locator('[data-metric="estimatedTax"]')).toHaveText(money(expected.estimatedTax, language))
+    await expect(page.locator('[data-metric="deductibleDebts"]')).toHaveText(money(10000 - expected.totalDebtsThreshold, language))
+    await page.getByRole('button', { name: language === 'nl' ? 'Ja' : 'Yes', exact: true }).click()
+    const partner = calculateBox3Tax({ bankBalance: 150000, investmentAssets: 90000, debts: 10000, hasTaxPartner: true }, getDefaultsForYear(DEFAULT_YEAR))
+    await expect(steps.last().locator('[data-metric="estimatedTax"]')).toHaveText(money(partner.estimatedTax, language))
+    await page.screenshot({ path: `test-results/box3-explained-${language}.png`, fullPage: true })
+  })
+}
+
+test('Box 3 explanations handle empty and debt-dominated balances without dividing by zero', async ({ page }) => {
+  await page.goto('/?calcType=box3')
+  await page.locator('.guided-tax-row > button').click()
+  await expect(page.locator('[data-metric="estimatedTax"]')).toHaveText('—')
+  const dialog = await openEntries(page, 'Debts')
+  await dialog.getByRole('spinbutton').fill('100000')
+  await dialog.locator('.standard-modal__actions').getByRole('button', { name: 'Save', exact: true }).click()
+  await expect(page.locator('.guided-calculation-steps > li').nth(3)).toContainText(translations.en.box3Breakdown.noPositiveBase)
+  await expect(page.locator('[data-metric="estimatedTax"]')).toHaveText(money(0))
+  await expect(page.locator('.guided-box3-breakdown')).not.toContainText('NaN')
 })

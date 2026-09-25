@@ -301,5 +301,45 @@
     "invalidHours": "Enter hours per week greater than 0 and no more than 168.",
     "periodNote": "All amounts use the selected period. Monthly and weekly figures are averages of the annual calculation.",
     "holidayNote": "The calculator separates the included holiday allowance from regular take-home pay."
+  },
+  "box3Breakdown": {
+    "introduction": "Here is the math spelled out step by step, with simple explanations:",
+    "minimumZero": "at least €0",
+    "noPositiveBase": "No positive amount remains after deductible debts",
+    "deductibleDebts": "Only debts above the debt threshold can be deducted:",
+    "bankReturns": "Assumed return on your bank savings:",
+    "investmentReturns": "Assumed return on your investments:",
+    "debtCosts": "Costs allowed for your deductible debts:",
+    "taxableReturns": "Add the assumed returns and subtract the debt costs:",
+    "totalAssets": {
+      "title": "Total assets",
+      "formula": "bank savings + investments",
+      "explanation": "This is all the money you have in the bank and in investments, added together."
+    },
+    "netAssets": {
+      "title": "Capital yield tax base",
+      "formula": "total assets − deductible debts",
+      "explanation": "We subtract the debts you can deduct from your total assets. This gives the amount used for the next step."
+    },
+    "taxableBase": {
+      "title": "Basis for savings & investments",
+      "formula": "capital yield tax base − tax-free allowance",
+      "explanation": "You get a tax-free allowance. We take this away from the amount above. Only the amount left over counts, and it cannot be less than zero. With a tax partner, the calculator doubles the allowance and debt threshold."
+    },
+    "taxableShare": {
+      "title": "Share in capital yield tax base",
+      "formula": "basis ÷ capital yield tax base",
+      "explanation": "This shows what proportion of your assets remains after the allowance. We apply this proportion to the assumed returns in the next step. If the capital yield tax base is zero or negative, this share is zero."
+    },
+    "taxableIncome": {
+      "title": "Income from savings & investments",
+      "formula": "taxable returns × share",
+      "explanation": "This is the income used to estimate your tax. The calculator uses assumed returns on savings and investments, subtracts allowed debt costs, and then applies the share above. These are assumed returns, not your actual earnings."
+    },
+    "estimatedTax": {
+      "title": "Estimated tax",
+      "formula": "income × Box 3 tax rate",
+      "explanation": "We multiply the income from the previous step by the selected Box 3 tax rate. This gives your estimated tax for the year."
+    }
   }
 }

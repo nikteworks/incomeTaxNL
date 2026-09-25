@@ -4,6 +4,7 @@ import { useLanguage } from '../../../context/LanguageContext.jsx'
 import { pageCopy } from '../../../seo/metadata.js'
 import Box1InputForm from './Box1InputForm.jsx'
 import Box3InputForm from './Box3InputForm.jsx'
+import Box3CalculationBreakdown from './Box3CalculationBreakdown.jsx'
 import ConfigurationMenu from './ConfigurationMenu.jsx'
 import { formatEuro, formatPercent } from '../../../utils/formatters.js'
 
@@ -41,20 +42,7 @@ export default function GuidedRailCalculator({ mode, onModeChange, salary, salar
   const headline = box1 ? net : assetSummary?.estimatedTax
   const secondary = box1 ? tax : assetSummary?.taxableBase
   const metric = (label, value, id) => <div className="guided-ledger-row" key={label} data-metric={id}><span>{label}</span><strong>{money(value)}</strong></div>
-  const assetRows = [
-    ['totalAssets', assetInputs.bankBalance + assetInputs.investmentAssets],
-    ['debtThreshold', assetSummary?.totalDebtsThreshold],
-    ['debts', assetSummary?.deductibleDebts],
-    ['netAssets', assetSummary?.netAssets],
-    ['allowancesApplied', assetSummary?.totalTaxFreeAllowance],
-    ['taxableBase', assetSummary?.taxableBase],
-    ['bankReturns', assetSummary?.bankReturns],
-    ['investmentReturns', assetSummary?.investmentReturns],
-    ['debtCosts', assetSummary?.totalCosts],
-    ['taxableReturns', assetSummary?.taxableReturns],
-    ['taxableIncome', assetSummary?.taxableIncome],
-    ['estimatedTax', assetSummary?.estimatedTax],
-  ]
+
 
   return (
     <div className="guided-rail calculator-shell" id="calculator" tabIndex={-1}>
@@ -119,9 +107,7 @@ export default function GuidedRailCalculator({ mode, onModeChange, salary, salar
                       {breakdown.filter(([, category]) => categories.includes(category)).map(([label, , help, field]) => <div className="guided-detail-row" key={label} data-metric={field}>
                         <div>{t(`box1Result.${label}`)}<p>{t(`box1Result.${help}`)}</p></div><strong>{money(details?.[field] / divisor)}</strong>
                       </div>)}
-                    </> : <>{assetRows.map(([key, value]) => metric(t(`box3Result.${key}`), value, key))}
-                      <div className="guided-ledger-row"><span>{t('box3Result.taxableShare')}</span><strong>{ready ? formatPercent(assetSummary.taxableShare, locale) : '—'}</strong></div>
-                      <div className="guided-ledger-row"><span>{t('config.taxRate')}</span><strong>{formatPercent(config.taxRate, locale)}</strong></div><p>{t('box3Result.actualReturnDisclaimer')}</p></>}
+                    </> : <Box3CalculationBreakdown inputs={assetInputs} summary={assetSummary} config={config} ready={ready} />}
                   </div>
                 </div>
                 {metric(t(box1 ? 'guidedRail.net' : 'box3Result.estimatedTax'), headline, 'net')}

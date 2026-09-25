@@ -142,3 +142,11 @@
 .guided-ledger-row strong, .guided-tax-row strong, .guided-detail-row strong { max-width: 60%; overflow-wrap: anywhere; text-align: right; }
 .guided-basic-fields input[aria-invalid='true'] { color: #a32929; }
 @media (max-width: 1050px) { .guided-amount strong { font-size: 36px; } }
+
+.guided-box3-breakdown { padding-block: 8px; font-size: 14px; line-height: 1.65; }
+.guided-calculation-steps { margin: 20px 0; padding-left: 24px; }
+.guided-calculation-steps > li { margin-bottom: 28px; padding-left: 4px; }
+.guided-calculation-steps > li::marker { font-weight: 600; color: #465770; }
+.guided-calculation-formula { background: #e3eaf4; border-radius: 8px; padding: 12px 16px; overflow-wrap: anywhere; }
+.guided-calculation-steps p { margin: 8px 0 0; }
+.guided-calculation-detail { margin-top: 8px; color: #465770; font-size: 13px; }
