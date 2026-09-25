@@ -7,8 +7,6 @@
   },
   "header": {
     "aboutAriaLabel": "Learn about incomeTaxNL",
-    "contactAriaLabel": "Contact me on X (Twitter)",
-    "contactTitle": "Need help? Message me on X",
     "githubAriaLabel": "View on GitHub"
   },
   "footer": {
@@ -241,8 +239,6 @@
     "termsChangesText": "These terms may be updated from time to time. Continued use of incomeTaxNL after changes constitutes acceptance of the revised terms.",
     "termsContactTitle": "9. Contact",
     "termsContactText": "For questions or concerns, please contact us via",
-    "termsContactOr": "or",
-    "termsContactDM": "direct message on X",
     "close": "Close",
     "statementTitle": "Reading your annual statement",
     "discardTitle": "Discard this entry?",

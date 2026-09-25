@@ -1,12 +1,13 @@
-import { useState } from 'react'
+import { lazy, Suspense, useState } from 'react'
 import FaqSection from '../../../components/FaqSection.jsx'
 import { useLanguage } from '../../../context/LanguageContext.jsx'
-import { pageCopy } from '../../../seo/metadata.js'
+import { pageCopy } from '../../../seo/pageCopy.js'
 import Box1InputForm from './Box1InputForm.jsx'
-import Box3InputForm from './Box3InputForm.jsx'
-import Box3CalculationBreakdown from './Box3CalculationBreakdown.jsx'
-import ConfigurationMenu from './ConfigurationMenu.jsx'
 import { formatEuro, formatPercent } from '../../../utils/formatters.js'
+
+const Box3InputForm = lazy(() => import('./Box3InputForm.jsx'))
+const Box3CalculationBreakdown = lazy(() => import('./Box3CalculationBreakdown.jsx'))
+const ConfigurationMenu = lazy(() => import('./ConfigurationMenu.jsx'))
 
 const breakdown = [
   ['grossIncome', 'income', 'grossIncomeInfo', 'grossYear'],
@@ -53,9 +54,9 @@ export default function GuidedRailCalculator({ mode, onModeChange, salary, salar
           </div>
           {box1 ? <Box1InputForm guided values={salary}
             onChange={onSalaryChange} year={salaryYear} onYearChange={onSalaryYearChange} onReset={onSalaryReset} />
-            : <Box3InputForm values={assets} onChange={onAssetChange}
+            : <Suspense fallback={<p role="status">{pageCopy[language].loading}</p>}><Box3InputForm values={assets} onChange={onAssetChange}
               year={config.year} onYearChange={onAssetYearChange} onReset={onAssetReset}
-              configMenu={<ConfigurationMenu config={config} onConfigChange={onConfigChange} />} />}
+              configMenu={<Suspense fallback={null}><ConfigurationMenu config={config} onConfigChange={onConfigChange} /></Suspense>} /></Suspense>}
 
         </aside>
         <div className="guided-reading">
@@ -107,7 +108,7 @@ export default function GuidedRailCalculator({ mode, onModeChange, salary, salar
                       {breakdown.filter(([, category]) => categories.includes(category)).map(([label, , help, field]) => <div className="guided-detail-row" key={label} data-metric={field}>
                         <div>{t(`box1Result.${label}`)}<p>{t(`box1Result.${help}`)}</p></div><strong>{money(details?.[field] / divisor)}</strong>
                       </div>)}
-                    </> : <Box3CalculationBreakdown inputs={assetInputs} summary={assetSummary} config={config} ready={ready} />}
+                    </> : taxOpen && !faqOpen && <Suspense fallback={<p role="status">{pageCopy[language].loading}</p>}><Box3CalculationBreakdown inputs={assetInputs} summary={assetSummary} config={config} ready={ready} /></Suspense>}
                   </div>
                 </div>
                 {metric(t(box1 ? 'guidedRail.net' : 'box3Result.estimatedTax'), headline, 'net')}
@@ -120,7 +121,7 @@ export default function GuidedRailCalculator({ mode, onModeChange, salary, salar
               aria-expanded={faqOpen} aria-controls="guided-faq-content" onClick={() => setFaqOpen(!faqOpen)}>
               {pageCopy[language].faqTitle}<span aria-hidden="true">{faqOpen ? '−' : '+'}</span>
             </button></h2>
-            <div id="guided-faq-content" hidden={!faqOpen}><FaqSection /></div>
+            <div id="guided-faq-content" hidden={!faqOpen}>{faqOpen && <FaqSection />}</div>
           </section>
         </div>
       </div>

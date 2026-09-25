@@ -7,7 +7,7 @@ import CalculatorLink from '../features/tax-calculator/components/CalculatorLink
 import LanguageSwitcher from '../components/LanguageSwitcher.jsx'
 import './PrimaryLayout.css'
 import { useHydrated } from '../hooks/useHydrated.js'
-import { pageCopy } from '../seo/metadata.js'
+import { pageCopy } from '../seo/pageCopy.js'
 
 
 function PrimaryLayout({ children, guided = false }) {
@@ -34,18 +34,6 @@ function PrimaryLayout({ children, guided = false }) {
               <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Zm1.5 11.25h-3v-2h1v-3h-1v-2h2a1 1 0 0 1 1 1v4h1v2Z"/>
             </svg>
           </button>
-          <a
-            href="https://twitter.com/messages/compose?recipient_id=718363377798615041"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="app-header__helpdesk-link"
-            aria-label={t('header.contactAriaLabel')}
-            title={t('header.contactTitle')}
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-              <path d="M12 2C6.48 2 2 5.58 2 10c0 2.03 1.01 3.87 2.64 5.24-.17 1.89-1.05 3.47-1.07 3.5a.5.5 0 0 0 .42.76c2.31 0 4.13-1.06 5.24-1.88.57.1 1.16.16 1.77.16 5.52 0 10-3.58 10-8S17.52 2 12 2Zm-3 9.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm3 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Zm3 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Z"/>
-            </svg>
-          </a>
           <a
             href="https://github.com/nikteworks/incomeTaxNL"
             target="_blank"
@@ -199,10 +187,6 @@ function PrimaryLayout({ children, guided = false }) {
             {t('modals.termsContactText')}{' '}
             <a href="https://github.com/nikteworks/incomeTaxNL/issues" target="_blank" rel="noopener noreferrer">
               GitHub Issues
-            </a>{' '}
-            {t('modals.termsContactOr')}{' '}
-            <a href="https://twitter.com/messages/compose?recipient_id=718363377798615041" target="_blank" rel="noopener noreferrer">
-              {t('modals.termsContactDM')}
             </a>
             .
           </p>

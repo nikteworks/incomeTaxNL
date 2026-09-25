@@ -27,6 +27,7 @@ for (const language of ['en', 'nl']) {
 test('FAQ language and JSON-LD change together after navigation', async ({ page }) => {
   await page.goto('/')
   await page.locator('.language-switcher').click()
+  await page.locator('#guided-faq-title button').click()
   await expect(page.locator('.faq-section__item summary').first()).toHaveText(faqByLanguage.nl.mainEntity[0].name)
   await expect.poll(async () => JSON.parse(await page.locator('#faq-structured-data').textContent()).inLanguage).toBe('nl')
   await expect(page.locator('#faq-structured-data')).toHaveCount(1)

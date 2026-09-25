@@ -5,19 +5,21 @@ import { Analytics } from '@vercel/analytics/react'
 import { LanguageProvider } from './context/LanguageContext.jsx'
 import './styles/global.css'
 import App from './app/App.jsx'
+import { readPrerenderedFaq } from './seo/faqClient.js'
+import { readLanguage } from './utils/urlState.js'
 
-const app = (
+const root = document.getElementById('root')
+const initialFaq = readPrerenderedFaq(readLanguage(window.location.search), document)
+const appWithFaq = (
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LanguageProvider><App /></LanguageProvider>} />
+        <Route path="/" element={<LanguageProvider><App initialFaq={initialFaq} /></LanguageProvider>} />
         <Route path="*" element={<main><h1>404 — Page not found</h1><a href="/">Return to calculator</a></main>} />
       </Routes>
     </BrowserRouter>
     <Analytics />
   </StrictMode>
 )
-
-const root = document.getElementById('root')
-if (root.dataset.prerendered) hydrateRoot(root, app)
-else createRoot(root).render(app)
+if (root.dataset.prerendered) hydrateRoot(root, appWithFaq)
+else createRoot(root).render(appWithFaq)
