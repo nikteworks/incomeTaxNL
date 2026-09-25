@@ -6,13 +6,11 @@ import {
   Stack,
   TextField,
   Switch,
-  Checkbox,
   FormControlLabel,
   MenuItem,
   InputAdornment,
   IconButton,
   Tooltip,
-  Collapse,
   RadioGroup,
   Radio,
   FormControl,
@@ -87,112 +85,91 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
 
   return (
     <form className="box1-form" onSubmit={(e) => e.preventDefault()} noValidate>
-
-      {guided && (
-        <div className="guided-basic-fields">
-          <label htmlFor="guided-salary">{t('guidedRail.salary')}</label>
-          <div className="guided-salary-input"><span aria-hidden="true">€</span><input
-            id="guided-salary" type="number" min="0.01" step="any" value={values.grossIncome}
-            onChange={handleNumberChange('grossIncome')} aria-describedby="guided-salary-help" aria-invalid={values.grossIncome !== '' && (!Number.isFinite(Number(values.grossIncome)) || Number(values.grossIncome) <= 0)}
-          /></div>
-          <p id="guided-salary-help">{values.grossIncome !== '' && Number(values.grossIncome) <= 0 ? t('guidedRail.invalidSalary') : t('guidedRail.salaryHelp')}</p>
-          <div className="guided-income-period">
-            <label htmlFor="guided-income-period">{t('box1Form.period')}</label>
-            <select id="guided-income-period" value={values.period} onChange={handleSelectChange('period')}>
-              {translatedPeriods.map(period => <option key={period.value} value={period.value}>{period.label}</option>)}
-            </select>
+      <div className="box1-form__compact-card">
+        {guided && (
+          <div className="guided-basic-fields">
+            <div className="guided-salary-field">
+              <label htmlFor="guided-salary">{t('guidedRail.salary')}</label>
+              <div className="guided-salary-input"><span aria-hidden="true">€</span><input
+                id="guided-salary" type="number" min="0.01" step="any" value={values.grossIncome}
+                onChange={handleNumberChange('grossIncome')} aria-describedby="guided-salary-help" aria-invalid={values.grossIncome !== '' && (!Number.isFinite(Number(values.grossIncome)) || Number(values.grossIncome) <= 0)}
+              /></div>
+              <p id="guided-salary-help" className={values.grossIncome !== '' && Number(values.grossIncome) <= 0 ? 'guided-salary-help--error' : 'guided-salary-help--quiet'}>{values.grossIncome !== '' && Number(values.grossIncome) <= 0 ? t('guidedRail.invalidSalary') : t('guidedRail.salaryHelp')}</p>
+            </div>
+            <div className="guided-income-period">
+              <label htmlFor="guided-income-period">{t('box1Form.period')}</label>
+              <select id="guided-income-period" value={values.period} onChange={handleSelectChange('period')}>
+                {translatedPeriods.map(period => <option key={period.value} value={period.value}>{period.label}</option>)}
+              </select>
+            </div>
           </div>
-          <div className="guided-holiday">
-            <FormControlLabel control={<Checkbox checked={values.holidayAllowanceIncluded}
-              onChange={handleToggleChange('holidayAllowanceIncluded')} />}
-              label={t('box1Form.holidayAllowanceIncluded')} />
-            <Tooltip title={t('guidedRail.holidayHelp')} describeChild>
-              <IconButton size="small" aria-label={t('guidedRail.holidayHelpLabel')}>
-                <InfoOutlinedIcon fontSize="small" />
-              </IconButton>
-            </Tooltip>
+        )}
+        {!guided && (
+          <div className="box1-form__income-row">
+            <TextField
+              label={getIncomeLabel()}
+              type="number"
+              value={values.grossIncome}
+              onChange={handleNumberChange('grossIncome')}
+              placeholder="e.g. 50000"
+              className="box1-form__income-input"
+              InputProps={{
+                startAdornment: <InputAdornment position="start">€</InputAdornment>,
+              }}
+            />
+            <TextField
+              select
+              size="small"
+              label={t('box1Form.period')}
+              value={values.period}
+              onChange={handleSelectChange('period')}
+              className="box1-form__period-select"
+              aria-label={t('box1Form.period')}
+            >
+              {translatedPeriods.map((p) => (
+                <MenuItem key={p.value} value={p.value}>
+                  {p.label}
+                </MenuItem>
+              ))}
+            </TextField>
           </div>
-
-        </div>
-      )}
-      {!guided && <>
-      <div className="box1-form__income-row">
-        <TextField
-          label={getIncomeLabel()}
-          type="number"
-          value={values.grossIncome}
-          onChange={handleNumberChange('grossIncome')}
-          placeholder="e.g. 50000"
-          className="box1-form__income-input"
-          InputProps={{
-            startAdornment: <InputAdornment position="start">€</InputAdornment>,
-          }}
-        />
-        <TextField
-          select
-          size="small"
-          label={t('box1Form.period')}
-          value={values.period}
-          onChange={handleSelectChange('period')}
-          className="box1-form__period-select"
-          aria-label={t('box1Form.period')}
-        >
-          {translatedPeriods.map((p) => (
-            <MenuItem key={p.value} value={p.value}>
-              {p.label}
-            </MenuItem>
-          ))}
-        </TextField>
-      </div>
-
-      </>}
-      <div className="box1-form__main-ruling">
-        <div className="box1-form__ruling-section">
-          <FormControlLabel
-            control={
-              <Switch
-                checked={values.ruling30Enabled}
-                onChange={handleToggleChange('ruling30Enabled')}
-              />
-            }
-            label={
-              <Stack direction="row" alignItems="center" spacing={0.5}>
-                <span>{t('box1Form.ruling30')}</span>
-                <Tooltip title={t('box1Form.ruling30Tooltip')}>
-                  <InfoOutlinedIcon fontSize="small" color="action" />
-                </Tooltip>
-              </Stack>
-            }
-          />
-          <Collapse in={values.ruling30Enabled}>
-            <FormControl component="fieldset" className="box1-form__ruling-options">
-              <FormLabel component="legend" className="box1-form__ruling-legend">
-                {t('box1Form.category')}
-              </FormLabel>
-              <RadioGroup
-                value={values.ruling30Category}
-                onChange={handleSelectChange('ruling30Category')}
-                className="box1-form__ruling-radio-group"
-              >
-                {translatedCategories.map((cat) => (
-                  <FormControlLabel
-                    key={cat.value}
-                    value={cat.value}
-                    control={<Radio size="small" />}
-                    label={cat.label}
-                    className="box1-form__ruling-radio-label"
+        )}
+        <div className="box1-form__actions-row">
+          <div className="box1-form__main-ruling">
+            <div className="box1-form__ruling-section">
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked={values.ruling30Enabled}
+                    onChange={handleToggleChange('ruling30Enabled')}
                   />
-                ))}
-              </RadioGroup>
-            </FormControl>
-          </Collapse>
+                }
+                label={
+                  <Stack direction="row" alignItems="center" spacing={0.5}>
+                    <span>{t('box1Form.ruling30')}</span>
+                    <Tooltip title={t('box1Form.ruling30Tooltip')}>
+                      <InfoOutlinedIcon fontSize="small" color="action" />
+                    </Tooltip>
+                  </Stack>
+                }
+              />
+            </div>
+          </div>
+          <button type="button" className="advanced-options-link" aria-haspopup="dialog"
+            onClick={() => setShowAdvanced(true)}>{t('box1Form.advancedOptions')}</button>
         </div>
       </div>
-      <button type="button" className="advanced-options-link" aria-haspopup="dialog"
-        onClick={() => setShowAdvanced(true)}>{t('box1Form.advancedOptions')}</button>
       <StandardModal open={showAdvanced} onClose={() => setShowAdvanced(false)}
         title={t('box1Form.advancedOptions')}>
         <Stack spacing={3} component={Box} className="box1-form__fields">
+          {values.ruling30Enabled && <FormControl component="fieldset" className="box1-form__ruling-options">
+            <FormLabel component="legend" className="box1-form__ruling-legend">{t('box1Form.category')}</FormLabel>
+            <RadioGroup value={values.ruling30Category} onChange={handleSelectChange('ruling30Category')}
+              className="box1-form__ruling-radio-group">
+              {translatedCategories.map((cat) => <FormControlLabel key={cat.value} value={cat.value}
+                control={<Radio size="small" />} label={cat.label} className="box1-form__ruling-radio-label" />)}
+            </RadioGroup>
+          </FormControl>}
           <div className="box1-form__year-row">
             <TextField
               select
@@ -227,22 +204,18 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
           )}
 
           <Box className="box1-form__toggles">
-            {!guided && <FormControlLabel
-              control={
-                <Switch
-                  checked={values.holidayAllowanceIncluded}
-                  onChange={handleToggleChange('holidayAllowanceIncluded')}
-                />
-              }
-              label={
-                <Stack direction="row" alignItems="center" spacing={0.5}>
-                  <span>{t('box1Form.holidayAllowanceIncluded')}</span>
-                  <Tooltip title={t('box1Form.holidayAllowanceTooltip')}>
-                    <InfoOutlinedIcon fontSize="small" color="action" />
-                  </Tooltip>
-                </Stack>
-              }
-            />}
+            <div className="box1-form__toggle-row">
+              <FormControlLabel
+                control={<Switch checked={values.holidayAllowanceIncluded}
+                  onChange={handleToggleChange('holidayAllowanceIncluded')} />}
+                label={t('box1Form.holidayAllowanceIncluded')}
+              />
+              <Tooltip title={t(guided ? 'guidedRail.holidayHelp' : 'box1Form.holidayAllowanceTooltip')} describeChild>
+                <IconButton size="small" aria-label={t('guidedRail.holidayHelpLabel')}>
+                  <InfoOutlinedIcon fontSize="small" />
+                </IconButton>
+              </Tooltip>
+            </div>
 
             <FormControlLabel
               control={
@@ -278,22 +251,15 @@ function Box1InputForm({ values, onChange, year, onYearChange, onReset, guided =
               }
             />
           </Box>
+          <Box className="box1-form__reset-section">
+            <Button size="small" color="error" className="box1-form__reset-button"
+              startIcon={<RestartAltIcon fontSize="small" />} aria-label={t('box1Form.reset')}
+              onClick={() => setShowResetConfirm(true)}>
+              {t('box1Form.reset')}
+            </Button>
+          </Box>
         </Stack>
       </StandardModal>
-
-      {/* Reset button always visible below advanced options */}
-      <Box className="box1-form__reset-section">
-        <Button
-          size="small"
-          color="error"
-          onClick={() => setShowResetConfirm(true)}
-          className="box1-form__reset-button"
-          startIcon={<RestartAltIcon fontSize="small" />}
-          aria-label={t('box1Form.reset')}
-        >
-          {t('box1Form.reset')}
-        </Button>
-      </Box>
 
       {/* Reset confirmation dialog */}
       <StandardModal open={showResetConfirm} onClose={() => setShowResetConfirm(false)} size="xs"

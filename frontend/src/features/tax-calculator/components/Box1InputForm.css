@@ -97,6 +97,16 @@
   font-size: 0.875rem;
 }
 
+.box1-form__toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.box1-form__toggle-row .MuiFormControlLabel-root {
+  margin-right: 0;
+}
+
 /* 30% Ruling Section */
 .box1-form__ruling-section {
   display: flex;

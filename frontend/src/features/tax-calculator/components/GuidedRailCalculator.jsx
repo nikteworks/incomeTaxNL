@@ -46,7 +46,7 @@ export default function GuidedRailCalculator({ mode, onModeChange, salary, salar
 
   return (
     <div className="guided-rail calculator-shell" id="calculator" tabIndex={-1}>
-        <aside className="guided-inputs" aria-label={t('guidedRail.inputs')}>
+        <aside className={`guided-inputs${box1 ? ' guided-inputs--box1' : ''}`} aria-label={t('guidedRail.inputs')}>
           <div className="guided-mode" role="group" aria-label={t('calculator.boxToggleLabel')}>
             {['box1', 'box3'].map(box => <button type="button" key={box}
               aria-pressed={mode === box} aria-label={box === 'box1' ? 'Box 1' : 'Box 3'} onClick={() => onModeChange(box)}>{t(`calculator.${box}`)}</button>)}
