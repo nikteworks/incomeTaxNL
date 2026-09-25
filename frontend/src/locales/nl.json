@@ -7,8 +7,6 @@
   },
   "header": {
     "aboutAriaLabel": "Meer informatie over incomeTaxNL",
-    "contactAriaLabel": "Neem contact op via X (Twitter)",
-    "contactTitle": "Hulp nodig? Stuur een bericht op X",
     "githubAriaLabel": "Bekijk op GitHub"
   },
   "footer": {
@@ -241,8 +239,6 @@
     "termsChangesText": "Deze voorwaarden kunnen van tijd tot tijd worden bijgewerkt. Voortgezet gebruik van incomeTaxNL na wijzigingen houdt acceptatie van de herziene voorwaarden in.",
     "termsContactTitle": "9. Contact",
     "termsContactText": "Voor vragen of opmerkingen kunt u contact met ons opnemen via",
-    "termsContactOr": "of",
-    "termsContactDM": "direct bericht op X",
     "close": "Sluiten",
     "statementTitle": "Je jaaropgave lezen",
     "discardTitle": "Deze invoer verwerpen?",

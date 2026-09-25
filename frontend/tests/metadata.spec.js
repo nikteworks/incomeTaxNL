@@ -20,7 +20,7 @@ for (const [path, language] of [['/', 'en'], ['/?lang=en', 'en'], ['/?lang=nl', 
     await expect(staticPage).toHaveTitle(pageCopy[language].title)
     await expect(staticPage.locator('meta[name="description"]')).toHaveAttribute('content', pageCopy[language].description)
     await expect(staticPage.locator('meta[property="og:title"]')).toHaveAttribute('content', pageCopy[language].title)
-    await expect(staticPage.locator('meta[name="twitter:description"]')).toHaveAttribute('content', pageCopy[language].description)
+    await expect(staticPage.locator('meta[name^="twitter:"]')).toHaveCount(0)
     await noJs.close()
     const errors = []
     page.on('pageerror', (error) => errors.push(error.message))
@@ -38,7 +38,7 @@ for (const [path, language] of [['/', 'en'], ['/?lang=en', 'en'], ['/?lang=nl', 
     await page.locator('.language-switcher').click()
     await expect(page).toHaveTitle(pageCopy[other].title)
     await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content', pageCopy[other].title)
-    await expect(page.locator('meta[name="twitter:description"]')).toHaveAttribute('content', pageCopy[other].description)
+    await expect(page.locator('meta[name^="twitter:"]')).toHaveCount(0)
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(pageCopy[other].heading)
     await page.goBack()
     await expect(page).toHaveTitle(pageCopy[language].title)

@@ -2,7 +2,7 @@ import { createContext, useContext, useMemo, useCallback, useEffect } from 'reac
 import { useNavigate } from 'react-router-dom'
 import { useQueryState } from '../hooks/useQueryState.js'
 import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES, readLanguage, normalizedLanguageLocation, languageLocation } from '../utils/urlState.js'
-import { updateMetadata } from '../seo/metadata.js'
+import { updateMetadata } from '../seo/clientMetadata.js'
 import PropTypes from 'prop-types'
 import en from '../locales/en.json'
 import nl from '../locales/nl.json'
