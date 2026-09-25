@@ -19,6 +19,10 @@ for (const language of ['en', 'nl']) {
         const dialog = page.getByRole('dialog', { name: title, exact: true })
         await expect(dialog).toBeVisible()
         await expect(dialog).toHaveCSS('background-color', 'rgb(249, 251, 253)')
+        if (title === copy.modals.privacyTitle) {
+          await expect(dialog.getByText(copy.modals.privacyText, { exact: true })).toBeVisible()
+          await expect(dialog.getByText(copy.modals.privacyBullet1, { exact: true })).toBeVisible()
+        }
         const bounds = await dialog.boundingBox()
         expect(bounds.x).toBeGreaterThanOrEqual(12)
         expect(bounds.x + bounds.width).toBeLessThanOrEqual(width - 12)

@@ -199,10 +199,8 @@
   "modals": {
     "privacyTitle": "Privacy-first by design",
     "privacyIntro": "Your financial data is your business.",
-    "privacyText": "Calculations run in your browser, and entered values are saved locally in your browser. The site uses Vercel Analytics for page visits.",
-    "privacyBullet1": "A URL containing financial values or account names can reveal them to anyone who receives the link.",
-    "privacyBullet2": "URL query strings can appear in browser history and hosting logs. Check a link before sharing it.",
-    "privacyBullet3": "Calculator results are estimates for guidance, not a personal tax assessment.",
+    "privacyText": "We do not collect your financial data. Values are saved in your browser, and we only track page view counts.",
+    "privacyBullet1": "URL-based sharing means we do not need to store your data. A shared URL may contain sensitive information and can appear in browser history or hosting logs, so only share it with someone you trust.",
     "aboutTitle": "About incomeTaxNL",
     "aboutText": "incomeTaxNL estimates Dutch gross-to-net salary in Box 1 and tax on savings and investments in Box 3. Calculations run locally in your browser.",
     "howToUseTitle": "How to use this Dutch income tax calculator",

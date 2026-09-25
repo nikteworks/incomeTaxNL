@@ -103,12 +103,9 @@ function PrimaryLayout({ children, guided = false }) {
       </footer>
       <StandardModal open={showPrivacy} onClose={() => setShowPrivacy(false)}
         title={t('modals.privacyTitle')} size="sm">
-        <p><strong>{t('modals.privacyIntro')}</strong> {t('modals.privacyText')}</p>
-        <ul>
-          <li>{t('modals.privacyBullet1')}</li>
-          <li>{t('modals.privacyBullet2')}</li>
-          <li>{t('modals.privacyBullet3')}</li>
-        </ul>
+        <p><strong>{t('modals.privacyIntro')}</strong></p>
+        <p>{t('modals.privacyText')}</p>
+        <p>{t('modals.privacyBullet1')}</p>
       </StandardModal>
       <StandardModal open={showInfo} onClose={() => setShowInfo(false)}
         title={t('modals.aboutTitle')} size="sm">

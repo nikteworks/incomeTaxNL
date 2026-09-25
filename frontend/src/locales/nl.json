@@ -199,10 +199,8 @@
   "modals": {
     "privacyTitle": "Privacy-first by design",
     "privacyIntro": "Uw financiële gegevens zijn uw zaak.",
-    "privacyText": "Berekeningen worden in uw browser uitgevoerd en ingevoerde gegevens worden lokaal in uw browser bewaard. De website gebruikt Vercel Analytics voor paginabezoeken.",
-    "privacyBullet1": "Een URL met financiële bedragen of rekeningnamen kan deze gegevens tonen aan iedereen die de link ontvangt.",
-    "privacyBullet2": "URL-parameters kunnen in de browsergeschiedenis en hostinglogs terechtkomen. Controleer een link voordat u deze deelt.",
-    "privacyBullet3": "De uitkomsten zijn schattingen ter oriëntatie, geen persoonlijke belastingaanslag.",
+    "privacyText": "We verzamelen uw financiële gegevens niet. Gegevens worden in uw browser bewaard en we tellen alleen paginaweergaven.",
+    "privacyBullet1": "Dankzij delen via URL hoeven we uw gegevens niet op te slaan. Een gedeelde URL kan gevoelige informatie bevatten en in de browsergeschiedenis of hostinglogs terechtkomen. Deel de URL daarom alleen met iemand die u vertrouwt.",
     "aboutTitle": "Over incomeTaxNL",
     "aboutText": "incomeTaxNL schat uw nettoloon in Box 1 en belasting over sparen en beleggen in Box 3. Berekeningen worden lokaal in uw browser uitgevoerd.",
     "howToUseTitle": "Hoe deze Nederlandse inkomstenbelastingcalculator te gebruiken",
