@@ -19,6 +19,9 @@ for (const language of ['en', 'nl']) {
     await expect(headline(page)).toHaveText('—')
     await expect(page.getByRole('meter')).toHaveCount(0)
     await page.locator('#guided-salary').fill('83000.99')
+    const live = page.locator('.guided-headline [aria-live="polite"]')
+    await expect(live).toHaveAttribute('aria-atomic', 'true')
+    await expect(live).toContainText(copy.guidedRail.takeHome)
     const expected = paycheck(83000.99)
     await expect(headline(page)).toHaveText(money(expected.netYear / 12, language))
     await expect(page.getByRole('meter')).toHaveAttribute('value', String(expected.netYear / expected.grossYear))
@@ -26,6 +29,7 @@ for (const language of ['en', 'nl']) {
     for (const [label, divisor] of [['yearly', 1], ['weekly', 52], ['monthly', 12]]) {
       await page.locator('.guided-period').getByRole('button', { name: copy.periods[label], exact: true }).click()
       await expect(headline(page)).toHaveText(money(expected.netYear / divisor, language))
+      await expect(live).toContainText(money(expected.netYear / divisor, language))
       for (const field of ['grossYear', 'taxableYear', 'incomeTax', 'netYear', 'grossAllowance', 'payrollTax', 'socialTax', 'generalCredit', 'labourCredit']) {
         await expect(page.locator(`[data-metric="${field}"] strong`)).toHaveText(money(expected[field] / divisor, language))
       }

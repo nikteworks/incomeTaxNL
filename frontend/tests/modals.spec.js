@@ -105,3 +105,21 @@ for (const language of ['en', 'nl']) {
     await expect(trigger).toBeFocused()
   })
 }
+
+for (const language of ['en', 'nl']) {
+  test(`annual statement starts collapsed on every open: ${language}`, async ({ page }) => {
+    await page.goto(`/?lang=${language}&calcType=box3`)
+    const trigger = page.getByRole('button', { name: 'Where can I find this information?' })
+    for (let attempt = 0; attempt < 2; attempt++) {
+      await trigger.click()
+      const dialog = page.getByRole('dialog', { name: translations[language].modals.statementTitle })
+      const sections = dialog.locator('.jaaropgave-guide__accordion .MuiAccordionSummary-root')
+      await expect(sections).toHaveCount(3)
+      for (const section of await sections.all()) await expect(section).toHaveAttribute('aria-expanded', 'false')
+      await sections.first().click()
+      await expect(sections.first()).toHaveAttribute('aria-expanded', 'true')
+      await page.keyboard.press('Escape')
+      await expect(trigger).toBeFocused()
+    }
+  })
+}

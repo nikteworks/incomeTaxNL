@@ -75,7 +75,7 @@ export default function GuidedRailCalculator({ mode, onModeChange, salary, salar
               </div>}
             </div>
             <div className={`guided-headline${faqOpen ? ' guided-headline--compact' : ''}`}>
-              <div><h3>{t(box1 ? 'guidedRail.takeHome' : 'box3Result.estimatedTax')}</h3>
+              <div aria-live="polite" aria-atomic="true"><h3>{t(box1 ? 'guidedRail.takeHome' : 'box3Result.estimatedTax')}</h3>
                 <div className="guided-amount"><strong data-metric="headline">{money(headline)}</strong><span>{box1 ? periodLabel : t('box1Result.perYear')}</span></div>
               </div>
               {faqOpen && <div className="guided-compact-secondary"><span>{t(box1 ? 'guidedRail.tax' : 'box3Result.taxableBase')}</span><strong data-metric="compact-secondary">{money(secondary)}</strong></div>}

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { pageCopy, PAGE_UPDATED_AT } from '../src/seo/metadata.js'
 
 // Run against the deployment AFTER #21 and #22 ship together. No production writes.
 const base = new URL(process.env.ROUTING_BASE_URL || 'https://incometax.nl')
@@ -67,7 +68,7 @@ for (const [path, language] of [
   assert.ok(html.includes(`<link rel="canonical" href="${canonical}"`), `${path}: initial canonical`)
   assert.equal((html.match(/rel="canonical"/g) || []).length, 1)
   assert.equal((html.match(/rel="alternate"/g) || []).length, 3)
-  assert.ok(html.includes(language === 'nl' ? 'Nederlandse Belastingcalculator' : 'Dutch Tax Calculator'))
+  assert.ok(html.includes(pageCopy[language].heading.replaceAll('&', '&amp;')), 'current localized heading')
   assert.ok(html.includes('<h1>'), 'visible initial heading')
   assert.ok(!html.includes('PRIVATE_TEST_VALUE') && !html.includes('utm_source'), 'no request state in HTML')
   console.log(`PASS initial ${language} HTML; status=${response.status}; cache=${response.headers.get('x-vercel-cache') || 'not exposed'}`)
@@ -75,5 +76,8 @@ for (const [path, language] of [
 const sitemap = await (await request(new URL('/sitemap.xml', base))).text()
 assert.ok(sitemap.includes('<loc>https://incometax.nl/</loc>'))
 assert.ok(sitemap.includes('<loc>https://incometax.nl/?lang=nl</loc>'))
-assert.ok(!sitemap.includes('<lastmod>'))
+assert.equal((sitemap.match(new RegExp(`<lastmod>${PAGE_UPDATED_AT}</lastmod>`, 'g')) || []).length, 2)
+const robotsResponse = await request(new URL('/robots.txt', base))
+assert.equal(robotsResponse.status, 200)
+assert.ok((await robotsResponse.text()).includes('Sitemap: https://incometax.nl/sitemap.xml'))
 console.log('PASS localized initial HTML, cache-selection probes and sitemap')

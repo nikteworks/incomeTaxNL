@@ -5,6 +5,30 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "What can I calculate with incomeTaxNL?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "incomeTaxNL is a free calculator for Dutch Box 1 salary estimates and Box 3 savings and investment tax estimates. Box 1 supports tax years 2019–2026, holiday allowance, the 30% ruling, pension-age status and social security. Box 3 supports 2023–2026, bank balances, investments, debts and a tax partner. Advanced Options lets you inspect or change the settings. Results are estimates, not a final tax assessment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does incomeTaxNL calculate the Box 3 estimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The calculator adds bank balances and investments, subtracts debts above the selected debt threshold, and applies the tax-free allowance. It calculates the share left after that allowance, multiplies assumed returns after debt costs by that share, and then applies the selected Box 3 tax rate. Show Breakdown displays these six steps with your amounts. The calculator does not compare actual returns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do salary periods work in incomeTaxNL?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can enter gross salary per year, month, week, day or hour. Changing the input period converts the amount while preserving its annual value; hourly calculations use your hours per week from Advanced Options. Monthly, yearly and weekly result views use the same annual calculation. Check Holiday allowance included when your entered salary already includes it."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "How much tax do I pay on my salary in the Netherlands?",
       "acceptedAnswer": {
         "@type": "Answer",

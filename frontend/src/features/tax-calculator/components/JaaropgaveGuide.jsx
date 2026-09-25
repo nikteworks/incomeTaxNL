@@ -97,7 +97,7 @@ const GENERAL_INFO = {
       heading: 'Key date: 1 January (Peildatum)',
       items: [
         'Box 3 tax is based on your wealth on 1 January of the tax year',
-        'For 2025 taxes, use balances from 1 January 2025',
+        'Use balances from 1 January of the tax year selected in the calculator',
         'This is called the "peildatum" (reference date)',
       ],
     },
@@ -118,7 +118,7 @@ const GENERAL_INFO = {
         'Personal loans and credit',
         'Debts for investments',
         'Note: Primary home mortgage is NOT deductible in Box 3',
-        'Threshold: First €3,400 per person is not deductible',
+        'The debt threshold depends on the tax year and tax-partner setting; check Advanced Options',
       ],
     },
   ],
@@ -127,9 +127,12 @@ const GENERAL_INFO = {
 function JaaropgaveGuide() {
   const { t } = useLanguage()
   const [open, setOpen] = useState(false)
-  const [expanded, setExpanded] = useState('panel-bank')
+  const [expanded, setExpanded] = useState(false)
 
-  const handleOpen = () => setOpen(true)
+  const handleOpen = () => {
+    setExpanded(false)
+    setOpen(true)
+  }
   const handleClose = () => setOpen(false)
 
   const handleAccordionChange = (panel) => (_event, isExpanded) => {
