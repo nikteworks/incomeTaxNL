@@ -37,17 +37,12 @@
 .guided-income-period { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 20px; }
 .guided-income-period label { font-weight: 600; }
 .guided-income-period select { min-width: 0; width: 160px; max-width: 65%; padding: 8px 12px; border: 1px solid #7b8da5; border-radius: 6px; background: #f9fbfd; color: #172941; font-size: 14px; }
-.guided-holiday { display: flex; align-items: center; gap: 4px; margin-top: 20px; }
-.guided-holiday .MuiIconButton-root { flex-shrink: 0; color: #465770; }
 .guided-salary-input { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border: 1px solid #7b8da5; border-radius: 6px; background: #f9fbfd; font-size: 26px; }
 .guided-salary-input input { width: 100%; min-width: 0; border: 0; background: transparent; color: #172941; outline: 0; }
 .guided-salary-input:focus-within { outline: 3px solid #2246ae; outline-offset: 2px; }
 .guided-inputs .box1-form { padding: 0; gap: 16px; }
-.guided-inputs .box1-form__toggles { padding: 0; border: 0; background: transparent; }
-.guided-inputs .box1-form__ruling-options { margin-left: 0; background: transparent; border: 0; padding: 8px; }
 .guided-inputs .MuiFormControlLabel-root { margin-right: 0; }
 .guided-inputs .MuiFormControlLabel-label { font-size: 14px; }
-.guided-inputs .box1-form__reset-section { justify-content: flex-start; margin-top: 0; }
 .guided-inputs .tax-form__accordion { border: 0; border-radius: 0 !important; background: transparent; box-shadow: none; border-bottom: 1px solid #b8c5d6; }
 .guided-inputs .tax-form__accordion-summary { padding: 12px 0; }
 .guided-inputs .tax-form__accordion-details { padding: 8px 0 16px; background: transparent; }
@@ -129,7 +124,6 @@
   }
 }
 .guided-inputs .tax-form__actions-grid { justify-content: space-between; }
-.guided-inputs .box1-form__main-ruling { margin-top: 8px; }
 
 .guided-ratio { flex-basis: 100%; margin-top: 18px; font-size: 13px; }
 .guided-ratio > span { display: flex; justify-content: space-between; gap: 12px; }
@@ -150,3 +144,52 @@
 .guided-calculation-formula { background: #e3eaf4; border-radius: 8px; padding: 12px 16px; overflow-wrap: anywhere; }
 .guided-calculation-steps p { margin: 8px 0 0; }
 .guided-calculation-detail { margin-top: 8px; color: #465770; font-size: 13px; }
+
+/* Box 1 keeps its essential inputs together above the live result on narrow screens. */
+.guided-inputs--box1 .box1-form__compact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid #cbd4df;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 3px 14px rgba(23, 41, 65, 0.05);
+}
+.guided-inputs--box1 .guided-basic-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+.guided-salary-field { min-width: 0; }
+.guided-salary-field label,
+.guided-inputs--box1 .guided-income-period label { display: block; margin-bottom: 7px; font-size: 13px; font-weight: 600; }
+.guided-inputs--box1 .guided-salary-input { min-height: 45px; padding: 7px 10px; gap: 7px; font-size: 20px; }
+.guided-inputs--box1 .guided-salary-input input { font-size: 20px; }
+.guided-inputs--box1 .guided-income-period { display: block; margin-top: 0; }
+.guided-inputs--box1 .guided-income-period select { width: 100%; max-width: none; height: 45px; font-size: 14px; padding: 7px 8px; }
+.guided-salary-help--quiet { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.guided-inputs--box1 .guided-salary-help--error { margin-top: 6px; color: #a32929; }
+.guided-inputs--box1 .box1-form__actions-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px; padding-top: 10px; border-top: 1px solid #e1e7ef; }
+.guided-inputs--box1 .box1-form__main-ruling { margin-top: 0; min-width: 0; }
+.guided-inputs--box1 .box1-form__main-ruling .MuiFormControlLabel-root { margin-left: -8px; }
+.guided-inputs--box1 .advanced-options-link { flex-shrink: 0; font-size: 13px; padding: 8px 0; }
+
+@media (max-width: 760px) {
+  .guided-inputs--box1 { padding: 14px 16px 16px; }
+  .guided-inputs--box1 .guided-mode { margin-bottom: 12px; }
+  .guided-inputs--box1 .guided-mode button { padding-block: 8px; }
+  .guided-inputs--box1 .box1-form__compact-card { padding: 14px 16px; }
+  .guided-rail:has(.guided-inputs--box1) .guided-reading { padding: 18px 16px 32px; }
+  .guided-rail:has(.guided-inputs--box1) .guided-result-heading { margin-bottom: 8px; }
+  .guided-rail:has(.guided-inputs--box1) .guided-result-toolbar { margin-bottom: 12px; }
+  .guided-rail:has(.guided-inputs--box1) .guided-headline { padding: 20px; }
+}
+
+@media (max-width: 360px) {
+  .app-shell--guided:has(.guided-inputs--box1) { grid-template-columns: minmax(0, 1fr); }
+  .app-shell--guided:has(.guided-inputs--box1) .app-header { padding-inline: 14px; min-width: 0; }
+  .app-shell--guided:has(.guided-inputs--box1) .app-brand { font-size: 17px; }
+  .app-shell--guided:has(.guided-inputs--box1) .app-header__nav { gap: 6px; }
+}
